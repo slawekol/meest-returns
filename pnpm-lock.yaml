@@ -269,6 +269,9 @@ importers:
       '@meest/config':
         specifier: workspace:*
         version: link:../config
+      '@types/node':
+        specifier: ^22.10.1
+        version: 22.19.18
       prisma:
         specifier: ^5.22.0
         version: 5.22.0
