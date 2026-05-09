@@ -10,3 +10,4 @@ export {
   CardContent,
 } from './components/card';
 export { Badge, badgeVariants, type BadgeProps } from './components/badge';
+export { MaterialIcon, type MaterialIconProps } from './components/material-icon';
