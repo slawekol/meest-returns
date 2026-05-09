@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wpisz kod zwrotu - Meest&amp;Returns</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#000000",
+                    "inverse-on-surface": "#f3f0f2",
+                    "primary": "#000000",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-secondary-fixed": "#002113",
+                    "outline-variant": "#c6c6cd",
+                    "secondary-fixed-dim": "#4edea3",
+                    "text-primary": "#0F172A",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-secondary-container": "#00714d",
+                    "on-tertiary-fixed-variant": "#574425",
+                    "on-primary-fixed": "#131b2e",
+                    "on-secondary-fixed-variant": "#005236",
+                    "error": "#EF4444",
+                    "outline": "#76777d",
+                    "badge-rejected-bg": "#FEE2E2",
+                    "on-tertiary-container": "#98805d",
+                    "badge-dropped-bg": "#FEF3C7",
+                    "badge-completed-bg": "#D1FAE5",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "tertiary-container": "#271901",
+                    "surface": "#fcf8fa",
+                    "on-surface": "#1b1b1d",
+                    "surface-tint": "#565e74",
+                    "surface-dim": "#dcd9db",
+                    "badge-initiated-bg": "#F1F5F9",
+                    "success": "#10B981",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "warning": "#F59E0B",
+                    "surface-container-lowest": "#ffffff",
+                    "badge-received-bg": "#EDE9FE",
+                    "surface-container-low": "#f6f3f5",
+                    "on-secondary": "#ffffff",
+                    "bg-light": "#FAFAFA",
+                    "surface-container": "#f0edef",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#bec6e0",
+                    "secondary-fixed": "#6ffbbe",
+                    "background": "#fcf8fa",
+                    "text-secondary": "#64748B",
+                    "on-primary-container": "#7c839b",
+                    "inverse-surface": "#303032",
+                    "text-muted": "#94A3B8",
+                    "secondary": "#006c49",
+                    "surface-bright": "#fcf8fa",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e4e2e4",
+                    "info": "#3B82F6",
+                    "surface-container-high": "#eae7e9",
+                    "surface-container-highest": "#e4e2e4",
+                    "badge-transit-bg": "#DBEAFE",
+                    "on-tertiary-fixed": "#271901",
+                    "primary-container": "#131b2e",
+                    "on-surface-variant": "#45464d",
+                    "secondary-container": "#6cf8bb",
+                    "border-base": "#E2E8F0",
+                    "on-background": "#1b1b1d",
+                    "tertiary-fixed": "#fcdeb5",
+                    "primary-fixed": "#dae2fd",
+                    "bg-subtle": "#F1F5F9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xxl": "48px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "container-padding": "24px",
+                    "xxxl": "64px",
+                    "md": "16px",
+                    "form-gap": "16px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "section-gap": "48px"
+            },
+            "fontFamily": {
+                    "technical": ["JetBrains Mono"],
+                    "h2": ["Inter"],
+                    "display": ["Inter"],
+                    "body": ["Inter"],
+                    "h1": ["Inter"],
+                    "small": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                    "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                    "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                    "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Hide scrollbar for a cleaner mobile app look */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body antialiased selection:bg-success selection:text-white">
+<!-- TopAppBar (Contextual Header & Back Button) -->
+<!-- Applying exact style logic from JSON: style_component_shape, style_separation_logic, style_shell_layout, etc. -->
+<header class="fixed top-0 w-full z-50 border-b border-border-base dark:border-outline-variant bg-surface dark:bg-on-background flex items-center justify-between px-md h-11 max-w-[480px] mx-auto left-1/2 -translate-x-1/2">
+<button aria-label="Go back" class="text-text-secondary dark:text-on-surface-variant hover:bg-bg-subtle dark:hover:bg-surface-variant transition-colors duration-200 p-unit rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<span class="font-h1 text-h1 font-bold text-primary dark:text-primary-fixed">Meest&amp;Returns</span>
+<button aria-label="Notifications" class="text-text-secondary dark:text-on-surface-variant hover:bg-bg-subtle dark:hover:bg-surface-variant transition-colors duration-200 p-unit rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas (Constrained to 480px for consumer app) -->
+<!-- Navigation shell (BottomNavBar) is suppressed because this is a focused, transactional task page -->
+<main class="pt-[60px] pb-lg px-container-padding max-w-[480px] mx-auto min-h-screen flex flex-col">
+<!-- Header Section -->
+<div class="mt-md mb-xl flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-badge-initiated-bg rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-text-primary">dialpad</span>
+</div>
+<h1 class="font-display text-display text-text-primary">Wpisz kod zwrotu</h1>
+<p class="font-body text-body text-text-secondary mt-sm max-w-[280px]">
+                Wprowadź 10-cyfrowy kod RTN podany na dokumencie zwrotu.
+            </p>
+</div>
+<!-- Input Field Container -->
+<div class="mb-xl w-full">
+<div class="w-full border-2 border-success bg-surface-container-lowest rounded-lg h-[64px] flex items-center justify-center px-lg shadow-[0_0_0_4px_rgba(16,185,129,0.1)] transition-all">
+<span class="font-technical text-h1 text-text-muted mr-sm tracking-widest">RTN-</span>
+<span class="font-technical text-h1 text-text-primary tracking-widest">8372</span>
+<span class="w-[2px] h-[28px] bg-success ml-unit animate-pulse"></span>
+</div>
+<div class="mt-sm flex justify-between px-xs">
+<span class="font-small text-small text-text-muted">Format: RTN-XXXXXXXXXX</span>
+<span class="font-small text-small text-text-secondary">4 / 10</span>
+</div>
+</div>
+<!-- Spacer to push keypad to bottom area if screen is tall, but keep it structured -->
+<div class="flex-grow"></div>
+<!-- Large Numeric Keypad (3x4 Grid) -->
+<div class="w-full max-w-[320px] mx-auto grid grid-cols-3 gap-md mb-xl">
+<!-- Row 1 -->
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">1</button>
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">2</button>
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">3</button>
+<!-- Row 2 -->
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">4</button>
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">5</button>
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">6</button>
+<!-- Row 3 -->
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">7</button>
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">8</button>
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">9</button>
+<!-- Row 4 -->
+<button class="h-[64px] flex items-center justify-center rounded-lg text-text-primary bg-transparent" disabled=""></button>
+<button class="h-[64px] flex items-center justify-center bg-surface-container-lowest border border-border-base rounded-lg text-display font-display text-text-primary hover:bg-bg-subtle hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] active:scale-95 transition-all">0</button>
+<button class="h-[64px] flex items-center justify-center rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-subtle active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-size: 32px;">backspace</span>
+</button>
+</div>
+<!-- CTA Button -->
+<div class="mt-auto pt-md w-full">
+<button class="w-full bg-success text-on-primary font-h2 text-h2 py-[12px] px-[24px] min-h-[48px] rounded-lg flex items-center justify-center hover:opacity-90 active:scale-[0.98] transition-all shadow-sm">
+                Zatwierdź
+            </button>
+</div>
+</main>
+</body></html>

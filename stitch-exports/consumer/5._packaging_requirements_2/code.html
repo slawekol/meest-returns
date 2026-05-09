@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meest&amp;Returns - Przygotuj paczkę</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dcd9db",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary-fixed": "#271901",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "secondary-fixed": "#6ffbbe",
+                        "tertiary-fixed": "#fcdeb5",
+                        "tertiary": "#000000",
+                        "on-primary-fixed": "#131b2e",
+                        "text-secondary": "#64748B",
+                        "bg-light": "#FAFAFA",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "secondary-fixed-dim": "#4edea3",
+                        "text-primary": "#0F172A",
+                        "on-background": "#1b1b1d",
+                        "inverse-surface": "#303032",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "surface-container-high": "#eae7e9",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary-fixed-variant": "#005236",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-low": "#f6f3f5",
+                        "badge-received-bg": "#EDE9FE",
+                        "surface-tint": "#565e74",
+                        "bg-subtle": "#F1F5F9",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "surface-container-highest": "#e4e2e4",
+                        "primary-fixed": "#dae2fd",
+                        "error": "#EF4444",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary-container": "#98805d",
+                        "info": "#3B82F6",
+                        "primary-container": "#131b2e",
+                        "on-error": "#ffffff",
+                        "outline": "#76777d",
+                        "on-surface": "#1b1b1d",
+                        "on-secondary-fixed": "#002113",
+                        "background": "#fcf8fa",
+                        "error-container": "#ffdad6",
+                        "secondary": "#006c49",
+                        "success": "#10B981",
+                        "secondary-container": "#6cf8bb",
+                        "warning": "#F59E0B",
+                        "tertiary-container": "#271901",
+                        "surface-bright": "#fcf8fa",
+                        "primary": "#000000",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-primary-container": "#7c839b",
+                        "border-base": "#E2E8F0",
+                        "badge-transit-bg": "#DBEAFE",
+                        "on-error-container": "#93000a",
+                        "text-muted": "#94A3B8",
+                        "surface-container": "#f0edef",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e4e2e4",
+                        "surface": "#fcf8fa",
+                        "badge-completed-bg": "#D1FAE5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "form-gap": "16px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "section-gap": "48px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "xxxl": "64px"
+                    },
+                    "fontFamily": {
+                        "technical": ["JetBrains Mono"],
+                        "h1": ["Inter"],
+                        "small": ["Inter"],
+                        "h2": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-text-primary font-body antialiased min-h-screen flex flex-col items-center">
+<!-- TopAppBar (Transactional - Hidden Nav, Kept for Back Action & Brand) -->
+<header class="w-full max-w-[480px] mx-auto flex items-center px-container-padding h-11 border-b border-border-base bg-surface">
+<button class="mr-sm text-text-primary hover:bg-bg-subtle p-xs rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<span class="font-h1 text-h1 text-text-primary flex-1 text-center pr-[32px]">Meest&amp;Returns</span>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-[480px] flex-1 flex flex-col px-container-padding py-xl pb-[100px]">
+<!-- Header Section -->
+<div class="mb-xl text-center">
+<h1 class="font-display text-display text-text-primary mb-sm">Przygotuj paczkę</h1>
+<p class="font-body text-body text-error font-medium">Zwrot zostanie odrzucony jeśli paczka nie spełnia wymagań</p>
+</div>
+<!-- Requirements List (Bento-style stacked cards) -->
+<div class="flex flex-col gap-form-gap mb-xxl">
+<!-- Requirement 1 -->
+<div class="flex items-start gap-md p-md bg-surface-container-lowest border border-border-base rounded-lg hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="sell">sell</span>
+</div>
+<div class="flex-1 pt-unit">
+<p class="font-body text-body text-text-primary font-medium">Metki oryginalne nieuszkodzone</p>
+</div>
+</div>
+<!-- Requirement 2 -->
+<div class="flex items-start gap-md p-md bg-surface-container-lowest border border-border-base rounded-lg hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_mall">local_mall</span>
+</div>
+<div class="flex-1 pt-unit">
+<p class="font-body text-body text-text-primary font-medium">Produkt w worku foliowym (możesz użyć torby z zakupów)</p>
+</div>
+</div>
+<!-- Requirement 3 -->
+<div class="flex items-start gap-md p-md bg-surface-container-lowest border border-border-base rounded-lg hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="flex-1 pt-unit">
+<p class="font-body text-body text-text-primary font-medium">Bez oryginalnego pudełka — tylko produkt w worku</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Action Area -->
+<div class="fixed bottom-0 w-full max-w-[480px] bg-surface border-t border-border-base p-container-padding z-40">
+<!-- Confirmation Checkbox -->
+<label class="flex items-center gap-sm mb-md cursor-pointer group">
+<div class="relative flex items-center justify-center w-5 h-5 rounded border border-outline bg-surface-container-lowest group-hover:border-success transition-colors">
+<input class="opacity-0 absolute inset-0 cursor-pointer w-full h-full z-10" id="confirm-requirements" type="checkbox"/>
+<!-- Custom Checkmark (Visible when checked via CSS ideally, simplified for visual representation here) -->
+<span class="material-symbols-outlined text-[16px] text-surface-container-lowest opacity-0 transition-opacity" data-icon="check" data-weight="fill" id="check-icon" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-small text-small text-text-primary font-medium select-none">Potwierdzam, że paczka spełnia wymagania</span>
+</label>
+<!-- CTA Button (Visually styled as disabled initially) -->
+<button class="w-full h-[44px] rounded-lg bg-surface-container-high text-text-muted font-body text-body font-medium flex items-center justify-center transition-colors select-none pointer-events-none" id="generate-btn">
+            Wygeneruj kod QR
+        </button>
+</div>
+</body></html>

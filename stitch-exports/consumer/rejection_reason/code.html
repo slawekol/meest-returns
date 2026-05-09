@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Odrzucenie Zwrotu - Krok 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#98805d",
+                        "on-primary-fixed": "#131b2e",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary": "#000000",
+                        "surface-variant": "#e4e2e4",
+                        "outline": "#76777d",
+                        "on-surface": "#1b1b1d",
+                        "on-tertiary-fixed": "#271901",
+                        "on-secondary-container": "#00714d",
+                        "inverse-primary": "#bec6e0",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "on-background": "#1b1b1d",
+                        "surface-container-low": "#f6f3f5",
+                        "badge-completed-bg": "#D1FAE5",
+                        "border-base": "#E2E8F0",
+                        "text-secondary": "#64748B",
+                        "bg-subtle": "#F1F5F9",
+                        "primary-container": "#131b2e",
+                        "on-secondary-fixed": "#002113",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-error-container": "#93000a",
+                        "badge-received-bg": "#EDE9FE",
+                        "text-muted": "#94A3B8",
+                        "badge-transit-bg": "#DBEAFE",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#fcdeb5",
+                        "info": "#3B82F6",
+                        "background": "#fcf8fa",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-tint": "#565e74",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary": "#000000",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-high": "#eae7e9",
+                        "secondary": "#006c49",
+                        "secondary-container": "#6cf8bb",
+                        "on-primary-container": "#7c839b",
+                        "warning": "#F59E0B",
+                        "primary-fixed": "#dae2fd",
+                        "inverse-on-surface": "#f3f0f2",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container": "#f0edef",
+                        "on-surface-variant": "#45464d",
+                        "tertiary-container": "#271901",
+                        "error": "#EF4444",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "inverse-surface": "#303032",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dcd9db",
+                        "surface": "#fcf8fa",
+                        "surface-bright": "#fcf8fa",
+                        "bg-light": "#FAFAFA",
+                        "success": "#10B981",
+                        "text-primary": "#0F172A",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "secondary-fixed": "#6ffbbe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "unit": "4px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "xxl": "48px",
+                        "xl": "32px",
+                        "xxxl": "64px",
+                        "section-gap": "48px",
+                        "md": "16px",
+                        "form-gap": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Inter"],
+                        "technical": ["JetBrains Mono"],
+                        "small": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h2": ["Inter"],
+                        "body": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-bg-light text-on-surface font-body w-full max-w-[768px] mx-auto min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container-highest flex justify-between items-center h-[56px] px-md w-full border-b border-border-base flat no shadows z-10 sticky top-0">
+<div class="flex items-center gap-sm">
+<button aria-label="Back" class="p-sm text-primary dark:text-on-surface hover:bg-surface-container-low transition-colors active:opacity-80 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</button>
+<h1 class="font-h1 text-h1 font-bold text-primary dark:text-on-surface">Meest&amp;Returns Operator</h1>
+</div>
+<div class="flex items-center">
+<button class="p-sm text-primary dark:text-on-surface hover:bg-surface-container-low transition-colors active:opacity-80 rounded-full">
+<span class="material-symbols-outlined" style="font-size: 24px;">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col p-container-padding gap-section-gap">
+<!-- Header Section -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-display text-display text-primary">Dlaczego odrzucasz?</h2>
+<p class="font-body text-body text-text-secondary">Wybierz główny powód odrzucenia zwrotu. Ta informacja zostanie przekazana klientowi.</p>
+</section>
+<!-- Reason Selection Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-form-gap">
+<!-- Reason Card 1 (Selected State) -->
+<button class="flex items-start p-md bg-surface border-2 border-success rounded-lg hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all text-left min-h-[72px] relative overflow-hidden group">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-success/10 text-success mr-sm shrink-0">
+<span class="material-symbols-outlined" style="font-size: 20px;">label_off</span>
+</div>
+<div class="flex flex-col">
+<span class="font-h2 text-h2 text-primary group-hover:text-success transition-colors">Brak metki / metka uszkodzona</span>
+</div>
+<!-- Selection indicator -->
+<div class="absolute top-sm right-sm text-success">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<!-- Reason Card 2 -->
+<button class="flex items-start p-md bg-surface border border-border-base rounded-lg hover:border-outline hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all text-left min-h-[72px] group">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container text-text-secondary mr-sm shrink-0">
+<span class="material-symbols-outlined" style="font-size: 20px;">layers_clear</span>
+</div>
+<div class="flex flex-col">
+<span class="font-h2 text-h2 text-primary">Brak worka foliowego</span>
+</div>
+</button>
+<!-- Reason Card 3 -->
+<button class="flex items-start p-md bg-surface border border-border-base rounded-lg hover:border-outline hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all text-left min-h-[72px] group">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container text-text-secondary mr-sm shrink-0">
+<span class="material-symbols-outlined" style="font-size: 20px;">report</span>
+</div>
+<div class="flex flex-col">
+<span class="font-h2 text-h2 text-primary">Produkt niezgodny z opisem</span>
+</div>
+</button>
+<!-- Reason Card 4 -->
+<button class="flex items-start p-md bg-surface border border-border-base rounded-lg hover:border-outline hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all text-left min-h-[72px] group">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container text-text-secondary mr-sm shrink-0">
+<span class="material-symbols-outlined" style="font-size: 20px;">more_horiz</span>
+</div>
+<div class="flex flex-col">
+<span class="font-h2 text-h2 text-primary">Inny powód</span>
+</div>
+</button>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="p-container-padding bg-surface border-t border-border-base mt-auto sticky bottom-0 z-10">
+<button class="w-full h-[56px] bg-[#EF4444] hover:bg-[#DC2626] text-on-error font-h2 text-h2 rounded flex items-center justify-center gap-sm transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">block</span>
+            Odrzuć i wyjaśnij klientowi
+        </button>
+</div>
+</body></html>

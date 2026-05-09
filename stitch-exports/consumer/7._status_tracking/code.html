@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Status Zwrotu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c6c6cd",
+                        "text-secondary": "#64748B",
+                        "border-base": "#E2E8F0",
+                        "tertiary-container": "#271901",
+                        "bg-subtle": "#F1F5F9",
+                        "surface-bright": "#fcf8fa",
+                        "on-surface-variant": "#45464d",
+                        "surface-variant": "#e4e2e4",
+                        "badge-completed-bg": "#D1FAE5",
+                        "text-primary": "#0F172A",
+                        "surface": "#fcf8fa",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae7e9",
+                        "on-tertiary": "#ffffff",
+                        "bg-light": "#FAFAFA",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#565e74",
+                        "on-tertiary-container": "#98805d",
+                        "primary-container": "#131b2e",
+                        "on-primary-fixed": "#131b2e",
+                        "secondary": "#006c49",
+                        "tertiary-fixed": "#fcdeb5",
+                        "surface-container": "#f0edef",
+                        "on-secondary-fixed-variant": "#005236",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "outline": "#76777d",
+                        "warning": "#F59E0B",
+                        "on-primary-container": "#7c839b",
+                        "inverse-on-surface": "#f3f0f2",
+                        "inverse-surface": "#303032",
+                        "on-secondary-fixed": "#002113",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "surface-dim": "#dcd9db",
+                        "info": "#3B82F6",
+                        "text-muted": "#94A3B8",
+                        "on-surface": "#1b1b1d",
+                        "on-background": "#1b1b1d",
+                        "on-secondary": "#ffffff",
+                        "primary": "#000000",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "success": "#10B981",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f5",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-highest": "#e4e2e4",
+                        "secondary-fixed-dim": "#4edea3",
+                        "error": "#EF4444",
+                        "primary-fixed-dim": "#bec6e0",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "background": "#fcf8fa",
+                        "tertiary": "#000000",
+                        "badge-received-bg": "#EDE9FE",
+                        "on-tertiary-fixed": "#271901",
+                        "secondary-fixed": "#6ffbbe",
+                        "badge-transit-bg": "#DBEAFE",
+                        "secondary-container": "#6cf8bb",
+                        "primary-fixed": "#dae2fd",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#bec6e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "24px",
+                        "xxl": "48px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "form-gap": "16px",
+                        "section-gap": "48px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "xxxl": "64px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "small": ["Inter"],
+                        "technical": ["JetBrains Mono"],
+                        "display": ["Inter"],
+                        "h1": ["Inter"],
+                        "body": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .tech-font { font-family: 'JetBrains Mono', monospace; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex flex-col items-center">
+<!-- Mobile-first Container constraint -->
+<main class="w-full max-w-[480px] bg-surface min-h-screen relative shadow-sm flex flex-col">
+<!-- TopAppBar (From JSON) -->
+<header class="bg-surface dark:bg-surface-container-high docked full-width top-0 border-b border-border-base dark:border-outline-variant flex items-center px-container-padding h-11 w-full max-w-[480px] mx-auto z-50 sticky">
+<button class="text-text-primary dark:text-on-surface hover:bg-bg-subtle dark:hover:bg-surface-variant p-sm rounded-full -ml-sm transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex-1 flex justify-center pr-8">
+<h1 class="font-h1 text-h1 text-text-primary dark:text-on-surface">Meest&amp;Returns</h1>
+</div>
+</header>
+<!-- Main Content (Active Status View) -->
+<div class="flex-1 flex flex-col px-container-padding py-lg pb-xxxl" id="active-status-view">
+<!-- Page Header -->
+<div class="mb-xl text-center">
+<h2 class="font-display text-display text-text-primary mb-xs">Status zwrotu</h2>
+<div class="inline-flex items-center gap-2 bg-bg-subtle px-3 py-1.5 rounded-full border border-border-base">
+<span class="material-symbols-outlined text-[16px] text-text-secondary" data-icon="tag">tag</span>
+<span class="font-technical text-technical text-text-secondary uppercase tracking-wider">RTN-K9F2-8XLM</span>
+</div>
+</div>
+<!-- Timeline -->
+<div class="mb-xl pl-2">
+<!-- Step 1: Done -->
+<div class="flex gap-md relative pb-8">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-text-primary flex items-center justify-center z-10 shrink-0">
+<span class="material-symbols-outlined text-[14px] text-on-primary font-bold" data-icon="check">check</span>
+</div>
+<div class="w-[2px] bg-text-primary absolute top-6 bottom-0 left-[11px]"></div>
+</div>
+<div class="pt-0.5">
+<p class="font-h2 text-h2 text-text-primary">Zwrot zainicjowany</p>
+<p class="font-body text-body text-text-secondary mt-1">12 Paź 2023, 09:41</p>
+</div>
+</div>
+<!-- Step 2: Active -->
+<div class="flex gap-md relative pb-8">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full bg-success flex items-center justify-center z-10 shrink-0 shadow-[0_0_0_4px_rgba(16,185,129,0.1)]">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest"></div>
+</div>
+<div class="w-[2px] bg-border-base absolute top-6 bottom-0 left-[11px]"></div>
+</div>
+<div class="pt-0.5">
+<p class="font-h2 text-h2 text-success">Oddany w punkcie</p>
+<p class="font-body text-body text-text-secondary mt-1">Oczekuje na kuriera</p>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="flex gap-md relative pb-8">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full border-2 border-border-base bg-surface flex items-center justify-center z-10 shrink-0"></div>
+<div class="w-[2px] bg-border-base absolute top-6 bottom-0 left-[11px]"></div>
+</div>
+<div class="pt-0.5 opacity-50">
+<p class="font-body text-body font-medium text-text-primary">W transporcie</p>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex gap-md relative pb-8">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full border-2 border-border-base bg-surface flex items-center justify-center z-10 shrink-0"></div>
+<div class="w-[2px] bg-border-base absolute top-6 bottom-0 left-[11px]"></div>
+</div>
+<div class="pt-0.5 opacity-50">
+<p class="font-body text-body font-medium text-text-primary">Dotarł do magazynu</p>
+</div>
+</div>
+<!-- Step 5: Pending -->
+<div class="flex gap-md relative">
+<div class="flex flex-col items-center">
+<div class="w-6 h-6 rounded-full border-2 border-border-base bg-surface flex items-center justify-center z-10 shrink-0"></div>
+</div>
+<div class="pt-0.5 opacity-50">
+<p class="font-body text-body font-medium text-text-primary">Środki zwrócone</p>
+</div>
+</div>
+</div>
+<!-- Bento Info Cards -->
+<div class="grid grid-cols-2 gap-sm mb-xl">
+<div class="bg-bg-subtle rounded-lg p-md border border-border-base flex flex-col justify-between">
+<span class="material-symbols-outlined text-text-secondary mb-sm" data-icon="calendar_today">calendar_today</span>
+<div>
+<p class="font-label-caps text-label-caps text-text-secondary uppercase mb-1">Szacowany zwrot</p>
+<p class="font-h2 text-h2 text-text-primary">14-16 Paź</p>
+</div>
+</div>
+<div class="bg-bg-subtle rounded-lg p-md border border-border-base flex flex-col justify-between">
+<span class="material-symbols-outlined text-text-secondary mb-sm" data-icon="account_balance_wallet">account_balance_wallet</span>
+<div>
+<p class="font-label-caps text-label-caps text-text-secondary uppercase mb-1">Kwota zwrotu</p>
+<p class="font-h2 text-h2 text-text-primary">359,00 zł</p>
+<p class="font-small text-small text-text-secondary mt-1">Karta •••• 4242</p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-auto flex flex-col gap-md">
+<button class="w-full h-[44px] bg-surface border border-border-base text-text-primary font-small text-small rounded-lg flex items-center justify-center gap-2 hover:bg-bg-subtle transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                    Pomoc
+                </button>
+<button class="w-full py-2 text-error font-small text-small text-center hover:opacity-80 transition-opacity">
+                    Anuluj zwrot
+                </button>
+</div>
+</div>
+<!-- Empty State View (Included per instructions, visually hidden by default to prioritize active state, remove 'hidden' class to preview) -->
+<div class="hidden flex-1 flex flex-col items-center justify-center px-container-padding py-xxxl text-center border-t-8 border-bg-subtle mt-12" id="empty-state-view">
+<div class="w-20 h-20 bg-bg-subtle rounded-full flex items-center justify-center mb-md border border-border-base">
+<span class="material-symbols-outlined text-[40px] text-text-secondary" data-icon="package_2">package_2</span>
+</div>
+<h3 class="font-h1 text-h1 text-text-primary mb-sm">Brak aktywnych zwrotów</h3>
+<p class="font-body text-body text-text-secondary max-w-[280px]">
+                Obecnie nie masz żadnych przesyłek w procesie zwrotu. Kiedy nadasz zwrot, jego status pojawi się tutaj.
+            </p>
+</div>
+</main>
+</body></html>

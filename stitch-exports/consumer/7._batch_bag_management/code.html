@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Worek Zbiorczy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#000000",
+                      "inverse-on-surface": "#f3f0f2",
+                      "primary": "#000000",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#bec6e0",
+                      "on-secondary-fixed": "#002113",
+                      "outline-variant": "#c6c6cd",
+                      "secondary-fixed-dim": "#4edea3",
+                      "text-primary": "#0F172A",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "on-secondary-container": "#00714d",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "on-primary-fixed": "#131b2e",
+                      "on-secondary-fixed-variant": "#005236",
+                      "error": "#EF4444",
+                      "outline": "#76777d",
+                      "badge-rejected-bg": "#FEE2E2",
+                      "on-tertiary-container": "#98805d",
+                      "badge-dropped-bg": "#FEF3C7",
+                      "badge-completed-bg": "#D1FAE5",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "tertiary-container": "#271901",
+                      "surface": "#fcf8fa",
+                      "on-surface": "#1b1b1d",
+                      "surface-tint": "#565e74",
+                      "surface-dim": "#dcd9db",
+                      "badge-initiated-bg": "#F1F5F9",
+                      "success": "#10B981",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "warning": "#F59E0B",
+                      "surface-container-lowest": "#ffffff",
+                      "badge-received-bg": "#EDE9FE",
+                      "surface-container-low": "#f6f3f5",
+                      "on-secondary": "#ffffff",
+                      "bg-light": "#FAFAFA",
+                      "surface-container": "#f0edef",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#bec6e0",
+                      "secondary-fixed": "#6ffbbe",
+                      "background": "#fcf8fa",
+                      "text-secondary": "#64748B",
+                      "on-primary-container": "#7c839b",
+                      "inverse-surface": "#303032",
+                      "text-muted": "#94A3B8",
+                      "secondary": "#006c49",
+                      "surface-bright": "#fcf8fa",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e4e2e4",
+                      "info": "#3B82F6",
+                      "surface-container-high": "#eae7e9",
+                      "surface-container-highest": "#e4e2e4",
+                      "badge-transit-bg": "#DBEAFE",
+                      "on-tertiary-fixed": "#271901",
+                      "primary-container": "#131b2e",
+                      "on-surface-variant": "#45464d",
+                      "secondary-container": "#6cf8bb",
+                      "border-base": "#E2E8F0",
+                      "on-background": "#1b1b1d",
+                      "tertiary-fixed": "#fcdeb5",
+                      "primary-fixed": "#dae2fd",
+                      "bg-subtle": "#F1F5F9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xxl": "48px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "container-padding": "24px",
+                      "xxxl": "64px",
+                      "md": "16px",
+                      "form-gap": "16px",
+                      "unit": "4px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "section-gap": "48px"
+              },
+              "fontFamily": {
+                      "technical": ["JetBrains Mono"],
+                      "h2": ["Inter"],
+                      "display": ["Inter"],
+                      "body": ["Inter"],
+                      "h1": ["Inter"],
+                      "small": ["Inter"],
+                      "label-caps": ["Inter"]
+              },
+              "fontSize": {
+                      "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                      "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                      "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                      "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                      "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-technical { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-surface dark:bg-on-background min-h-screen text-text-primary antialiased selection:bg-success selection:text-white pb-[100px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-border-base dark:border-outline-variant bg-surface dark:bg-on-background">
+<div class="flex items-center justify-between px-md h-11 w-full max-w-[480px] mx-auto">
+<button class="flex items-center justify-center p-xs hover:bg-bg-subtle dark:hover:bg-surface-variant transition-colors duration-200 rounded-DEFAULT text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</button>
+<h1 class="font-h1 text-h1 font-bold text-primary dark:text-primary-fixed">Meest&amp;Returns</h1>
+<button class="flex items-center justify-center p-xs hover:bg-bg-subtle dark:hover:bg-surface-variant transition-colors duration-200 rounded-DEFAULT text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" style="font-size: 24px;">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-[480px] mx-auto px-container-padding pt-[64px] flex flex-col gap-lg">
+<!-- Header Section -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-display text-display text-text-primary">Worek zbiorczy #29</h2>
+<div class="flex items-start gap-sm p-md bg-badge-initiated-bg border border-border-base rounded-DEFAULT">
+<span class="material-symbols-outlined text-info mt-[2px]" style="font-size: 20px;">local_shipping</span>
+<p class="font-body text-body text-text-secondary">Kurier odbierze ten worek jutro do 12:00</p>
+</div>
+</section>
+<!-- Metrics Bento Grid -->
+<section class="grid grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs p-md border border-border-base bg-surface-container-lowest rounded-lg">
+<span class="font-small text-small text-text-secondary flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">inventory_2</span>
+                    Skanowania
+                </span>
+<span class="font-display text-display text-text-primary">14 <span class="font-h2 text-h2 text-text-muted">szt.</span></span>
+</div>
+<div class="flex flex-col gap-xs p-md border border-border-base bg-surface-container-lowest rounded-lg">
+<span class="font-small text-small text-text-secondary flex items-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 16px;">weight</span>
+                    Szac. Waga
+                </span>
+<span class="font-display text-display text-text-primary">~18 <span class="font-h2 text-h2 text-text-muted">kg</span></span>
+</div>
+</section>
+<!-- High-Density Returns List -->
+<section class="flex flex-col">
+<h3 class="font-h2 text-h2 text-text-primary mb-md">Zawartość worka</h3>
+<div class="border border-border-base bg-surface-container-lowest rounded-lg divide-y divide-border-base overflow-hidden">
+<!-- List Item 1 -->
+<div class="flex items-center justify-between p-md hover:bg-bg-light transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-DEFAULT bg-bg-subtle border border-border-base flex items-center justify-center">
+<span class="material-symbols-outlined text-text-secondary" style="font-size: 16px;">package_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-technical text-technical text-text-primary">MST893201452PL</span>
+<span class="font-small text-small text-text-secondary">Zara • Zeskanowano 09:41</span>
+</div>
+</div>
+<span class="font-small text-small text-text-primary bg-badge-initiated-bg px-2 py-1 rounded-DEFAULT">1.2 kg</span>
+</div>
+<!-- List Item 2 -->
+<div class="flex items-center justify-between p-md hover:bg-bg-light transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-DEFAULT bg-bg-subtle border border-border-base flex items-center justify-center">
+<span class="material-symbols-outlined text-text-secondary" style="font-size: 16px;">package_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-technical text-technical text-text-primary">MST893201488PL</span>
+<span class="font-small text-small text-text-secondary">H&amp;M • Zeskanowano 09:38</span>
+</div>
+</div>
+<span class="font-small text-small text-text-primary bg-badge-initiated-bg px-2 py-1 rounded-DEFAULT">0.8 kg</span>
+</div>
+<!-- List Item 3 -->
+<div class="flex items-center justify-between p-md hover:bg-bg-light transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-DEFAULT bg-bg-subtle border border-border-base flex items-center justify-center">
+<span class="material-symbols-outlined text-text-secondary" style="font-size: 16px;">package_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-technical text-technical text-text-primary">MST893201501PL</span>
+<span class="font-small text-small text-text-secondary">Reserved • Zeskanowano 09:30</span>
+</div>
+</div>
+<span class="font-small text-small text-text-primary bg-badge-initiated-bg px-2 py-1 rounded-DEFAULT">2.1 kg</span>
+</div>
+<!-- List Item 4 -->
+<div class="flex items-center justify-between p-md hover:bg-bg-light transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-DEFAULT bg-bg-subtle border border-border-base flex items-center justify-center">
+<span class="material-symbols-outlined text-text-secondary" style="font-size: 16px;">package_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-technical text-technical text-text-primary">MST893201555PL</span>
+<span class="font-small text-small text-text-secondary">Mango • Zeskanowano 09:15</span>
+</div>
+</div>
+<span class="font-small text-small text-text-primary bg-badge-initiated-bg px-2 py-1 rounded-DEFAULT">0.5 kg</span>
+</div>
+<!-- Overflow Indicator -->
+<div class="flex items-center justify-center p-sm bg-bg-subtle">
+<span class="font-small text-small text-text-muted">+ 10 innych paczek</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full z-40 bg-surface border-t border-border-base pb-[env(safe-area-inset-bottom)]">
+<div class="max-w-[480px] mx-auto w-full p-md">
+<button class="w-full h-[44px] bg-success hover:bg-[#0EA5E9] text-on-primary font-label-caps text-label-caps rounded-DEFAULT flex items-center justify-center gap-sm transition-colors shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined" data-weight="fill" style="font-size: 18px;">lock</span>
+                ZAMKNIJ I WYŚLIJ WOREK
+            </button>
+</div>
+</div>
+</body></html>

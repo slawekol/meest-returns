@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Logistics Pro - Analityka</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0edef",
+                        "on-secondary-fixed-variant": "#005236",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "outline": "#76777d",
+                        "inverse-on-surface": "#f3f0f2",
+                        "warning": "#F59E0B",
+                        "on-primary-container": "#7c839b",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-surface": "#303032",
+                        "info": "#3B82F6",
+                        "surface-dim": "#dcd9db",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1b1d",
+                        "text-muted": "#94A3B8",
+                        "on-surface": "#1b1b1d",
+                        "surface-container-lowest": "#ffffff",
+                        "success": "#10B981",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "primary": "#000000",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-low": "#f6f3f5",
+                        "surface-container-highest": "#e4e2e4",
+                        "secondary-fixed-dim": "#4edea3",
+                        "error": "#EF4444",
+                        "background": "#fcf8fa",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "primary-fixed-dim": "#bec6e0",
+                        "badge-received-bg": "#EDE9FE",
+                        "tertiary": "#000000",
+                        "primary-fixed": "#dae2fd",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#bec6e0",
+                        "secondary-container": "#6cf8bb",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed": "#271901",
+                        "badge-transit-bg": "#DBEAFE",
+                        "outline-variant": "#c6c6cd",
+                        "text-secondary": "#64748B",
+                        "tertiary-container": "#271901",
+                        "border-base": "#E2E8F0",
+                        "surface-bright": "#fcf8fa",
+                        "bg-subtle": "#F1F5F9",
+                        "on-surface-variant": "#45464d",
+                        "surface-variant": "#e4e2e4",
+                        "badge-completed-bg": "#D1FAE5",
+                        "surface": "#fcf8fa",
+                        "text-primary": "#0F172A",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "error-container": "#ffdad6",
+                        "bg-light": "#FAFAFA",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#eae7e9",
+                        "primary-container": "#131b2e",
+                        "on-tertiary-container": "#98805d",
+                        "surface-tint": "#565e74",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#fcdeb5",
+                        "secondary": "#006c49",
+                        "on-primary-fixed": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "form-gap": "16px",
+                        "section-gap": "48px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xxxl": "64px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "xxl": "48px",
+                        "xs": "4px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body": ["Inter"],
+                        "h1": ["Inter"],
+                        "display": ["Inter"],
+                        "technical": ["JetBrains Mono"],
+                        "small": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-text-primary font-body antialiased min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-background text-primary dark:text-primary-fixed font-h2 text-h2 h-[64px] fixed top-0 right-0 left-[240px] z-10 border-b border-border-base dark:border-outline-variant flat no shadows cursor-pointer flex justify-between items-center px-lg h-full">
+<div class="font-h1 text-h1 font-bold text-text-primary dark:text-on-primary">
+            Merchant Dashboard
+        </div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-md text-text-secondary">
+<span class="material-symbols-outlined hover:text-primary dark:hover:text-on-primary cursor-pointer text-[24px]">notifications</span>
+<span class="material-symbols-outlined hover:text-primary dark:hover:text-on-primary cursor-pointer text-[24px]">help_outline</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-border-base overflow-hidden ml-md">
+<img alt="Użytkownik" class="w-full h-full object-cover" data-alt="A close-up portrait of a professional individual with a neutral expression. The lighting is soft and corporate, matching a clean, modern aesthetic. The background is slightly blurred to focus on the face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmLm0n9Y-b_RjAJAxQSL_8XqbIKLXQ_5xEq6qU5Yz1LBmtwD40sCwxrWnrp9v6joiKTH1Rtkj7s_aeJThjlGumV2tdyeuXnNv0mR0w_5LlNJiUwUyZ9Pcb1-SsuzOnuSIp_o_1g1xK-K3ndjIC7U9O8NO20sLxZlDq7q5E-ZSsEI8b22sWTVRHUsjFLnCWkNu2swkdTgiBAgS25TP8Peu0xczr1Utuz0LYErUdyi_fb1HJaVYRe-sMYJwhpwIUcpEkf7fDZrZt1XOy"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="bg-surface-container-lowest dark:bg-on-primary-fixed text-primary dark:text-primary-fixed font-body text-body font-h1 text-h1 font-bold text-text-primary dark:text-on-primary w-[240px] h-screen fixed left-0 top-0 border-r border-border-base dark:border-outline-variant flat no shadows transition-colors duration-200 ease-in-out flex flex-col h-full py-lg px-md z-20">
+<div class="mb-xl px-sm">
+<div class="flex items-center gap-sm mb-xs">
+<div class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-[14px]">
+                    LP
+                </div>
+<span class="font-h1 text-h1 text-text-primary">Logistics Pro</span>
+</div>
+<div class="text-text-secondary font-small text-small px-sm">Merchant Portal</div>
+</div>
+<nav class="flex flex-col gap-xs flex-grow">
+<a class="flex items-center gap-md px-sm py-sm rounded text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="font-body text-body font-medium">Pulpit</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container" href="#">
+<span class="material-symbols-outlined text-[24px]">assignment_return</span>
+<span class="font-body text-body font-medium">Zwroty</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container" href="#">
+<span class="material-symbols-outlined text-[24px]">location_on</span>
+<span class="font-body text-body font-medium">Punkty</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded text-text-primary dark:text-on-primary font-bold border-r-2 border-primary dark:border-primary-fixed bg-bg-subtle" href="#">
+<span class="material-symbols-outlined text-[24px] font-variation-settings: 'FILL' 1;">bar_chart</span>
+<span class="font-body text-body font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="font-body text-body font-medium">Ustawienia</span>
+</a>
+<a class="flex items-center gap-md px-sm py-sm rounded text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container" href="#">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+<span class="font-body text-body font-medium">Rozliczenia</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-border-base pt-md">
+<a class="flex items-center gap-md px-sm py-sm rounded text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container" href="#">
+<span class="material-symbols-outlined text-[24px]">logout</span>
+<span class="font-body text-body font-medium">Wyloguj</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-[240px] pt-[64px] min-h-screen bg-bg-light">
+<div class="max-w-[1280px] mx-auto p-container-padding">
+<header class="mb-xl flex justify-between items-end">
+<div>
+<h1 class="font-display text-display text-text-primary mb-sm">Analityka</h1>
+<p class="font-body text-body text-text-secondary">Przegląd danych dotyczących zwrotów i wydajności operacyjnej.</p>
+</div>
+</header>
+<!-- Tab Navigation -->
+<div class="border-b border-border-base mb-xl">
+<nav aria-label="Tabs" class="flex gap-lg">
+<a class="border-b-2 border-primary text-text-primary py-sm font-small text-small whitespace-nowrap" href="#">
+                        Powody
+                    </a>
+<a class="border-b-2 border-transparent text-text-secondary hover:text-text-primary hover:border-border-base py-sm font-small text-small whitespace-nowrap" href="#">
+                        Produkty
+                    </a>
+<a class="border-b-2 border-transparent text-text-secondary hover:text-text-primary hover:border-border-base py-sm font-small text-small whitespace-nowrap" href="#">
+                        Lokalizacje
+                    </a>
+<a class="border-b-2 border-transparent text-text-secondary hover:text-text-primary hover:border-border-base py-sm font-small text-small whitespace-nowrap" href="#">
+                        Klienci
+                    </a>
+</nav>
+</div>
+<!-- Dashboard Content: Powody -->
+<div class="flex flex-col gap-lg">
+<!-- Charts Row -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Pie Chart Placeholder -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg flex flex-col relative hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<h2 class="font-h2 text-h2 text-text-primary mb-md">Rozkład Powodów</h2>
+<div class="flex-grow flex items-center justify-center min-h-[240px]">
+<div class="relative w-48 h-48 rounded-full border-8 border-border-base" style="border-top-color: #0F172A; border-right-color: #64748B; border-bottom-color: #94A3B8; border-left-color: #E2E8F0;">
+<!-- CSS-based Pie chart approximation -->
+</div>
+</div>
+<div class="flex flex-col gap-sm mt-md font-small text-small">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-xs"><div class="w-3 h-3 rounded-full bg-text-primary"></div><span>Zmieniono zdanie</span></div>
+<span class="font-technical text-technical">42%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-xs"><div class="w-3 h-3 rounded-full bg-text-secondary"></div><span>Rozmiar za duży</span></div>
+<span class="font-technical text-technical">28%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-xs"><div class="w-3 h-3 rounded-full bg-text-muted"></div><span>Niezgodny z opisem</span></div>
+<span class="font-technical text-technical">15%</span>
+</div>
+</div>
+</div>
+<!-- Trend Chart Placeholder -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg lg:col-span-2 flex flex-col relative hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="absolute top-lg right-lg">
+<div class="bg-badge-initiated-bg text-text-secondary font-label-caps text-label-caps px-sm py-xs rounded-full border border-border-base flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                                Analityka rozszerzona dostępna w planie Premium
+                            </div>
+</div>
+<h2 class="font-h2 text-h2 text-text-primary mb-md">Trendy (Top 3)</h2>
+<div class="flex-grow relative mt-xl min-h-[200px] border-l border-b border-border-base flex items-end justify-between px-md pt-md pb-xs">
+<!-- CSS-based Bar Chart Approximation -->
+<div class="flex flex-col items-center gap-xs w-1/6">
+<div class="w-full bg-text-primary h-[120px] rounded-t-sm opacity-90"></div>
+<span class="font-label-caps text-label-caps text-text-secondary">Sty</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-1/6">
+<div class="w-full bg-text-primary h-[140px] rounded-t-sm opacity-90"></div>
+<span class="font-label-caps text-label-caps text-text-secondary">Lut</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-1/6">
+<div class="w-full bg-text-primary h-[110px] rounded-t-sm opacity-90"></div>
+<span class="font-label-caps text-label-caps text-text-secondary">Mar</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-1/6">
+<div class="w-full bg-text-primary h-[160px] rounded-t-sm opacity-90"></div>
+<span class="font-label-caps text-label-caps text-text-secondary">Kwi</span>
+</div>
+<div class="flex flex-col items-center gap-xs w-1/6">
+<div class="w-full bg-text-primary h-[130px] rounded-t-sm opacity-90"></div>
+<span class="font-label-caps text-label-caps text-text-secondary">Maj</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Table -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg overflow-hidden">
+<div class="p-lg border-b border-border-base flex justify-between items-center bg-bg-light">
+<h3 class="font-h2 text-h2 text-text-primary">Szczegóły Powodów Zwrotu</h3>
+<button class="h-[44px] px-lg rounded bg-surface-container-lowest border border-border-base text-text-primary font-small text-small hover:bg-bg-subtle transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined text-[16px]">download</span>
+                            Eksportuj
+                        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-lowest border-b border-border-base">
+<th class="p-md font-label-caps text-label-caps text-text-secondary font-medium">Powód zwrotu</th>
+<th class="p-md font-label-caps text-label-caps text-text-secondary font-medium text-right">Liczba</th>
+<th class="p-md font-label-caps text-label-caps text-text-secondary font-medium text-right">Procent (%)</th>
+<th class="p-md font-label-caps text-label-caps text-text-secondary font-medium text-right">Średnia wartość</th>
+<th class="p-md font-label-caps text-label-caps text-text-secondary font-medium text-center">Trend</th>
+</tr>
+</thead>
+<tbody class="font-body text-body text-text-primary divide-y divide-border-base">
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="p-md font-medium">Zmieniono zdanie</td>
+<td class="p-md text-right font-technical text-technical">1,245</td>
+<td class="p-md text-right font-technical text-technical">42.1%</td>
+<td class="p-md text-right font-technical text-technical">245 PLN</td>
+<td class="p-md text-center">
+<span class="material-symbols-outlined text-error text-[20px]">arrow_upward</span>
+</td>
+</tr>
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="p-md font-medium">Rozmiar za duży</td>
+<td class="p-md text-right font-technical text-technical">832</td>
+<td class="p-md text-right font-technical text-technical">28.0%</td>
+<td class="p-md text-right font-technical text-technical">180 PLN</td>
+<td class="p-md text-center">
+<span class="material-symbols-outlined text-success text-[20px]">arrow_downward</span>
+</td>
+</tr>
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="p-md font-medium">Produkt niezgodny z opisem</td>
+<td class="p-md text-right font-technical text-technical">451</td>
+<td class="p-md text-right font-technical text-technical">15.2%</td>
+<td class="p-md text-right font-technical text-technical">320 PLN</td>
+<td class="p-md text-center">
+<span class="material-symbols-outlined text-error text-[20px]">arrow_upward</span>
+</td>
+</tr>
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="p-md font-medium">Rozmiar za mały</td>
+<td class="p-md text-right font-technical text-technical">310</td>
+<td class="p-md text-right font-technical text-technical">10.4%</td>
+<td class="p-md text-right font-technical text-technical">195 PLN</td>
+<td class="p-md text-center">
+<span class="material-symbols-outlined text-text-muted text-[20px]">horizontal_rule</span>
+</td>
+</tr>
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="p-md font-medium">Uszkodzony w transporcie</td>
+<td class="p-md text-right font-technical text-technical">125</td>
+<td class="p-md text-right font-technical text-technical">4.3%</td>
+<td class="p-md text-right font-technical text-technical">410 PLN</td>
+<td class="p-md text-center">
+<span class="material-symbols-outlined text-success text-[20px]">arrow_downward</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

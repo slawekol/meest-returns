@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Szczegóły Zwrotu - Logistics Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#98805d",
+                        "info": "#3B82F6",
+                        "on-primary-container": "#7c839b",
+                        "secondary": "#006c49",
+                        "text-secondary": "#64748B",
+                        "outline": "#76777d",
+                        "bg-subtle": "#F1F5F9",
+                        "primary-container": "#131b2e",
+                        "warning": "#F59E0B",
+                        "surface": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "inverse-surface": "#303032",
+                        "error-container": "#ffdad6",
+                        "text-primary": "#0F172A",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-background": "#1b1b1d",
+                        "error": "#EF4444",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2e4",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "border-base": "#E2E8F0",
+                        "on-tertiary-fixed": "#271901",
+                        "tertiary-fixed": "#fcdeb5",
+                        "on-primary": "#ffffff",
+                        "badge-transit-bg": "#DBEAFE",
+                        "secondary-fixed": "#6ffbbe",
+                        "text-muted": "#94A3B8",
+                        "tertiary": "#000000",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container": "#f0edef",
+                        "badge-received-bg": "#EDE9FE",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "badge-completed-bg": "#D1FAE5",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#eae7e9",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container-low": "#f6f3f5",
+                        "on-surface": "#1b1b1d",
+                        "surface-dim": "#dcd9db",
+                        "secondary-container": "#6cf8bb",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#dae2fd",
+                        "surface-tint": "#565e74",
+                        "on-surface-variant": "#45464d",
+                        "background": "#fcf8fa",
+                        "success": "#10B981",
+                        "on-secondary-container": "#00714d",
+                        "inverse-on-surface": "#f3f0f2",
+                        "primary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "bg-light": "#FAFAFA",
+                        "on-primary-fixed": "#131b2e",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-container": "#271901",
+                        "inverse-primary": "#bec6e0",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary-fixed-dim": "#dec29a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxxl": "64px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "form-gap": "16px",
+                        "section-gap": "48px",
+                        "md": "16px",
+                        "container-padding": "24px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "technical": ["JetBrains Mono"],
+                        "display": ["Inter"],
+                        "small": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-body text-text-primary antialiased min-h-screen">
+<!-- TopNavBar -->
+<header class="h-[64px] fixed top-0 right-0 left-[240px] z-10 border-b border-border-base dark:border-outline-variant bg-surface dark:bg-background flex justify-between items-center px-lg">
+<div class="font-h2 text-h2 text-primary dark:text-primary-fixed">Merchant Dashboard</div>
+<div class="flex items-center gap-md text-text-secondary">
+<span class="material-symbols-outlined hover:text-primary dark:hover:text-on-primary cursor-pointer transition-colors duration-200 ease-in-out">notifications</span>
+<span class="material-symbols-outlined hover:text-primary dark:hover:text-on-primary cursor-pointer transition-colors duration-200 ease-in-out">help_outline</span>
+<div class="w-8 h-8 rounded-full bg-border-base overflow-hidden ml-sm cursor-pointer">
+<img alt="Użytkownik" class="w-full h-full object-cover" data-alt="A clean, minimalist placeholder avatar image featuring a simple geometric user icon on a solid background, suitable for a professional business dashboard interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHzTp_Mjpd6uG-rCbGKeRIMg135eE3rUtPRaxs2tXYaZllJ5twgpqhuCuxrK9_M0gvk5jAhj0MJJpwTSZr0lEjifG9k0IVpXZkdp06aI7qh2jhOpCMTyiHwx1C3Vasw3Xf1PKnsS5YdV5lYeEFDGiIiETiHp990F8lm4nqvd-hxMQeXYDeRr3E2Cth4nNKgoGVzUdICfXHra3JdJPVWvQlbk-BaQVB6WBMw1ljzDa1Z0UP9ZVh9zvIgylSnSF8Hvii1gEwtQrxdATr"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="w-[240px] h-screen fixed left-0 top-0 border-r border-border-base dark:border-outline-variant bg-surface-container-lowest dark:bg-on-primary-fixed flex flex-col py-lg px-md z-20">
+<div class="mb-xxl px-sm">
+<div class="font-h1 text-h1 font-bold text-text-primary dark:text-on-primary mb-xs">Logistics Pro</div>
+<div class="font-small text-small text-text-secondary">Merchant Portal</div>
+</div>
+<div class="flex-1 flex flex-col gap-xs">
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-small text-small">Pulpit</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-text-primary dark:text-on-primary font-bold border-r-2 border-primary dark:border-primary-fixed bg-bg-subtle dark:bg-primary-container transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">assignment_return</span>
+<span class="font-small text-small">Zwroty</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-small text-small">Punkty</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-small text-small">Analytics</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-small text-small">Ustawienia</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-small text-small">Rozliczenia</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-md pt-md border-t border-border-base">
+<div class="flex items-center gap-sm px-sm">
+<div class="w-8 h-8 rounded-DEFAULT bg-border-base overflow-hidden shrink-0">
+<img alt="Merchant Logo" class="w-full h-full object-cover" data-alt="A clean, minimalist placeholder avatar image featuring the letter M on a solid dark navy background, representing a merchant logo in a professional business dashboard interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpZR_LFe7O3vPn9Tn2ohRlhSX_Hu45N6Xbt4YwDpdl9FYFWIDSUlvq_PnsDIPX0Pd5uYNsUYLlqN1JkXrf0QBc5gTJprJDRnJlhbKse8JJfeS_TWijof9cCk8yLaWgx-S31nsFyijQmloIgwa-SHx45sYF9l9jRNtDjPzwaq8RIl078zL_GGkkxRS-aJDMZZOjJknC82kLgGmKbJbBf0XCEMP3D2QnCd6avwa3SL_xqbFL3EBwPDgyHLViPkrHLva7LZGAdRu1VQL9"/>
+</div>
+<div class="truncate">
+<div class="font-small text-small font-bold text-text-primary truncate">Modivo S.A.</div>
+</div>
+</div>
+<a class="flex items-center gap-sm px-sm py-sm rounded-DEFAULT text-text-secondary dark:text-on-surface-variant hover:text-text-primary dark:hover:text-on-primary hover:bg-bg-subtle dark:hover:bg-primary-container transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-small text-small">Wyloguj</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] pt-[64px] min-h-screen p-xl flex flex-col gap-section-gap">
+<!-- Breadcrumb & Header -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-xs font-small text-small text-text-secondary">
+<a class="hover:text-text-primary transition-colors" href="#">Zwroty</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-technical text-technical text-text-primary">RTN-K9F2-8XLM</span>
+</div>
+</div>
+<!-- 2-Column Layout -->
+<div class="flex flex-col lg:flex-row gap-xl">
+<!-- LEFT COLUMN (66%) -->
+<div class="w-full lg:w-2/3 flex flex-col gap-xl">
+<!-- Status Timeline -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg">
+<h2 class="font-h2 text-h2 mb-md">Status Zwrotu</h2>
+<div class="relative flex items-center justify-between w-full mt-xl mb-md">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] bg-border-base z-0"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[2px] bg-success z-0" style="width: 100%;"></div>
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-success flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-caps text-label-caps text-text-primary">Inicjowany</span>
+<span class="font-technical text-[10px] text-text-secondary">10.10, 09:12</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-success flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-caps text-label-caps text-text-primary">Nadany</span>
+<span class="font-technical text-[10px] text-text-secondary">11.10, 14:30</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-success flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-caps text-label-caps text-text-primary">W drodze</span>
+<span class="font-technical text-[10px] text-text-secondary">12.10, 08:15</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-success flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-caps text-label-caps text-text-primary">W hubie</span>
+<span class="font-technical text-[10px] text-text-secondary">13.10, 11:45</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-success flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-success"></div>
+</div>
+<span class="font-label-caps text-label-caps text-text-primary">Zakończony</span>
+<span class="font-technical text-[10px] text-text-secondary">14.10, 09:00</span>
+</div>
+</div>
+</div>
+<!-- Product Details -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg">
+<h2 class="font-h2 text-h2 mb-md">Szczegóły Produktu</h2>
+<div class="flex gap-md">
+<div class="w-24 h-24 rounded-DEFAULT bg-surface-container overflow-hidden shrink-0">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A clean, studio-lit photograph of a folded navy blue t-shirt on a crisp white background. The fabric texture is slightly visible. The lighting is even and flat, typical of e-commerce product photography. The overall aesthetic is professional, minimalist, and utilitarian." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRV13r7fzreBTJQSM1cTK8kDNEHYGV2mb_J7f6dug2-SYzN3bazdQQAk05BoaA_TvkqfxoChMrESl67Ihh0G4Xt1zakg86f7Xau59fXiirFt6x2NfjkUHlAxPI8VWKZnulHpFefoJXNGcTpPQyhh3gg04NE12qFQUY8cqkOee3-yllhaw0TFJ4p2IUDMOUxmWeLQZ0AUCcUBQV4FsbS1174T81_4ffNeuKlAkboKXoQHqrmi_BHmFr6NQUX7RdkGcHpwUCJUFfvmKZ"/>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<div class="font-small text-small font-bold mb-xs">T-Shirt Bawełniany Basic</div>
+<div class="font-technical text-technical text-text-secondary mb-sm">SKU: TS-NAV-M-01</div>
+<div class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-badge-completed-bg text-on-secondary-fixed-variant font-label-caps text-label-caps self-start">
+                                Otrzymano
+                            </div>
+</div>
+<div class="w-32 h-24 rounded-DEFAULT bg-surface-container overflow-hidden shrink-0 border border-border-base">
+<img alt="Verification Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhB1CRSIz-okvq7rdbjrvezhzyDxD9e5kJmaFXIu8k7RyZ1GAX-N0lyR4qS7LoWUBILVr_6FQ877Y7ESLvgy2F7aTZAi1SRIETNN9jgNnSvDe_1ymDOgNJbSUlmmtv6-PfjTNM6ZPPwskek0KbTBm1vB14e85z9lwnvL_hb_rzXYSX47VAlc8P55BVbZhmp4RN9Vd5wkHbFR7uW2FEh8DrqSmawv87RgxCFafbRiNdiFEcygUn8xOnopUvy"/>
+</div>
+</div>
+</div>
+<!-- Return Reason -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg">
+<h2 class="font-h2 text-h2 mb-md">Powód Zwrotu</h2>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-text-secondary">straighten</span>
+<span class="font-small text-small font-bold">Rozmiar za mały</span>
+</div>
+<div class="p-sm bg-bg-subtle rounded-DEFAULT border border-border-base">
+<p class="font-body text-body text-text-secondary italic">"Koszulka jest świetnej jakości, ale niestety okazała się za ciasna w ramionach. Zwykle noszę M, ale ta wypada mniejsza."</p>
+</div>
+</div>
+</div>
+<!-- Logistics Info -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg">
+<h2 class="font-h2 text-h2 mb-md">Informacje Logistyczne</h2>
+<div class="grid grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">Punkt Nadania</span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-text-primary">storefront</span>
+<span class="font-small text-small">Żabka #Z1203</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">Czas Skanowania</span>
+<span class="font-technical text-technical">11.10.2023, 14:30:12</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">ID Worka</span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-text-primary">inventory_2</span>
+<span class="font-technical text-technical">#A-2026-3847</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">Status Transportu</span>
+<span class="font-small text-small text-success">Dostarczono do magazynu</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (33%) -->
+<div class="w-full lg:w-1/3 flex flex-col gap-xl">
+<!-- Customer Info -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-text-primary">person</span>
+<h2 class="font-h2 text-h2">Informacje o Kliencie</h2>
+</div>
+<div class="flex flex-col gap-md">
+<div class="flex justify-between items-center pb-sm border-b border-border-base">
+<span class="font-small text-small text-text-secondary">Email</span>
+<span class="font-technical text-technical text-text-primary">j***@gmail.com</span>
+</div>
+<div class="flex justify-between items-center pb-sm border-b border-border-base">
+<span class="font-small text-small text-text-secondary">Ocena Kupującego</span>
+<div class="flex items-center gap-xs">
+<span class="font-small text-small font-bold text-text-primary">4.7/5</span>
+<span class="material-symbols-outlined text-warning text-[16px] icon-fill">star</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-small text-small text-text-secondary">Liczba zwrotów</span>
+<span class="font-small text-small font-bold text-text-primary">8 (Lifetime)</span>
+</div>
+</div>
+</div>
+<!-- Refund Details -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-text-primary">payments</span>
+<h2 class="font-h2 text-h2">Szczegóły Zwrotu Środków</h2>
+</div>
+<div class="flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<span class="font-h1 text-h1 font-bold text-text-primary">189.00 zł</span>
+<div class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-badge-completed-bg text-on-secondary-fixed-variant font-label-caps text-label-caps">
+                                Zakończony
+                            </div>
+</div>
+<div class="grid grid-cols-2 gap-sm pt-sm border-t border-border-base">
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">Metoda</span>
+<span class="font-small text-small">BLIK</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase">Data</span>
+<span class="font-technical text-technical">14.10.2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action List -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg flex flex-col gap-sm">
+<button class="w-full min-h-[44px] px-lg py-[12px] bg-success text-on-primary rounded-DEFAULT font-small text-small font-bold hover:bg-opacity-90 transition-opacity flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        Zatwierdź zwrot
+                    </button>
+<button class="w-full min-h-[44px] px-lg py-[12px] bg-surface text-error border border-error rounded-DEFAULT font-small text-small font-bold hover:bg-error-container transition-colors flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                        Odrzuć zwrot
+                    </button>
+<div class="h-[1px] w-full bg-border-base my-xs"></div>
+<button class="w-full min-h-[44px] px-lg py-[12px] bg-surface text-text-primary border border-border-base rounded-DEFAULT font-small text-small font-bold hover:bg-bg-subtle transition-colors flex items-center justify-center gap-sm shadow-[0_4px_12px_rgba(0,0,0,0.00)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Pobierz dokumenty
+                    </button>
+<button class="w-full min-h-[44px] px-lg py-[12px] bg-surface text-text-primary border border-border-base rounded-DEFAULT font-small text-small font-bold hover:bg-bg-subtle transition-colors flex items-center justify-center gap-sm shadow-[0_4px_12px_rgba(0,0,0,0.00)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+                        Skontaktuj się z klientem
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

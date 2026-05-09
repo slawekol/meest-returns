@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wybór produktów - Meest&amp;Returns</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#005236",
+                    "badge-initiated-bg": "#F1F5F9",
+                    "text-muted": "#94A3B8",
+                    "secondary-fixed-dim": "#4edea3",
+                    "primary": "#000000",
+                    "surface-variant": "#e4e2e4",
+                    "outline-variant": "#c6c6cd",
+                    "inverse-on-surface": "#f3f0f2",
+                    "surface-tint": "#565e74",
+                    "surface-container": "#f0edef",
+                    "badge-dropped-bg": "#FEF3C7",
+                    "surface-container-low": "#f6f3f5",
+                    "inverse-surface": "#303032",
+                    "on-secondary": "#ffffff",
+                    "bg-subtle": "#F1F5F9",
+                    "primary-container": "#131b2e",
+                    "tertiary": "#000000",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface": "#fcf8fa",
+                    "on-tertiary-fixed-variant": "#574425",
+                    "badge-completed-bg": "#D1FAE5",
+                    "badge-received-bg": "#EDE9FE",
+                    "badge-transit-bg": "#DBEAFE",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "text-secondary": "#64748B",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "surface-container-highest": "#e4e2e4",
+                    "background": "#fcf8fa",
+                    "primary-fixed-dim": "#bec6e0",
+                    "bg-light": "#FAFAFA",
+                    "on-tertiary-container": "#98805d",
+                    "on-tertiary-fixed": "#271901",
+                    "on-background": "#1b1b1d",
+                    "outline": "#76777d",
+                    "on-primary-fixed": "#131b2e",
+                    "inverse-primary": "#bec6e0",
+                    "surface-container-high": "#eae7e9",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "secondary": "#006c49",
+                    "badge-rejected-bg": "#FEE2E2",
+                    "info": "#3B82F6",
+                    "on-secondary-fixed": "#002113",
+                    "primary-fixed": "#dae2fd",
+                    "border-base": "#E2E8F0",
+                    "success": "#10B981",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#271901",
+                    "on-surface-variant": "#45464d",
+                    "on-primary-container": "#7c839b",
+                    "tertiary-fixed": "#fcdeb5",
+                    "surface-dim": "#dcd9db",
+                    "secondary-fixed": "#6ffbbe",
+                    "warning": "#F59E0B",
+                    "on-surface": "#1b1b1d",
+                    "text-primary": "#0F172A",
+                    "error": "#EF4444",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fcf8fa",
+                    "secondary-container": "#6cf8bb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "48px",
+                    "xl": "32px",
+                    "container-padding": "24px",
+                    "lg": "24px",
+                    "xxxl": "64px",
+                    "xs": "4px",
+                    "unit": "4px",
+                    "xxl": "48px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "form-gap": "16px"
+            },
+            "fontFamily": {
+                    "small": ["Inter"],
+                    "h1": ["Inter"],
+                    "display": ["Inter"],
+                    "technical": ["JetBrains Mono"],
+                    "label-caps": ["Inter"],
+                    "h2": ["Inter"],
+                    "body": ["Inter"]
+            },
+            "fontSize": {
+                    "small": ["13px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "h1": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "technical": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600"}],
+                    "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-bg-light text-text-primary font-body antialiased min-h-screen flex justify-center">
+<div class="w-full max-w-[480px] bg-bg-light min-h-screen relative pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background fixed top-0 w-full z-50 border-b border-border-base dark:border-outline-variant transition-colors duration-200">
+<div class="flex items-center justify-between px-md h-11 w-full max-w-[480px] mx-auto">
+<button class="text-text-secondary dark:text-on-surface-variant hover:bg-bg-subtle dark:hover:bg-surface-variant p-1 rounded-full flex items-center justify-center transition-colors duration-200">
+<span class="material-symbols-outlined text-[24px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-h1 text-h1 font-bold text-primary dark:text-primary-fixed">Meest&amp;Returns</div>
+<button class="text-text-secondary dark:text-on-surface-variant hover:bg-bg-subtle dark:hover:bg-surface-variant p-1 rounded-full flex items-center justify-center transition-colors duration-200">
+<span class="material-symbols-outlined text-[24px]" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-[68px] px-md flex flex-col gap-xl">
+<!-- Order Summary Card -->
+<section class="bg-surface border border-border-base rounded-lg p-md">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-small text-small text-text-secondary">Nr zamówienia</span>
+<span class="font-technical text-technical text-text-secondary">12.05.2024</span>
+</div>
+<div class="font-h2 text-h2 text-text-primary">#MOD-2026-0042893</div>
+</section>
+<!-- Selection Section -->
+<section class="flex flex-col gap-md">
+<h2 class="font-h2 text-h2 text-text-primary">Wybierz produkty do zwrotu</h2>
+<div class="flex flex-col gap-sm">
+<!-- Product 1 (Selected) -->
+<label class="relative bg-surface border-[2px] border-success rounded-lg p-sm flex items-center gap-md cursor-pointer transition-colors hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] group">
+<div class="w-16 h-20 bg-bg-subtle rounded flex-shrink-0 bg-cover bg-center" data-alt="A stylish black midi dress displayed on a minimalist hanger against a clean white studio background. Soft, high-key lighting illuminates the fine texture of the fabric, casting minimal shadows. The aesthetic is clean, modern, and perfectly suited for a high-end e-commerce interface, emphasizing crisp details." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHeMKPynsRfE7JA2nL0lkmENwXikc7Do5WNoT6XUomlE8IwHd-SK0OScBuCzOTcaZedMqlqM4QY4ge9QFsEmbaGs5YId8ExGhQR6kXyJKbIkTHsangwZdwHLg7LapyhKVDHh0GOodPNZeVuPuP8wZwSGm6IKV75RswDZnmsZTTyf7m6HR2cGXOcn56u_RlbVQPptfuEmdsqbIf6WjpL5gJSUoM7M3_2EvwSFPsqpl_GDHCpydReh2pLm3f-rYw_ju2iz7ymQhwaeTe');"></div>
+<div class="flex-1 min-w-0">
+<h3 class="font-body text-body font-semibold text-text-primary truncate">Black midi dress</h3>
+<p class="font-small text-small text-text-secondary mt-xs">Rozmiar: M • Kolor: Czarny</p>
+<div class="font-body text-body font-semibold mt-1">199 zł</div>
+</div>
+<div class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-success text-on-secondary">
+<span class="material-symbols-outlined text-[16px] icon-fill" data-icon="check">check</span>
+</div>
+<input checked="" class="absolute opacity-0 w-0 h-0" type="checkbox"/>
+</label>
+<!-- Product 2 (Selected) -->
+<label class="relative bg-surface border-[2px] border-success rounded-lg p-sm flex items-center gap-md cursor-pointer transition-colors hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] group">
+<div class="w-16 h-20 bg-bg-subtle rounded flex-shrink-0 bg-cover bg-center" data-alt="A crisp white oversize shirt folded neatly on a flat, light grey surface. Bright, even studio lighting highlights the precise stitching and smooth cotton texture. The minimal composition and cool tones reflect a professional, modern logistics platform design language. The mood is fresh and structured." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKeKnqPGqWKyWBZ_esCwJXUCKYNhQ0XmvpCSGs8koW_bGw2XXQtVs9HVhBQIfrzAgy7zcrkPDI4JlaqV7Vpps3IQjW5zo5qKeYlYCoe1d_SLPHXV2u7zQkewXMMGLIOiq-U0gdyGbnM3CU0Rt7tkq1gFKMPEcdLUqRlVI8hetLtYAvLWSWipyaOTLV4YuI4vuhEPJBzbJxCl_kBbQT6LqCLRi37eR3EPbw-zRkjrhFgNltzFLogMzg-j3r9XSnKqXG8VGi1ObCA_sK');"></div>
+<div class="flex-1 min-w-0">
+<h3 class="font-body text-body font-semibold text-text-primary truncate">White oversize shirt</h3>
+<p class="font-small text-small text-text-secondary mt-xs">Rozmiar: S • Kolor: Biały</p>
+<div class="font-body text-body font-semibold mt-1">160 zł</div>
+</div>
+<div class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-success text-on-secondary">
+<span class="material-symbols-outlined text-[16px] icon-fill" data-icon="check">check</span>
+</div>
+<input checked="" class="absolute opacity-0 w-0 h-0" type="checkbox"/>
+</label>
+<!-- Product 3 (Unselected) -->
+<label class="relative bg-surface border border-border-base rounded-lg p-sm flex items-center gap-md cursor-pointer transition-colors hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] group">
+<div class="w-16 h-20 bg-bg-subtle rounded flex-shrink-0 bg-cover bg-center" data-alt="A pair of neatly folded tailored navy trousers resting on a plain white surface. Studio lighting reveals the fine twill texture and sharp creases of the fabric. The image maintains a high-key, uncluttered aesthetic typical of premium e-commerce catalogs, with deep navy tones contrasting against the light background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5nx8T1e3eBwoZQJpyKWgxW6MnWDJDmXN9DKxD6ZQ1el5P-bHpyRFXDgybFh4glAzLsCE8wrXrcCq31_GVIEOF16kNSbpr3i_BaE0isai6e4Ale1eUUa8HL8p6e8qXPkTfiL5N6qwihis1Z9G4UyCMtGwMRnfIBdT_Yv6P7vT64Lh3MsYm7VN9c_Jw9drVcXR22ZWZen3k1U9z5s9KtMGpuXhhHjRbOPNxnkmjuT_0_6B19f0NIlHu1ANxJBTTRNNiVznpM_cq1TRt');"></div>
+<div class="flex-1 min-w-0">
+<h3 class="font-body text-body font-semibold text-text-primary truncate">Tailored trousers</h3>
+<p class="font-small text-small text-text-secondary mt-xs">Rozmiar: 38 • Kolor: Granatowy</p>
+<div class="font-body text-body font-semibold mt-1">249 zł</div>
+</div>
+<div class="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full border border-border-base group-hover:border-outline">
+<!-- empty checkbox state -->
+</div>
+<input class="absolute opacity-0 w-0 h-0" type="checkbox"/>
+</label>
+</div>
+</section>
+</main>
+<!-- Bottom Sticky Bar -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-surface border-t border-border-base p-md z-40 flex flex-col gap-sm">
+<div class="flex justify-between items-center px-xs">
+<span class="font-body text-body text-text-secondary">Zwracasz: 2 produkty</span>
+<span class="font-body text-body font-semibold text-text-primary">359 zł</span>
+</div>
+<button class="w-full min-h-[44px] px-[24px] py-[12px] bg-success text-on-secondary font-body text-body font-medium rounded flex items-center justify-center transition-opacity hover:opacity-90 active:scale-[0.98]">
+                Dalej
+            </button>
+</div>
+</div>
+</body></html>

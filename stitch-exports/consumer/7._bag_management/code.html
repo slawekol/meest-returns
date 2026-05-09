@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Worek bieżący - Meest&amp;Returns</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#98805d",
+                      "on-primary-fixed": "#131b2e",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "primary": "#000000",
+                      "surface-variant": "#e4e2e4",
+                      "outline": "#76777d",
+                      "on-surface": "#1b1b1d",
+                      "on-tertiary-fixed": "#271901",
+                      "on-secondary-container": "#00714d",
+                      "inverse-primary": "#bec6e0",
+                      "badge-rejected-bg": "#FEE2E2",
+                      "on-background": "#1b1b1d",
+                      "surface-container-low": "#f6f3f5",
+                      "badge-completed-bg": "#D1FAE5",
+                      "border-base": "#E2E8F0",
+                      "text-secondary": "#64748B",
+                      "bg-subtle": "#F1F5F9",
+                      "primary-container": "#131b2e",
+                      "on-secondary-fixed": "#002113",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "on-error-container": "#93000a",
+                      "badge-received-bg": "#EDE9FE",
+                      "text-muted": "#94A3B8",
+                      "badge-transit-bg": "#DBEAFE",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#fcdeb5",
+                      "info": "#3B82F6",
+                      "background": "#fcf8fa",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-tint": "#565e74",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "tertiary": "#000000",
+                      "badge-dropped-bg": "#FEF3C7",
+                      "outline-variant": "#c6c6cd",
+                      "surface-container-high": "#eae7e9",
+                      "secondary": "#006c49",
+                      "secondary-container": "#6cf8bb",
+                      "on-primary-container": "#7c839b",
+                      "warning": "#F59E0B",
+                      "primary-fixed": "#dae2fd",
+                      "inverse-on-surface": "#f3f0f2",
+                      "primary-fixed-dim": "#bec6e0",
+                      "surface-container": "#f0edef",
+                      "on-surface-variant": "#45464d",
+                      "tertiary-container": "#271901",
+                      "error": "#EF4444",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "inverse-surface": "#303032",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#dcd9db",
+                      "surface": "#fcf8fa",
+                      "surface-bright": "#fcf8fa",
+                      "bg-light": "#FAFAFA",
+                      "success": "#10B981",
+                      "text-primary": "#0F172A",
+                      "badge-initiated-bg": "#F1F5F9",
+                      "secondary-fixed": "#6ffbbe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "unit": "4px",
+                      "container-padding": "24px",
+                      "xs": "4px",
+                      "xxl": "48px",
+                      "xl": "32px",
+                      "xxxl": "64px",
+                      "section-gap": "48px",
+                      "md": "16px",
+                      "form-gap": "16px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "h1": [
+                              "Inter"
+                      ],
+                      "technical": [
+                              "JetBrains Mono"
+                      ],
+                      "small": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "h2": [
+                              "Inter"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "display": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "h1": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "technical": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "small": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.5px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h2": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-technical { font-family: 'JetBrains Mono', monospace; }
+        /* Base styles */
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-bg-light text-text-primary min-h-screen flex w-full max-w-[1024px] mx-auto md:w-[768px] md:mx-auto lg:w-full lg:max-w-none">
+<!-- TopNavBar (Mobile only) -->
+<nav class="md:hidden flex justify-between items-center h-[56px] px-md w-full bg-surface border-b border-border-base fixed top-0 left-0 z-40">
+<div class="font-h1 text-h1 font-bold text-primary">Meest&amp;Returns Operator</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[24px] text-primary">account_circle</span>
+</div>
+</nav>
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-md px-sm w-64 border-r border-border-base bg-surface fixed left-0 top-0 bottom-0 z-40">
+<div class="px-md mb-lg">
+<div class="font-h2 text-h2 font-black text-primary mb-xl">Meest&amp;Returns Operator</div>
+<div class="flex items-center gap-sm p-sm rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-border-base">
+<img alt="Operator Avatar" class="w-full h-full object-cover" data-alt="A close up portrait of a professional warehouse operator wearing safety gear in a modern logistics center. The lighting is bright and even, highlighting a serious and focused expression. The background is a slightly blurred industrial setting with subtle metallic textures. The overall mood is confident and reliable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACHt_Qee5u8Kf9rGz84OdGCUtCH3V2O3gKpPLc8qjQBNEX5KfswT0FEtBCiyACWJY_mUy87IXvlWG29xlM-Tlc_yKD5U6QviIT8h78yO2Ifh0ASXmfEFYLoxJn5b_2IY7naPVyiykFDdT-02m-MfxWiHWHb-X-y2_0sSB72yDWJOWpR_97wkLrC8I9V9Ifkt2qYvnoPz3CLEhDYKQQEPU2Z-NQ7-SeaskA6IHsbiTGk4RT48PCQ1DPqjvUIibb07Xwjpv5HO6PN3ct"/>
+</div>
+<div>
+<div class="font-small text-small text-on-surface font-semibold">Operator PUDO</div>
+<div class="font-label-caps text-label-caps text-text-secondary mt-xs">ID: 48291</div>
+</div>
+</div>
+</div>
+<ul class="flex-1 flex flex-col gap-unit mt-md">
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-body hover:bg-surface-container active:scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span>Pulpit</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-body hover:bg-surface-container active:scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">barcode_scanner</span>
+<span>Skaner</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-body hover:bg-surface-container active:scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<span>Weryfikacja</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-body hover:bg-surface-container active:scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">block</span>
+<span>Odrzucenia</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container font-h2 rounded-lg active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px] fill">inventory_2</span>
+<span>Partie</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto border-t border-border-base pt-sm">
+<ul class="flex flex-col gap-unit">
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-body hover:bg-surface-container active:scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span>Ustawienia</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant font-body hover:bg-surface-container active:scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined text-[24px]">logout</span>
+<span>Wyloguj</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 w-full md:ml-64 pt-[56px] md:pt-0 pb-[80px] md:pb-lg px-md md:px-xl py-xl bg-bg-subtle min-h-screen">
+<header class="mb-xl">
+<h1 class="font-display text-display text-text-primary">Worek bieżący</h1>
+<p class="font-body text-body text-text-secondary mt-xs">Zarządzaj otwartą partią zwrotów</p>
+</header>
+<!-- Bag Info Card -->
+<section class="bg-surface border border-border-base rounded-xl p-lg mb-lg hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow duration-200">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h2 class="font-technical text-technical text-text-primary font-bold tracking-tight">Worek #A-2026-3847</h2>
+<p class="font-body text-body text-text-secondary mt-xs">Otwarty: poniedziałek 09:34</p>
+</div>
+<div class="bg-badge-initiated-bg border border-border-base px-sm py-xs rounded-full font-label-caps text-label-caps text-text-primary flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-warning"></span> W trakcie
+                </div>
+</div>
+<div class="mt-lg">
+<div class="flex justify-between items-end mb-sm">
+<span class="font-small text-small text-text-secondary">Pojemność worka</span>
+<span class="font-h2 text-h2 text-text-primary">Paczek: 8 / 12</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-success rounded-full" style="width: 66.66%;"></div>
+</div>
+<p class="font-small text-small text-text-muted mt-sm text-right">Pozostało miejsca na 4 paczki</p>
+</div>
+</section>
+<!-- List of returns -->
+<section class="bg-surface border border-border-base rounded-xl overflow-hidden mb-xl">
+<div class="px-md py-sm border-b border-border-base bg-surface-container-lowest">
+<h3 class="font-small text-small text-text-secondary">Zawartość worka (Ostatnio dodane)</h3>
+</div>
+<ul class="divide-y divide-border-base">
+<!-- Row 1 -->
+<li class="flex items-center px-md py-md hover:bg-bg-subtle transition-colors group">
+<div class="w-3 h-3 rounded-full bg-warning mr-md flex-shrink-0" title="Orange dot"></div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between mb-xs">
+<span class="font-body text-body text-text-primary font-semibold truncate pr-2">Sweter dziergany pomarańczowy</span>
+<span class="font-small text-small text-text-secondary flex-shrink-0">10:15</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-technical text-[13px] text-text-secondary">RTN-K9F2-8XLM</span>
+</div>
+</div>
+<div class="ml-md opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:bg-surface-container hover:text-text-primary">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</li>
+<!-- Row 2 -->
+<li class="flex items-center px-md py-md hover:bg-bg-subtle transition-colors group">
+<div class="w-3 h-3 rounded-full bg-info mr-md flex-shrink-0" title="Blue dot"></div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between mb-xs">
+<span class="font-body text-body text-text-primary font-semibold truncate pr-2">Jeansy slim fit</span>
+<span class="font-small text-small text-text-secondary flex-shrink-0">09:58</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-technical text-[13px] text-text-secondary">RTN-L2B3-9YNP</span>
+</div>
+</div>
+<div class="ml-md opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:bg-surface-container hover:text-text-primary">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</li>
+<!-- Row 3 -->
+<li class="flex items-center px-md py-md hover:bg-bg-subtle transition-colors group">
+<div class="w-3 h-3 rounded-full bg-primary mr-md flex-shrink-0" title="Black dot"></div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between mb-xs">
+<span class="font-body text-body text-text-primary font-semibold truncate pr-2">Kurtka przejściowa</span>
+<span class="font-small text-small text-text-secondary flex-shrink-0">09:45</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-technical text-[13px] text-text-secondary">RTN-M5X4-2ZLQ</span>
+</div>
+</div>
+<div class="ml-md opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded text-text-secondary hover:bg-surface-container hover:text-text-primary">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</li>
+</ul>
+</section>
+<!-- Actions -->
+<div class="flex flex-col gap-md mt-auto">
+<button class="w-full h-[56px] bg-primary text-on-primary font-h2 text-h2 rounded-lg flex items-center justify-center px-lg active:scale-[0.98] transition-transform">
+                Zamknij worek (gotowy do odbioru)
+            </button>
+<button class="w-full h-[56px] bg-surface text-text-primary border border-border-base font-h2 text-h2 rounded-lg flex items-center justify-center px-lg active:scale-[0.98] transition-transform hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[24px] mr-sm">print</span>
+                Wydrukuj manifest
+            </button>
+<div class="text-center mt-sm">
+<button class="font-small text-small text-text-muted cursor-not-allowed" disabled="">
+                    Otwórz nowy worek
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] bg-surface md:hidden border-t border-border-base pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-all w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px]">qr_code_scanner</span>
+<span class="font-label-caps text-label-caps mt-unit">Skanuj</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-all w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label-caps text-label-caps mt-unit">Pulpit</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed-dim font-bold active:scale-95 transition-all w-full h-full relative" href="#">
+<div class="absolute top-1 right-1/4 w-2 h-2 bg-success rounded-full"></div>
+<span class="material-symbols-outlined text-[24px] fill">package_2</span>
+<span class="font-label-caps text-label-caps mt-unit">Batch</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-all w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="font-label-caps text-label-caps mt-unit">Profil</span>
+</a>
+</nav>
+</body></html>

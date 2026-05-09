@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Status zwrotu - Meest&amp;Returns</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "bg-subtle": "#F1F5F9",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#131b2e",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-container": "#00714d",
+                        "tertiary": "#000000",
+                        "secondary": "#006c49",
+                        "primary": "#000000",
+                        "tertiary-container": "#271901",
+                        "on-surface-variant": "#45464d",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-surface": "#1b1b1d",
+                        "on-error-container": "#93000a",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "tertiary-fixed": "#fcdeb5",
+                        "warning": "#F59E0B",
+                        "on-secondary": "#ffffff",
+                        "border-base": "#E2E8F0",
+                        "on-primary-container": "#7c839b",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "surface-container-lowest": "#ffffff",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "success": "#10B981",
+                        "on-primary": "#ffffff",
+                        "badge-received-bg": "#EDE9FE",
+                        "badge-completed-bg": "#D1FAE5",
+                        "error": "#EF4444",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container-high": "#eae7e9",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface": "#fcf8fa",
+                        "on-secondary-fixed": "#002113",
+                        "text-secondary": "#64748B",
+                        "outline-variant": "#c6c6cd",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-fixed": "#dae2fd",
+                        "text-muted": "#94A3B8",
+                        "surface-container-low": "#f6f3f5",
+                        "badge-transit-bg": "#DBEAFE",
+                        "bg-light": "#FAFAFA",
+                        "surface-container": "#f0edef",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-tertiary-container": "#98805d",
+                        "inverse-surface": "#303032",
+                        "info": "#3B82F6",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-variant": "#e4e2e4",
+                        "outline": "#76777d",
+                        "surface-tint": "#565e74",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "text-primary": "#0F172A",
+                        "on-background": "#1b1b1d",
+                        "background": "#fcf8fa",
+                        "surface-dim": "#dcd9db"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "form-gap": "16px",
+                        "xxxl": "64px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "technical": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "display": ["Inter"],
+                        "small": ["Inter"]
+                    },
+                    "fontSize": {
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-subtle text-text-primary font-body antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-container-high docked full-width top-0 border-b border-border-base dark:border-outline-variant flat no shadows flex items-center px-container-padding h-11 w-full max-w-[480px] mx-auto z-50">
+<button aria-label="Wróć" class="text-text-primary dark:text-on-surface hover:bg-bg-subtle dark:hover:bg-surface-variant p-sm rounded-full active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="ml-sm font-h1 text-h1 font-display text-display text-primary dark:text-inverse-primary truncate">
+            Meest&amp;Returns
+        </div>
+</header>
+<!-- Main Content Area -->
+<main class="w-full max-w-[480px] mx-auto pt-lg pb-xxxl px-container-padding bg-surface min-h-screen shadow-sm">
+<!-- Header Section -->
+<div class="mb-xl text-center mt-xl">
+<h1 class="font-display text-display text-text-primary mb-sm">Status zwrotu</h1>
+<p class="font-technical text-technical text-text-secondary bg-bg-subtle inline-block px-sm py-xs rounded">ID: RTN-K9F2-8XLM</p>
+</div>
+<!-- Progress/Timeline Section -->
+<div class="mb-xl relative pl-sm">
+<!-- Continuous Line -->
+<div class="absolute left-[20px] top-[24px] bottom-[24px] w-px bg-border-base z-0"></div>
+<!-- Step 1: Initiated (Completed) -->
+<div class="flex items-start mb-lg relative z-10 group">
+<div class="w-10 h-10 rounded-full bg-success flex items-center justify-center shrink-0 border-[3px] border-surface">
+<span class="material-symbols-outlined text-on-primary text-[20px]" data-icon="check">check</span>
+</div>
+<div class="ml-md pt-2">
+<h3 class="font-h2 text-h2 text-text-primary">Zainicjowany</h3>
+<p class="font-small text-small text-text-secondary">24 Paź 2023, 10:15</p>
+</div>
+</div>
+<!-- Step 2: Dropped Off (Completed) -->
+<div class="flex items-start mb-lg relative z-10 group">
+<div class="w-10 h-10 rounded-full bg-success flex items-center justify-center shrink-0 border-[3px] border-surface">
+<span class="material-symbols-outlined text-on-primary text-[20px]" data-icon="check">check</span>
+</div>
+<div class="ml-md pt-2">
+<h3 class="font-h2 text-h2 text-text-primary">Oddany</h3>
+<p class="font-small text-small text-text-secondary">24 Paź 2023, 14:30</p>
+<p class="font-small text-small text-text-secondary mt-xs">Punkt nadania: Żabka, ul. Główna 12</p>
+</div>
+</div>
+<!-- Step 3: In Transit (Active) -->
+<div class="flex items-start mb-lg relative z-10 group">
+<div class="w-10 h-10 rounded-full bg-surface border-2 border-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="local_shipping" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<div class="ml-md pt-2">
+<h3 class="font-h2 text-h2 text-text-primary">W transporcie</h3>
+<p class="font-small text-small text-text-secondary">Przewidywana dostawa do magazynu: 26 Paź</p>
+<span class="inline-block mt-sm bg-badge-transit-bg text-info font-label-caps text-label-caps px-[12px] py-[4px] rounded-full uppercase">Aktualny status</span>
+</div>
+</div>
+<!-- Step 4: In Warehouse (Pending) -->
+<div class="flex items-start mb-lg relative z-10 group opacity-50">
+<div class="w-10 h-10 rounded-full bg-surface border-2 border-border-base flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-text-muted text-[20px]" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="ml-md pt-2">
+<h3 class="font-h2 text-h2 text-text-primary">W magazynie</h3>
+<p class="font-small text-small text-text-secondary">Weryfikacja produktu</p>
+</div>
+</div>
+<!-- Step 5: Refunded (Pending) -->
+<div class="flex items-start relative z-10 group opacity-50">
+<div class="w-10 h-10 rounded-full bg-surface border-2 border-border-base flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-text-muted text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="ml-md pt-2">
+<h3 class="font-h2 text-h2 text-text-primary">Środki zwrócone</h3>
+</div>
+</div>
+</div>
+<!-- Info Cards Bento Grid -->
+<div class="grid grid-cols-1 gap-md mb-xl">
+<!-- Refund Date Card -->
+<div class="bg-surface-container-lowest border border-border-base p-md rounded-lg flex items-center shadow-sm">
+<div class="w-12 h-12 bg-bg-subtle rounded-full flex items-center justify-center shrink-0 mr-md">
+<span class="material-symbols-outlined text-text-primary" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<p class="font-small text-small text-text-secondary">Przewidywany zwrot środków</p>
+<p class="font-h2 text-h2 text-text-primary">28 - 30 Października</p>
+</div>
+</div>
+<!-- Amount Card -->
+<div class="bg-surface-container-lowest border border-border-base p-md rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center">
+<div class="w-12 h-12 bg-bg-subtle rounded-full flex items-center justify-center shrink-0 mr-md">
+<span class="material-symbols-outlined text-text-primary" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="font-small text-small text-text-secondary">Kwota zwrotu</p>
+<p class="font-technical text-technical text-text-primary">Karta kończąca się na **** 4242</p>
+</div>
+</div>
+<p class="font-h1 text-h1 text-text-primary">359 zł</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-md">
+<button class="w-full min-h-[44px] px-lg py-[12px] bg-primary text-on-primary font-body text-body rounded border border-primary flex justify-center items-center gap-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[16px]" data-icon="help">help</span>
+                Potrzebujesz pomocy?
+            </button>
+<button class="w-full min-h-[44px] px-lg py-[12px] bg-surface text-error font-body text-body rounded border border-border-base flex justify-center items-center hover:bg-error-container transition-colors">
+                Anuluj zwrot
+            </button>
+</div>
+</main>
+</body></html>

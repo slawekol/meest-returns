@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@meest/ui/styles.css';
+
+html,
+body {
+  @apply bg-background text-foreground;
+  font-family: var(--font-sans);
+}

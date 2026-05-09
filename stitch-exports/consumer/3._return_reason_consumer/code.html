@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meest&amp;Returns - Zwrot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "badge-dropped-bg": "#FEF3C7",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "primary": "#000000",
+                        "secondary-fixed-dim": "#4edea3",
+                        "badge-transit-bg": "#DBEAFE",
+                        "inverse-surface": "#303032",
+                        "success": "#10B981",
+                        "on-background": "#1b1b1d",
+                        "bg-subtle": "#F1F5F9",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#002113",
+                        "surface": "#fcf8fa",
+                        "surface-tint": "#565e74",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf8fa",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container-high": "#eae7e9",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "border-base": "#E2E8F0",
+                        "surface-container-low": "#f6f3f5",
+                        "secondary-container": "#6cf8bb",
+                        "info": "#3B82F6",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "tertiary-container": "#271901",
+                        "text-secondary": "#64748B",
+                        "badge-received-bg": "#EDE9FE",
+                        "tertiary-fixed": "#fcdeb5",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-secondary-container": "#00714d",
+                        "surface-container": "#f0edef",
+                        "inverse-primary": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-surface-variant": "#45464d",
+                        "badge-completed-bg": "#D1FAE5",
+                        "bg-light": "#FAFAFA",
+                        "error": "#EF4444",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary-fixed": "#131b2e",
+                        "tertiary": "#000000",
+                        "on-tertiary-container": "#98805d",
+                        "on-error": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "on-surface": "#1b1b1d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c6c6cd",
+                        "text-primary": "#0F172A",
+                        "inverse-on-surface": "#f3f0f2",
+                        "text-muted": "#94A3B8",
+                        "outline": "#76777d",
+                        "surface-variant": "#e4e2e4",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#dae2fd",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-primary-container": "#7c839b",
+                        "surface-container-highest": "#e4e2e4",
+                        "secondary": "#006c49",
+                        "surface-dim": "#dcd9db",
+                        "warning": "#F59E0B"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "section-gap": "48px",
+                        "xxl": "48px",
+                        "md": "16px",
+                        "form-gap": "16px",
+                        "xxxl": "64px",
+                        "xs": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "small": ["Inter"],
+                        "body": ["Inter"],
+                        "technical": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-highest min-h-screen text-text-primary font-body text-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="max-w-[480px] mx-auto bg-surface-container-lowest min-h-screen relative shadow-sm flex flex-col">
+<header class="docked full-width top-0 border-b border-border-base dark:border-outline-variant flat no shadows bg-surface dark:bg-surface-container-high z-10 sticky">
+<div class="flex items-center px-container-padding h-11 w-full max-w-[480px] mx-auto justify-between">
+<button class="text-primary dark:text-inverse-primary hover:bg-bg-subtle dark:hover:bg-surface-variant p-sm -ml-sm rounded-full Active: opacity-80 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">arrow_back</span>
+</button>
+<div class="font-display text-display text-primary dark:text-inverse-primary text-[18px] tracking-tight">Meest&amp;Returns</div>
+<div class="w-10"></div>
+</div>
+</header>
+<main class="flex-1 px-container-padding py-lg flex flex-col gap-lg">
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-xs font-label-caps text-label-caps text-text-secondary uppercase tracking-wider">
+<span>Krok 1 z 2</span>
+</div>
+<h1 class="font-h1 text-h1 text-text-primary">Dlaczego zwracasz?</h1>
+</div>
+<div class="bg-bg-subtle border border-border-base rounded-lg p-md flex gap-md items-center shadow-sm">
+<div class="w-[60px] h-[60px] bg-surface-container-highest rounded-DEFAULT overflow-hidden flex-shrink-0 border border-border-base">
+<img alt="Koszulka Basic L, Biała" class="w-full h-full object-cover" data-alt="A clean, flat-lay product shot of a simple, high-quality white basic t-shirt. The t-shirt is perfectly folded on a pristine, bright white background under even studio lighting. The aesthetic is extremely minimal, modern, and professional, reflecting an e-commerce catalog style with no distracting elements or shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpY8GF7DMYf9E7U_xzHikmFQmq6RaU2b2DJ7_u0_-3MaD5h2HLsM4w1sM6-E1UJ6a5doCFpSGr00R8IpIMiB5WwCPsKPB3ifFk4gV27OEhJ3oIXl3Fq28D6rUWsEssmGx08LiSN-JWLFiMUeJ6w-qINQWuoODXgvMdWl_ueCaom7q2oSVS2S8ZX5Bzcixis8kiJcSK-Aniz8AbGs4CQwZHY7PeFF1LTowWY7iYIaANoqwd8x3MGy6VgCqv-aj1bh70BY00yVdchJEk"/>
+</div>
+<div class="flex flex-col">
+<span class="font-small text-small text-text-secondary">Zwracany produkt:</span>
+<span class="font-body text-body font-medium text-text-primary">Koszulka Basic L, Biała</span>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<label class="relative flex items-center p-md border-[2px] border-success rounded-lg bg-surface-container-lowest cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.02)] transition-shadow">
+<div class="flex-1 font-body text-body text-text-primary font-medium">Za duży / za mały rozmiar</div>
+<input checked="" class="w-5 h-5 text-success border-border-base focus:ring-success focus:ring-offset-0 bg-surface-container-lowest checked:border-success" name="reason" type="radio" value="size"/>
+</label>
+<label class="relative flex items-center p-md border border-border-base rounded-lg bg-surface-container-lowest cursor-pointer hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow hover:bg-bg-light">
+<div class="flex-1 font-body text-body text-text-primary">Inny niż na zdjęciu</div>
+<input class="w-5 h-5 text-success border-border-base focus:ring-success focus:ring-offset-0 bg-surface-container-lowest" name="reason" type="radio" value="different"/>
+</label>
+<label class="relative flex items-center p-md border border-border-base rounded-lg bg-surface-container-lowest cursor-pointer hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow hover:bg-bg-light">
+<div class="flex-1 font-body text-body text-text-primary">Niska jakość</div>
+<input class="w-5 h-5 text-success border-border-base focus:ring-success focus:ring-offset-0 bg-surface-container-lowest" name="reason" type="radio" value="quality"/>
+</label>
+<label class="relative flex items-center p-md border border-border-base rounded-lg bg-surface-container-lowest cursor-pointer hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow hover:bg-bg-light">
+<div class="flex-1 font-body text-body text-text-primary">Nie pasuje / nie podoba się</div>
+<input class="w-5 h-5 text-success border-border-base focus:ring-success focus:ring-offset-0 bg-surface-container-lowest" name="reason" type="radio" value="dislike"/>
+</label>
+<label class="relative flex items-center p-md border border-border-base rounded-lg bg-surface-container-lowest cursor-pointer hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow hover:bg-bg-light">
+<div class="flex-1 font-body text-body text-text-primary">Wadliwy / uszkodzony</div>
+<input class="w-5 h-5 text-success border-border-base focus:ring-success focus:ring-offset-0 bg-surface-container-lowest" name="reason" type="radio" value="damaged"/>
+</label>
+<label class="relative flex items-center p-md border border-border-base rounded-lg bg-surface-container-lowest cursor-pointer hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow hover:bg-bg-light">
+<div class="flex-1 font-body text-body text-text-primary">Inny powód</div>
+<input class="w-5 h-5 text-success border-border-base focus:ring-success focus:ring-offset-0 bg-surface-container-lowest" name="reason" type="radio" value="other"/>
+</label>
+</div>
+<div class="flex flex-col gap-sm pt-sm pb-section-gap">
+<label class="font-small text-small text-text-secondary" for="comment">Dodatkowy komentarz (opcjonalnie)</label>
+<textarea class="w-full bg-surface-container-lowest border border-border-base rounded-lg px-md py-sm font-body text-body text-text-primary placeholder:text-text-muted focus:border-success focus:ring-0 focus:outline-none transition-colors" id="comment" placeholder="Opisz szczegóły..." rows="3"></textarea>
+</div>
+</main>
+<div class="p-container-padding border-t border-border-base bg-surface-container-lowest sticky bottom-0 z-20">
+<button class="w-full bg-text-primary text-on-primary font-small text-small font-semibold rounded-lg h-[44px] px-lg flex items-center justify-center hover:bg-opacity-90 transition-opacity">
+                Dalej
+            </button>
+</div>
+</div>
+</body></html>

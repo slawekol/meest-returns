@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rejection Flow - Meest&amp;Returns Operator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#7c839b",
+                        "on-error-container": "#93000a",
+                        "badge-transit-bg": "#DBEAFE",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#98805d",
+                        "surface-container-low": "#f6f3f5",
+                        "bg-subtle": "#F1F5F9",
+                        "primary-fixed": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#fcdeb5",
+                        "secondary": "#006c49",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-bright": "#fcf8fa",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e4e2e4",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary-fixed": "#131b2e",
+                        "surface": "#fcf8fa",
+                        "tertiary": "#000000",
+                        "on-background": "#1b1b1d",
+                        "text-muted": "#94A3B8",
+                        "on-tertiary-fixed": "#271901",
+                        "info": "#3B82F6",
+                        "surface-container-highest": "#e4e2e4",
+                        "secondary-fixed": "#6ffbbe",
+                        "text-secondary": "#64748B",
+                        "text-primary": "#0F172A",
+                        "border-base": "#E2E8F0",
+                        "bg-light": "#FAFAFA",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-dim": "#dcd9db",
+                        "badge-completed-bg": "#D1FAE5",
+                        "surface-tint": "#565e74",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fcf8fa",
+                        "primary-container": "#131b2e",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "tertiary-container": "#271901",
+                        "outline": "#76777d",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error": "#ffffff",
+                        "badge-received-bg": "#EDE9FE",
+                        "surface-container-high": "#eae7e9",
+                        "warning": "#F59E0B",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "secondary-container": "#6cf8bb",
+                        "on-surface-variant": "#45464d",
+                        "on-surface": "#1b1b1d",
+                        "inverse-surface": "#303032",
+                        "outline-variant": "#c6c6cd",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "on-secondary-container": "#00714d",
+                        "success": "#10B981",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "error": "#EF4444",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-on-surface": "#f3f0f2",
+                        "primary": "#000000",
+                        "surface-container": "#f0edef"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "form-gap": "16px",
+                        "unit": "4px",
+                        "section-gap": "48px",
+                        "xxxl": "64px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Inter"],
+                        "small": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body": ["Inter"],
+                        "technical": ["JetBrains Mono"],
+                        "display": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom radio button styles for cards */
+        input[type="radio"]:checked + div {
+            border-color: #EF4444; /* error */
+            background-color: #ffdad6; /* error-container */
+        }
+        input[type="radio"]:checked + div .radio-icon {
+            color: #EF4444;
+        }
+        input[type="radio"]:checked + div .radio-text {
+            color: #93000a; /* on-error-container */
+        }
+    </style>
+</head>
+<body class="bg-bg-subtle text-text-primary font-body antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface dark:bg-surface-container-highest border-b border-border-base w-full z-10 sticky top-0">
+<div class="flex justify-between items-center h-[56px] px-md w-full max-w-[768px] mx-auto">
+<div class="flex items-center gap-sm">
+<!-- Added back button for transactional flow context -->
+<button aria-label="Wróć" class="p-sm -ml-sm rounded-full hover:bg-surface-container-low transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-primary dark:text-on-surface" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-h1 text-h1 font-bold text-primary dark:text-on-surface">
+                    Meest&amp;Returns Operator
+                </div>
+</div>
+<div class="flex items-center gap-sm">
+<button aria-label="Konto" class="p-sm -mr-sm rounded-full hover:bg-surface-container-low transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-primary dark:text-on-surface" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-[768px] mx-auto p-container-padding flex flex-col gap-lg pb-xxxl">
+<!-- Header -->
+<section class="flex flex-col gap-unit">
+<h1 class="font-display text-display text-text-primary">Odrzucenie weryfikacji</h1>
+<p class="font-body text-body text-text-secondary">Wskaż dokładny powód odrzucenia przesyłki, aby zakończyć proces.</p>
+</section>
+<!-- Form Section -->
+<form class="flex flex-col gap-lg">
+<!-- Reason Grid (Bento Style) -->
+<fieldset>
+<legend class="font-h2 text-h2 text-text-primary mb-md">Powód odrzucenia</legend>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<!-- Option 1 -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="rejection_reason" type="radio" value="brak_metek"/>
+<div class="h-full p-md border border-border-base rounded-lg bg-surface transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined radio-icon text-text-secondary transition-colors" data-icon="sell">sell</span>
+<div class="flex flex-col">
+<span class="font-h2 text-h2 radio-text text-text-primary transition-colors">Brak metek</span>
+<span class="font-small text-small text-text-secondary mt-unit">Oryginalne metki zostały usunięte.</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Option 2 -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="rejection_reason" type="radio" value="zniszczony_produkt"/>
+<div class="h-full p-md border border-border-base rounded-lg bg-surface transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined radio-icon text-text-secondary transition-colors" data-icon="broken_image">broken_image</span>
+<div class="flex flex-col">
+<span class="font-h2 text-h2 radio-text text-text-primary transition-colors">Zniszczony produkt</span>
+<span class="font-small text-small text-text-secondary mt-unit">Widoczne ślady użytkowania lub wady.</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Option 3 -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="rejection_reason" type="radio" value="brak_worka"/>
+<div class="h-full p-md border border-border-base rounded-lg bg-surface transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined radio-icon text-text-secondary transition-colors" data-icon="work_outline">work_outline</span>
+<div class="flex flex-col">
+<span class="font-h2 text-h2 radio-text text-text-primary transition-colors">Brak worka</span>
+<span class="font-small text-small text-text-secondary mt-unit">Zgłoszenie bez oryginalnego opakowania.</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Option 4 -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="rejection_reason" type="radio" value="inne"/>
+<div class="h-full p-md border border-border-base rounded-lg bg-surface transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined radio-icon text-text-secondary transition-colors" data-icon="more_horiz">more_horiz</span>
+<div class="flex flex-col">
+<span class="font-h2 text-h2 radio-text text-text-primary transition-colors">Inne</span>
+<span class="font-small text-small text-text-secondary mt-unit">Niestandardowy powód, wymaga opisu.</span>
+</div>
+</div>
+</div>
+</label>
+</div>
+</fieldset>
+<!-- Text Area -->
+<div class="flex flex-col gap-sm">
+<label class="font-h2 text-h2 text-text-primary" for="additional_notes">Notatki dodatkowe</label>
+<textarea class="w-full bg-surface border border-border-base rounded-lg p-md font-body text-body text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-success focus:border-transparent transition-all resize-none" id="additional_notes" placeholder="Wprowadź szczegóły odrzucenia..." rows="4"></textarea>
+</div>
+</form>
+<!-- Warning Alert -->
+<div class="mt-section-gap flex items-start gap-md p-lg rounded-xl bg-badge-rejected-bg border border-error/20">
+<span class="material-symbols-outlined text-error" data-icon="warning" data-weight="fill" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="flex flex-col gap-unit">
+<span class="font-h2 text-h2 text-on-error-container">Oddaj paczkę klientowi</span>
+<span class="font-body text-body text-on-error-container/80">Proces weryfikacji został przerwany. Poinformuj klienta o powodzie odrzucenia i zwróć mu fizycznie towar.</span>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-border-base p-md z-20">
+<div class="max-w-[768px] mx-auto flex justify-end gap-md">
+<button class="h-[44px] px-lg rounded-DEFAULT border border-border-base bg-surface text-text-primary font-small text-small hover:bg-surface-container transition-colors" type="button">
+                Anuluj
+            </button>
+<button class="h-[44px] px-lg rounded-DEFAULT bg-error text-on-error font-small text-small hover:opacity-90 transition-opacity flex items-center gap-sm shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="block">block</span>
+                Potwierdź odrzucenie
+            </button>
+</div>
+</div>
+</body></html>

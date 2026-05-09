@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Twój kod QR - Meest&amp;Returns</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c6c6cd",
+                    "text-secondary": "#64748B",
+                    "border-base": "#E2E8F0",
+                    "tertiary-container": "#271901",
+                    "bg-subtle": "#F1F5F9",
+                    "surface-bright": "#fcf8fa",
+                    "on-surface-variant": "#45464d",
+                    "surface-variant": "#e4e2e4",
+                    "badge-completed-bg": "#D1FAE5",
+                    "text-primary": "#0F172A",
+                    "surface": "#fcf8fa",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#eae7e9",
+                    "on-tertiary": "#ffffff",
+                    "bg-light": "#FAFAFA",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "on-tertiary-container": "#98805d",
+                    "primary-container": "#131b2e",
+                    "on-primary-fixed": "#131b2e",
+                    "secondary": "#006c49",
+                    "tertiary-fixed": "#fcdeb5",
+                    "surface-container": "#f0edef",
+                    "on-secondary-fixed-variant": "#005236",
+                    "badge-rejected-bg": "#FEE2E2",
+                    "outline": "#76777d",
+                    "warning": "#F59E0B",
+                    "on-primary-container": "#7c839b",
+                    "inverse-on-surface": "#f3f0f2",
+                    "inverse-surface": "#303032",
+                    "on-secondary-fixed": "#002113",
+                    "badge-initiated-bg": "#F1F5F9",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#574425",
+                    "surface-dim": "#dcd9db",
+                    "info": "#3B82F6",
+                    "text-muted": "#94A3B8",
+                    "on-surface": "#1b1b1d",
+                    "on-background": "#1b1b1d",
+                    "on-secondary": "#ffffff",
+                    "primary": "#000000",
+                    "badge-dropped-bg": "#FEF3C7",
+                    "success": "#10B981",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f6f3f5",
+                    "on-secondary-container": "#00714d",
+                    "surface-container-highest": "#e4e2e4",
+                    "secondary-fixed-dim": "#4edea3",
+                    "error": "#EF4444",
+                    "primary-fixed-dim": "#bec6e0",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "background": "#fcf8fa",
+                    "tertiary": "#000000",
+                    "badge-received-bg": "#EDE9FE",
+                    "on-tertiary-fixed": "#271901",
+                    "secondary-fixed": "#6ffbbe",
+                    "badge-transit-bg": "#DBEAFE",
+                    "secondary-container": "#6cf8bb",
+                    "primary-fixed": "#dae2fd",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#bec6e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding": "24px",
+                    "xxl": "48px",
+                    "xs": "4px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "form-gap": "16px",
+                    "section-gap": "48px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "xxxl": "64px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "small": ["Inter"],
+                    "technical": ["JetBrains Mono"],
+                    "display": ["Inter"],
+                    "h1": ["Inter"],
+                    "body": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "h2": ["Inter"]
+            },
+            "fontSize": {
+                    "small": ["13px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "technical": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h1": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600"}],
+                    "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Subtle shimmer animation for simulated image loading readiness */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        .animate-shimmer {
+            animation: shimmer 2s infinite linear;
+            background: linear-gradient(to right, #f6f3f5 4%, #eae7e9 25%, #f6f3f5 36%);
+            background-size: 1000px 100%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-text-primary antialiased min-h-screen flex justify-center">
+<!-- Main Mobile Constraints / Desktop Centered Card -->
+<main class="w-full max-w-[480px] bg-surface min-h-screen flex flex-col relative shadow-[0_0_40px_rgba(0,0,0,0.03)] border-x border-border-base">
+<!-- TopAppBar Shared Component -->
+<header class="flex items-center px-container-padding h-11 w-full max-w-[480px] mx-auto bg-surface border-b border-border-base sticky top-0 z-50">
+<button class="mr-auto text-text-primary hover:bg-bg-subtle active:opacity-80 transition-opacity rounded-full w-8 h-8 flex items-center justify-center -ml-2">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-h1 text-h1 text-text-primary absolute left-1/2 -translate-x-1/2 whitespace-nowrap">Meest&amp;Returns</h1>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-container-padding py-xl flex flex-col gap-xl">
+<!-- Headers -->
+<section class="flex flex-col items-center gap-sm mt-md">
+<h2 class="font-display text-display text-text-primary text-center">Twój kod QR</h2>
+<p class="font-body text-body text-text-secondary text-center">Pokaż kod w punkcie odbioru, aby nadać przesyłkę zwrotną.</p>
+</section>
+<!-- QR Code Display Area -->
+<section class="w-full bg-surface-container-lowest border border-border-base rounded-xl p-lg flex flex-col items-center gap-md shadow-sm">
+<!-- QR Code Image placeholder -->
+<div class="w-[280px] h-[280px] bg-surface-container-low rounded-lg border border-border-base flex items-center justify-center overflow-hidden relative">
+<img alt="QR Code" class="w-full h-full object-cover opacity-90 mix-blend-multiply grayscale contrast-150" data-alt="A stark, high-contrast, perfectly square QR code rendered in pure black against a pristine white background. The image is crisp, sharply defined, and devoid of any background elements or artistic flair, embodying a strict, functional, modern corporate aesthetic. Lighting is perfectly even, resembling a direct digital scan rather than a photograph, ensuring optimal scannability and a professional, utilitarian appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcDdjpcK3ZiW53BogH2vkkWOcBG_spY-dZvHPN5RoFfvOMmWPXdicu8Vqa-b9QAF9sPLRdyQfBUA3TWx-OCr4hJCiF1GCp73BWoIvkCY7dlvalOKKoxLzJaZ-UV9yvFHUcy5Vf-A5psiJPi--i6PFs-5yHoooziC2JEzNi0xccWRMvCKT9wzvolxKhI3Di-mZBLTHo_MnccoQul7jTQBWd-aH0BrFt2rFtQYZIe_4IgdfJwT4WEMLm07lpzguYQUrG4MErHwYnB0MC"/>
+</div>
+<!-- ID -->
+<div class="flex flex-col items-center gap-xs mt-sm">
+<span class="font-label-caps text-label-caps text-text-secondary uppercase tracking-widest">Numer nadania</span>
+<span class="font-technical text-technical text-text-primary bg-bg-subtle px-md py-sm rounded-md border border-border-base tracking-[0.1em]">
+                        RTN-K9F2-8XLM
+                    </span>
+</div>
+</section>
+<!-- Point Details Card -->
+<section class="w-full bg-surface-container-lowest border border-border-base rounded-lg p-md flex flex-col gap-sm">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-badge-initiated-bg flex items-center justify-center shrink-0 border border-border-base">
+<span class="material-symbols-outlined text-text-primary" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+<div class="flex-1">
+<h3 class="font-body text-body font-semibold text-text-primary">Punkt DPD Pickup</h3>
+<p class="font-small text-small text-text-secondary mt-xs">ul. Przykładowa 12/4<br/>00-123 Warszawa</p>
+</div>
+</div>
+<button class="mt-sm w-full bg-surface border border-border-base text-text-primary font-small text-small h-[36px] rounded flex justify-center items-center gap-sm hover:bg-bg-subtle transition-colors">
+<span class="material-symbols-outlined text-[18px]">map</span>
+                    Pokaż na mapie
+                </button>
+</section>
+<!-- Products List -->
+<section class="flex flex-col gap-md">
+<h3 class="font-h2 text-h2 text-text-primary border-b border-border-base pb-sm">Twoje produkty</h3>
+<div class="flex flex-col gap-sm">
+<!-- Product Item 1 -->
+<div class="flex items-center gap-md bg-surface-container-lowest border border-border-base rounded-lg p-sm">
+<div class="w-12 h-12 rounded bg-surface-container-low border border-border-base overflow-hidden shrink-0">
+<img alt="T-shirt" class="w-full h-full object-cover" data-alt="A clean, minimalist product thumbnail photograph of a basic white t-shirt neatly folded. The t-shirt rests on a stark, light grey studio background under bright, even, high-key lighting. The style is strictly commercial, devoid of lifestyle elements, focusing purely on the garment's texture and form, perfectly aligned with a professional e-commerce logistics interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASRyuDRKRTOUlh1F0BTz3X8L7YvUGnJyR9naAIxuHBKHOaGxxA3PwnowXimSk2avzRmA4Ls0T9jWMqz9J-bsYBAC_U0JQTA4DICPIF2ByxPd6IA4cIz-HddxVJ_lJUL5gKdr4OVhR7Od7rPx4GAD2zM3XmnFrrWBGWSAW4i9qhYiczQfhxv53b8tiOrkbfIBxaoj1AZ3r6L476wowT6cZl-HbzYEIvu9uUyedd0mpiAxvh7kfxW3dOU3xcJk1PE3AYPvxL-BTx0L9i"/>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="font-small text-small font-semibold text-text-primary line-clamp-1">Basic Cotton T-Shirt</span>
+<span class="font-label-caps text-label-caps text-text-secondary mt-1">Rozmiar: M • Ilość: 1</span>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="flex items-center gap-md bg-surface-container-lowest border border-border-base rounded-lg p-sm">
+<div class="w-12 h-12 rounded bg-surface-container-low border border-border-base overflow-hidden shrink-0">
+<img alt="Shoes" class="w-full h-full object-cover" data-alt="A precise, side-profile commercial photograph of a single black running shoe. The shoe is positioned on an immaculate white studio surface with soft, diffused top lighting that eliminates harsh shadows. The aesthetic is extremely sterile and professional, typical of a high-end inventory management system, isolating the product entirely against a neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpmjTnOv9yAkm8XywDpBEc3CJhiCI8eTCPZEXOQQJIvWK4JbOCIGKMw6M3JVCVCwngRNOuIxaUC4HLW8uJUpdoLri2u83nk-IGyBKe58dcgd7UZXZlv0lFUyDQYH9fwuntfSNKPInyze_aRoj58XdlSoQ0uN6ahxoVzakW-6hqMz21wLhfC5zB1NVGKegSGI-uxXZ7m5WS7nzcQVYamCqxibH7npA0vCb3NG-DlrcZTQyV0r8lz7bNpFfTnmJN3raVKI2i9DBuV6aY"/>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<span class="font-small text-small font-semibold text-text-primary line-clamp-1">Pro Running Shoes</span>
+<span class="font-label-caps text-label-caps text-text-secondary mt-1">Rozmiar: 42 • Ilość: 1</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Bottom Actions -->
+<div class="px-container-padding py-lg bg-surface border-t border-border-base flex flex-col gap-md sticky bottom-0 z-40 mt-auto">
+<p class="font-small text-small text-text-secondary text-center">
+<span class="material-symbols-outlined text-[16px] inline-block align-text-bottom mr-1">info</span>
+                Kod jest ważny 14 dni
+            </p>
+<div class="flex flex-col gap-sm">
+<!-- Primary Action -->
+<button class="w-full h-[44px] bg-primary text-on-primary font-small text-small rounded-lg flex justify-center items-center gap-sm hover:opacity-90 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                    Zapisz kod
+                </button>
+<!-- Secondary Action -->
+<button class="w-full h-[44px] bg-surface-container-lowest border border-border-base text-text-primary font-small text-small rounded-lg flex justify-center items-center gap-sm hover:bg-bg-subtle active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                    Wyślij na email
+                </button>
+</div>
+</div>
+</main>
+</body></html>

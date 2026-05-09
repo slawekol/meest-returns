@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wybierz produkty do zwrotu - Meest&amp;Returns</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#c6c6cd",
+                      "text-secondary": "#64748B",
+                      "border-base": "#E2E8F0",
+                      "tertiary-container": "#271901",
+                      "bg-subtle": "#F1F5F9",
+                      "surface-bright": "#fcf8fa",
+                      "on-surface-variant": "#45464d",
+                      "surface-variant": "#e4e2e4",
+                      "badge-completed-bg": "#D1FAE5",
+                      "text-primary": "#0F172A",
+                      "surface": "#fcf8fa",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#eae7e9",
+                      "on-tertiary": "#ffffff",
+                      "bg-light": "#FAFAFA",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#565e74",
+                      "on-tertiary-container": "#98805d",
+                      "primary-container": "#131b2e",
+                      "on-primary-fixed": "#131b2e",
+                      "secondary": "#006c49",
+                      "tertiary-fixed": "#fcdeb5",
+                      "surface-container": "#f0edef",
+                      "on-secondary-fixed-variant": "#005236",
+                      "badge-rejected-bg": "#FEE2E2",
+                      "outline": "#76777d",
+                      "warning": "#F59E0B",
+                      "on-primary-container": "#7c839b",
+                      "inverse-on-surface": "#f3f0f2",
+                      "inverse-surface": "#303032",
+                      "on-secondary-fixed": "#002113",
+                      "badge-initiated-bg": "#F1F5F9",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "surface-dim": "#dcd9db",
+                      "info": "#3B82F6",
+                      "text-muted": "#94A3B8",
+                      "on-surface": "#1b1b1d",
+                      "on-background": "#1b1b1d",
+                      "on-secondary": "#ffffff",
+                      "primary": "#000000",
+                      "badge-dropped-bg": "#FEF3C7",
+                      "success": "#10B981",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f6f3f5",
+                      "on-secondary-container": "#00714d",
+                      "surface-container-highest": "#e4e2e4",
+                      "secondary-fixed-dim": "#4edea3",
+                      "error": "#EF4444",
+                      "primary-fixed-dim": "#bec6e0",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "background": "#fcf8fa",
+                      "tertiary": "#000000",
+                      "badge-received-bg": "#EDE9FE",
+                      "on-tertiary-fixed": "#271901",
+                      "secondary-fixed": "#6ffbbe",
+                      "badge-transit-bg": "#DBEAFE",
+                      "secondary-container": "#6cf8bb",
+                      "primary-fixed": "#dae2fd",
+                      "on-primary": "#ffffff",
+                      "inverse-primary": "#bec6e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-padding": "24px",
+                      "xxl": "48px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "unit": "4px",
+                      "form-gap": "16px",
+                      "section-gap": "48px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "xxxl": "64px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "small": [
+                              "Inter"
+                      ],
+                      "technical": [
+                              "JetBrains Mono"
+                      ],
+                      "display": [
+                              "Inter"
+                      ],
+                      "h1": [
+                              "Inter"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "h2": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "small": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "technical": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.5px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h2": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-bg-subtle text-text-primary font-body antialiased min-h-screen flex flex-col items-center">
+<div class="w-full max-w-[480px] bg-surface min-h-screen relative flex flex-col shadow-[0_0_40px_rgba(0,0,0,0.02)]">
+<!-- TopAppBar -->
+<header class="flex items-center px-container-padding h-11 w-full max-w-[480px] mx-auto bg-surface border-b border-border-base sticky top-0 z-20">
+<button class="mr-md text-text-primary hover:bg-bg-subtle p-xs rounded transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-h1 text-h1 text-text-primary flex-1 truncate">Meest&amp;Returns</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-container-padding py-xl pb-32 flex flex-col">
+<!-- Order Summary Card -->
+<div class="border border-border-base rounded-lg p-md mb-xl bg-surface-container-lowest flex flex-col gap-xs">
+<div class="flex justify-between items-start mb-xs">
+<span class="font-small text-small text-text-secondary uppercase tracking-wider">Szczegóły zamówienia</span>
+<span class="material-symbols-outlined text-text-secondary text-[18px]" data-icon="receipt_long">receipt_long</span>
+</div>
+<div class="font-technical text-technical text-text-primary">
+                    #MOD-2026-0042893
+                </div>
+<div class="font-small text-small text-text-secondary">
+                    Data zakupu: 12.05.2024
+                </div>
+</div>
+<!-- Header -->
+<h2 class="font-h2 text-h2 text-text-primary mb-form-gap">Wybierz produkty do zwrotu</h2>
+<!-- Product List -->
+<div class="flex flex-col gap-sm">
+<!-- Product 1 (Selected) -->
+<label class="flex items-start gap-md p-md border-2 border-success rounded-lg bg-badge-completed-bg/10 cursor-pointer transition-colors relative overflow-hidden group">
+<div class="absolute top-md right-md">
+<div class="w-5 h-5 border-2 border-success bg-success rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[14px] leading-none" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<input checked="" class="sr-only" type="checkbox"/>
+</div>
+<img alt="Czarna sukienka midi" class="w-16 h-20 bg-surface-variant rounded object-cover flex-shrink-0 border border-border-base" data-alt="A studio photograph of a sleek black midi dress on a minimalist white mannequin. The lighting is soft and flat, typical of high-end e-commerce photography, casting virtually no shadows. The background is a stark, clean off-white (#FAFAFA) to maintain focus on the garment's clean lines and high-quality fabric texture. The aesthetic is extremely professional, crisp, and devoid of any lifestyle clutter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS8JsGqks0Hyb-n8Xw75Br2wvxUWoqwFrLxz5vYmjZ4b4irssuVIVONwvJJb1NLs87sVHcLd_UAXhXJWjyrjKal324gx8mTwcWjwyoU0oKt23gQCvJ-dCGe-87DM4BadJ1HshcApJwpaqeNo8ZTEZi4Mgvn40dIBOpUCi3v2oTZR05mrjaLkUC7R8O-mqlND-rztPtbUHp3HsU839h6MkC1IHbAyFlfJ5XUv7tBgOcvNJmPE5Sihc_6wiX0j7H9MrI8Lkm5oK-m_Yw"/>
+<div class="flex flex-col flex-1 pr-8">
+<span class="font-body text-body font-semibold text-text-primary mb-xs">Czarna sukienka midi</span>
+<div class="flex items-center gap-sm text-text-secondary font-small text-small mb-sm">
+<span>Rozmiar: M</span>
+<span class="w-[3px] h-[3px] rounded-full bg-outline-variant"></span>
+<span>Kolor: Czarny</span>
+</div>
+<span class="font-body text-body font-semibold text-text-primary">199 zł</span>
+</div>
+</label>
+<!-- Product 2 (Selected) -->
+<label class="flex items-start gap-md p-md border-2 border-success rounded-lg bg-badge-completed-bg/10 cursor-pointer transition-colors relative overflow-hidden group">
+<div class="absolute top-md right-md">
+<div class="w-5 h-5 border-2 border-success bg-success rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[14px] leading-none" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<input checked="" class="sr-only" type="checkbox"/>
+</div>
+<img alt="Biała koszula oversize" class="w-16 h-20 bg-surface-variant rounded object-cover flex-shrink-0 border border-border-base" data-alt="A studio product shot of a crisp white oversized button-down shirt neatly folded flat. The lighting is bright and even, highlighting the fine cotton texture and precise stitching. Set against a pure white background to create a seamless, high-key look. The visual style is strictly corporate retail, emphasizing utility and pristine condition over emotional appeal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSlphxrPDn-wwPfgjCTLLnBTBXCn2uC1HxFAlECL6o-9pw0SDKkP1waihnvLbm8iUoRRahPSRS_b9oGTDFMmr7xYangLzANEGkd6P0F10fP3N87lcSf47V8g9FrH5lGQRXEp83mEBlGg5W5VVhNS3A5gJD7dcTdYh3ZooncovDuW1-G39JR8g23aPEsUySQ4Tc3hY7uX0FZAKKeeJJCuPkKFr_nA1TjMFWOc6qBpZY6_wU5vEw9AIPjhgQEomR5jt3zV07-A3jk_e9"/>
+<div class="flex flex-col flex-1 pr-8">
+<span class="font-body text-body font-semibold text-text-primary mb-xs">Biała koszula oversize</span>
+<div class="flex items-center gap-sm text-text-secondary font-small text-small mb-sm">
+<span>Rozmiar: S</span>
+<span class="w-[3px] h-[3px] rounded-full bg-outline-variant"></span>
+<span>Kolor: Biały</span>
+</div>
+<span class="font-body text-body font-semibold text-text-primary">160 zł</span>
+</div>
+</label>
+<!-- Product 3 (Unselected) -->
+<label class="flex items-start gap-md p-md border border-border-base rounded-lg bg-surface-container-lowest cursor-pointer hover:border-outline-variant transition-colors relative overflow-hidden group">
+<div class="absolute top-md right-md">
+<div class="w-5 h-5 border border-outline-variant bg-surface rounded flex items-center justify-center group-hover:border-text-secondary transition-colors">
+</div>
+<input class="sr-only" type="checkbox"/>
+</div>
+<img alt="Spodnie garniturowe" class="w-16 h-20 bg-surface-variant rounded object-cover flex-shrink-0 border border-border-base" data-alt="A flat-lay product photograph of dark navy tailored suit trousers. The fabric shows a subtle twill texture under clinical, uniform studio lighting. The trousers are perfectly pressed, laid out on a light grey (#F1F5F9) non-reflective surface. The composition is highly functional, showing the cut and waist details clearly, adhering to a minimalist, technical e-commerce aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1J66w55rQSwoH9EiAQIbnGH6wpHIShSaKPgI2UWCg6UKR8mRFf-hT0aEZUye6yqr_2DDbmE-v6ZBipGAKLUqowmS0bynbeUgurBJhtzLHIaeIutp628NCO54YNliNKPuUGS27x0fm0WIAc_gCLVnFGfDtwtLaF8CTTbxfK2jtp3IBR_zzrKPLBh4yUbwW6l7_pA6VisV-5y364C9YQNROTey4aHlN6ja9n2jIOOhFbhP7PMW53P3xrQw-KB-kD3xYY0FvJ9dqiAk2"/>
+<div class="flex flex-col flex-1 pr-8 opacity-80 group-hover:opacity-100 transition-opacity">
+<span class="font-body text-body font-semibold text-text-primary mb-xs">Spodnie garniturowe</span>
+<div class="flex items-center gap-sm text-text-secondary font-small text-small mb-sm">
+<span>Rozmiar: 38</span>
+<span class="w-[3px] h-[3px] rounded-full bg-outline-variant"></span>
+<span>Kolor: Granatowy</span>
+</div>
+<span class="font-body text-body font-semibold text-text-primary">249 zł</span>
+</div>
+</label>
+</div>
+</main>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-surface border-t border-border-base p-container-padding z-30 shadow-[0_-4px_16px_rgba(0,0,0,0.02)]">
+<div class="flex justify-between items-center mb-md">
+<span class="font-small text-small text-text-secondary">Zwracasz: 2 produkty</span>
+<span class="font-h2 text-h2 text-text-primary">359 zł</span>
+</div>
+<button class="w-full h-[44px] bg-text-primary text-on-primary rounded-lg font-body text-body font-medium flex items-center justify-center hover:bg-text-primary/90 transition-colors">
+                Dalej
+            </button>
+</div>
+</div>
+</body></html>

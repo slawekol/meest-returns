@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operator Main Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#303032",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#dcd9db",
+                      "surface": "#fcf8fa",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "error": "#EF4444",
+                      "tertiary-container": "#271901",
+                      "on-surface-variant": "#45464d",
+                      "secondary-fixed": "#6ffbbe",
+                      "text-primary": "#0F172A",
+                      "badge-initiated-bg": "#F1F5F9",
+                      "surface-bright": "#fcf8fa",
+                      "bg-light": "#FAFAFA",
+                      "success": "#10B981",
+                      "surface-container-high": "#eae7e9",
+                      "secondary": "#006c49",
+                      "outline-variant": "#c6c6cd",
+                      "badge-dropped-bg": "#FEF3C7",
+                      "tertiary": "#000000",
+                      "on-secondary-fixed-variant": "#005236",
+                      "surface-container": "#f0edef",
+                      "primary-fixed-dim": "#bec6e0",
+                      "primary-fixed": "#dae2fd",
+                      "inverse-on-surface": "#f3f0f2",
+                      "warning": "#F59E0B",
+                      "secondary-container": "#6cf8bb",
+                      "on-primary-container": "#7c839b",
+                      "on-tertiary": "#ffffff",
+                      "text-muted": "#94A3B8",
+                      "badge-transit-bg": "#DBEAFE",
+                      "on-error-container": "#93000a",
+                      "badge-received-bg": "#EDE9FE",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "primary-container": "#131b2e",
+                      "on-secondary-fixed": "#002113",
+                      "on-error": "#ffffff",
+                      "bg-subtle": "#F1F5F9",
+                      "on-primary": "#ffffff",
+                      "surface-tint": "#565e74",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e4e2e4",
+                      "background": "#fcf8fa",
+                      "info": "#3B82F6",
+                      "tertiary-fixed": "#fcdeb5",
+                      "outline": "#76777d",
+                      "on-surface": "#1b1b1d",
+                      "surface-variant": "#e4e2e4",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "primary": "#000000",
+                      "on-tertiary-container": "#98805d",
+                      "on-primary-fixed": "#131b2e",
+                      "text-secondary": "#64748B",
+                      "border-base": "#E2E8F0",
+                      "surface-container-low": "#f6f3f5",
+                      "badge-completed-bg": "#D1FAE5",
+                      "on-background": "#1b1b1d",
+                      "inverse-primary": "#bec6e0",
+                      "badge-rejected-bg": "#FEE2E2",
+                      "on-tertiary-fixed": "#271901",
+                      "on-secondary-container": "#00714d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "xxl": "48px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "container-padding": "24px",
+                      "unit": "4px",
+                      "sm": "8px",
+                      "xxxl": "64px",
+                      "form-gap": "16px",
+                      "section-gap": "48px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "technical": [
+                              "JetBrains Mono"
+                      ],
+                      "small": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "h2": [
+                              "Inter"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "h1": [
+                              "Inter"
+                      ],
+                      "display": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "technical": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "small": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.5px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h2": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "h1": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body antialiased">
+<!-- TopNavBar JSON Mapping -->
+<header class="bg-surface dark:bg-surface-container-highest text-primary dark:text-on-surface flex justify-between items-center h-[56px] px-md w-full max-w-[768px] mx-auto border-b border-border-base docked full-width top-0">
+<div class="flex flex-col">
+<span class="font-h1 text-h1 font-bold text-primary dark:text-on-surface">Meest&amp;Returns Operator</span>
+<span class="font-small text-small text-on-surface-variant">Żabka #4822</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="font-small text-small text-on-surface-variant hidden sm:inline">Zalogowany: Jan Kowalski</span>
+<button class="flex items-center gap-xs font-small text-small text-primary hover:bg-surface-container-low transition-colors px-sm py-xs rounded active:opacity-80 transition-opacity">
+<span>Wyloguj</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow w-full max-w-[768px] mx-auto px-md py-lg flex flex-col gap-lg pb-xxxl">
+<!-- Massive Primary Action -->
+<button class="w-full bg-success text-on-primary h-[80px] rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex items-center justify-center gap-md active:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[32px]" data-icon="qr_code_scanner" data-weight="fill" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+<span class="font-display text-display uppercase">SKANUJ KOD ZWROTU</span>
+</button>
+<!-- Stats Card Row -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-md flex flex-col gap-xs hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wide">Dziś przyjęto</span>
+<span class="font-technical text-technical text-h1 font-bold text-primary">12</span>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-md flex flex-col gap-xs hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wide">W tym worku</span>
+<span class="font-technical text-technical text-h1 font-bold text-primary">8</span>
+</div>
+<!-- Stat 3 (Progress/Alert) -->
+<div class="bg-badge-dropped-bg border border-warning/20 rounded-lg p-md flex flex-col gap-xs hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-tertiary-fixed-variant uppercase tracking-wide">Worek pełny</span>
+<span class="material-symbols-outlined text-[16px] text-warning" data-icon="warning" data-weight="fill" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex items-baseline gap-xs">
+<span class="font-small text-small text-on-tertiary-fixed-variant">za</span>
+<span class="font-technical text-technical text-h1 font-bold text-on-tertiary-fixed-variant">2</span>
+<span class="font-small text-small text-on-tertiary-fixed-variant">paczki</span>
+</div>
+<!-- Simple progress bar -->
+<div class="w-full bg-warning/20 h-[4px] rounded-full mt-sm overflow-hidden">
+<div class="bg-warning h-full rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar JSON Mapping -->
+<nav class="bg-surface dark:bg-surface-container-high text-primary dark:text-on-surface border-t border-border-base docked full-width bottom-0 fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] bg-surface md:hidden">
+<!-- Active Tab: Pulpit (Mapped conceptually to 'Skanuj' context given the intent, but strictly using JSON labels) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed-dim font-bold active:bg-surface-container active:scale-95 transition-all w-full h-full">
+<span class="material-symbols-outlined text-[24px] text-success" data-icon="qr_code_scanner" data-weight="fill" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+<span class="font-label-caps text-label-caps text-success mt-xs">Skanuj</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container active:scale-95 transition-all w-full h-full">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps mt-xs">Pulpit</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container active:scale-95 transition-all w-full h-full">
+<span class="material-symbols-outlined text-[24px]" data-icon="package_2">package_2</span>
+<span class="font-label-caps text-label-caps mt-xs">Batch</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container active:scale-95 transition-all w-full h-full">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps mt-xs">Profil</span>
+</button>
+</nav>
+</body></html>

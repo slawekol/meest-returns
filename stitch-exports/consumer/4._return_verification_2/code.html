@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sprawdź paczkę - PUDO Operator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fcf8fa",
+                        "primary": "#000000",
+                        "warning": "#F59E0B",
+                        "tertiary-container": "#271901",
+                        "on-primary-container": "#7c839b",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container": "#f0edef",
+                        "text-muted": "#94A3B8",
+                        "on-error-container": "#93000a",
+                        "border-base": "#E2E8F0",
+                        "badge-transit-bg": "#DBEAFE",
+                        "badge-completed-bg": "#D1FAE5",
+                        "surface-variant": "#e4e2e4",
+                        "surface": "#fcf8fa",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary-container": "#98805d",
+                        "inverse-primary": "#bec6e0",
+                        "outline": "#76777d",
+                        "on-surface": "#1b1b1d",
+                        "on-secondary-fixed": "#002113",
+                        "background": "#fcf8fa",
+                        "primary-container": "#131b2e",
+                        "on-error": "#ffffff",
+                        "info": "#3B82F6",
+                        "secondary": "#006c49",
+                        "success": "#10B981",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#6cf8bb",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-high": "#eae7e9",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary-fixed-variant": "#005236",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "surface-tint": "#565e74",
+                        "badge-received-bg": "#EDE9FE",
+                        "surface-container-low": "#f6f3f5",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "bg-subtle": "#F1F5F9",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container-highest": "#e4e2e4",
+                        "error": "#EF4444",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-dim": "#dcd9db",
+                        "inverse-on-surface": "#f3f0f2",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-fixed": "#131b2e",
+                        "tertiary-fixed": "#fcdeb5",
+                        "tertiary": "#000000",
+                        "text-primary": "#0F172A",
+                        "inverse-surface": "#303032",
+                        "on-background": "#1b1b1d",
+                        "text-secondary": "#64748B",
+                        "secondary-fixed-dim": "#4edea3",
+                        "bg-light": "#FAFAFA",
+                        "badge-dropped-bg": "#FEF3C7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "xxxl": "64px",
+                        "section-gap": "48px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "form-gap": "16px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "small": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "technical": ["JetBrains Mono"],
+                        "h1": ["Inter"]
+                    },
+                    "fontSize": {
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #E2E8F0; border-radius: 9999px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col md:flex-row antialiased">
+<!-- SideNavBar (Hidden on Mobile, Visible on md+) -->
+<nav class="hidden md:flex flex-col h-screen py-md px-sm bg-surface dark:bg-surface-container-low border-r border-border-base w-64 flex-shrink-0 sticky top-0 z-40">
+<div class="mb-xl px-sm">
+<h2 class="font-h2 text-h2 font-black text-primary">Meest&amp;Returns Operator</h2>
+<div class="mt-sm flex items-center gap-sm">
+<img alt="Operator Avatar" class="w-10 h-10 rounded-full object-cover border border-border-base" data-alt="A close-up portrait of a professional logistics worker in a high-tech warehouse environment. The lighting is bright and clean, typical of a modern corporate setting. The mood is serious and focused, conveying reliability. The aesthetic relies on crisp details, deep blacks, and clean whites, matching a high-end corporate modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtCGZNvZ2VxiWtTtGjRgREhjrYvb6uktvWHNIzMhw4biIx-WZ79vCZLGtMhOJRUiyzibX1x9b8cGK-8Q1jykbMTdYPmf-O1T0YyOuLHT5lVAzFqQFk46yyaG6s68QZB0xRk2MU--NrQzHCR4DqgyjK1pcDYjE_xZhZdD3-gjQ9RIK9S0j-P4ctDjsGdcgqTMdU2aoew7DbvkTnh3s0DTcFT6w3tq29smd3wyWuBrf6SXG_nJkp4i5GZ7xfLtpcHBRZJ1ivXj3pP-X_"/>
+<div>
+<p class="font-small text-small text-primary dark:text-on-surface">Operator PUDO</p>
+<p class="font-technical text-technical text-text-secondary">ID: 48291</p>
+</div>
+</div>
+</div>
+<div class="flex-1 space-y-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-body hover:bg-surface-container hover:bg-surface-container-high active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+                Pulpit
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-body hover:bg-surface-container hover:bg-surface-container-high active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]">barcode_scanner</span>
+                Skaner
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg bg-primary-container text-on-primary-container font-h2 hover:bg-surface-container-high active:scale-[0.98] transition-transform" href="#" style="font-variation-settings: 'FILL' 1;">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                Weryfikacja
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-body hover:bg-surface-container hover:bg-surface-container-high active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]">block</span>
+                Odrzucenia
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-body hover:bg-surface-container hover:bg-surface-container-high active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+                Partie
+            </a>
+</div>
+<div class="mt-auto space-y-xs pt-md border-t border-border-base">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-body hover:bg-surface-container hover:bg-surface-container-high active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+                Ustawienia
+            </a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-body hover:bg-surface-container hover:bg-surface-container-high active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]">logout</span>
+                Wyloguj
+            </a>
+</div>
+</nav>
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden flex justify-between items-center h-[56px] px-md w-full bg-surface dark:bg-surface-container-highest border-b border-border-base sticky top-0 z-40">
+<h1 class="font-h1 text-h1 font-bold text-primary dark:text-on-surface">Meest&amp;Returns Operator</h1>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-primary dark:text-on-surface hover:bg-surface-container-low transition-colors active:opacity-80 rounded-full">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center pb-[100px] md:pb-xl pt-lg md:pt-xxl px-md md:px-lg overflow-y-auto custom-scrollbar w-full max-w-[768px] mx-auto">
+<div class="w-full mb-lg flex justify-between items-end">
+<div>
+<h1 class="font-display text-display text-text-primary mb-xs">Sprawdź paczkę</h1>
+<p class="font-body text-body text-text-secondary">Zweryfikuj stan zwracanego produktu.</p>
+</div>
+<div class="hidden sm:flex bg-badge-initiated-bg border border-border-base rounded-full px-sm py-xs items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">package</span>
+<span class="font-small text-small text-text-primary">1 / 1 Elementów</span>
+</div>
+</div>
+<!-- Product Card Bento Grid -->
+<div class="w-full bg-surface-container-lowest border border-border-base rounded-xl overflow-hidden mb-section-gap flex flex-col md:flex-row group transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<!-- Color Swatch / Visual Placeholder -->
+<div class="w-full md:w-[35%] h-48 md:h-auto bg-[#FB923C] relative flex items-center justify-center border-b md:border-b-0 md:border-r border-border-base">
+<span class="material-symbols-outlined text-[64px] text-white opacity-40 mix-blend-overlay">apparel</span>
+<div class="absolute bottom-xs right-xs bg-surface/80 backdrop-blur-sm px-2 py-1 rounded text-label-caps font-label-caps text-text-primary">
+                    KOLOR: POMARAŃCZOWY
+                 </div>
+</div>
+<!-- Product Details -->
+<div class="p-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-h2 text-h2 text-text-primary uppercase tracking-tight">Sweter dziergany pomarańczowy</h2>
+<span class="bg-bg-subtle text-text-secondary font-label-caps text-label-caps px-2 py-1 rounded border border-border-base shrink-0 ml-md">SKU: SW-OR-M-01</span>
+</div>
+<div class="grid grid-cols-2 gap-y-sm gap-x-md mb-md">
+<div>
+<p class="font-label-caps text-label-caps text-text-secondary mb-1">ROZMIAR</p>
+<p class="font-small text-small text-text-primary">M</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-text-secondary mb-1">BRAND</p>
+<p class="font-small text-small text-text-primary">Reserved</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-text-secondary mb-1">ILOŚĆ</p>
+<p class="font-small text-small text-text-primary">1 szt.</p>
+</div>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-border-base flex items-center justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-text-secondary mb-1">NR ZWROTU</p>
+<p class="font-technical text-technical text-text-primary bg-bg-light px-2 py-1 rounded border border-border-base inline-block">RTN-K9F2-8XLM</p>
+</div>
+<button class="w-10 h-10 flex items-center justify-center bg-surface border border-border-base rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px] text-text-primary">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Verification Checklist -->
+<div class="w-full mb-section-gap">
+<h3 class="font-h2 text-h2 text-text-primary mb-md">Lista weryfikacyjna</h3>
+<div class="space-y-sm">
+<!-- Checklist Item 1 -->
+<label class="flex items-start gap-md p-md bg-surface-container-lowest border border-border-base rounded-lg cursor-pointer hover:bg-bg-subtle transition-colors group">
+<div class="relative flex items-start pt-1">
+<input class="w-6 h-6 rounded border-border-base text-success focus:ring-success focus:ring-offset-0 bg-surface checked:border-success" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="font-body text-body text-text-primary font-medium group-hover:text-primary transition-colors">Metki oryginalne, nieuszkodzone</p>
+<p class="font-small text-small text-text-secondary mt-1">Sprawdź czy metki wewnętrzne i zewnętrzne są nienaruszone.</p>
+</div>
+</label>
+<!-- Checklist Item 2 -->
+<label class="flex items-start gap-md p-md bg-surface-container-lowest border border-border-base rounded-lg cursor-pointer hover:bg-bg-subtle transition-colors group">
+<div class="relative flex items-start pt-1">
+<input class="w-6 h-6 rounded border-border-base text-success focus:ring-success focus:ring-offset-0 bg-surface checked:border-success" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="font-body text-body text-text-primary font-medium group-hover:text-primary transition-colors">Produkt w worku foliowym</p>
+<p class="font-small text-small text-text-secondary mt-1">Upewnij się, że produkt znajduje się w oryginalnym opakowaniu ochronnym.</p>
+</div>
+</label>
+<!-- Checklist Item 3 -->
+<label class="flex items-start gap-md p-md bg-surface-container-lowest border border-border-base rounded-lg cursor-pointer hover:bg-bg-subtle transition-colors group">
+<div class="relative flex items-start pt-1">
+<input class="w-6 h-6 rounded border-border-base text-success focus:ring-success focus:ring-offset-0 bg-surface checked:border-success" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="font-body text-body text-text-primary font-medium group-hover:text-primary transition-colors">Wygląd zgadza się z opisem powyżej</p>
+<p class="font-small text-small text-text-secondary mt-1">Porównaj kolor, rozmiar i cechy szczególne z deklaracją.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Bottom Sticky Action Bar -->
+<div class="fixed bottom-0 md:bottom-md left-0 md:left-auto right-0 w-full md:w-[calc(100%-256px)] max-w-[768px] mx-auto bg-surface-container-lowest border-t md:border border-border-base p-md flex flex-row gap-md items-center justify-between z-30 md:rounded-xl shadow-[0_-4px_24px_rgba(0,0,0,0.02)] md:shadow-none mb-[64px] md:mb-0">
+<button class="flex-1 h-[44px] flex items-center justify-center gap-sm bg-surface-container-lowest text-error border border-error hover:bg-badge-rejected-bg transition-colors rounded-DEFAULT font-small text-small uppercase tracking-wide px-[24px]">
+<span class="material-symbols-outlined text-[20px]">close</span>
+                Odrzuć zwrot
+            </button>
+<button class="flex-1 h-[44px] flex items-center justify-center gap-sm bg-success text-on-primary border border-success opacity-50 cursor-not-allowed rounded-DEFAULT font-small text-small uppercase tracking-wide px-[24px]" disabled="">
+<span class="material-symbols-outlined text-[20px]">check</span>
+                Przyjmij paczkę
+            </button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] bg-surface dark:bg-surface-container-high border-t border-border-base md:hidden pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container active:scale-95 transition-all w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">qr_code_scanner</span>
+<span class="font-label-caps text-label-caps">Skanuj</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container active:scale-95 transition-all w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">home</span>
+<span class="font-label-caps text-label-caps">Pulpit</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed-dim font-bold active:bg-surface-container active:scale-95 transition-all w-full h-full" href="#" style="font-variation-settings: 'FILL' 1;">
+<span class="material-symbols-outlined text-[24px] mb-1" style="font-variation-settings: 'FILL' 1;">package_2</span>
+<span class="font-label-caps text-label-caps">Batch</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container active:scale-95 transition-all w-full h-full" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">person</span>
+<span class="font-label-caps text-label-caps">Profil</span>
+</a>
+</nav>
+</body></html>

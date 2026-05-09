@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Twój kod QR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "success": "#10B981",
+                        "secondary": "#006c49",
+                        "text-muted": "#94A3B8",
+                        "primary-container": "#131b2e",
+                        "border-base": "#E2E8F0",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "secondary-fixed": "#6ffbbe",
+                        "secondary-container": "#6cf8bb",
+                        "primary-fixed-dim": "#bec6e0",
+                        "text-secondary": "#64748B",
+                        "text-primary": "#0F172A",
+                        "surface-dim": "#dcd9db",
+                        "primary-fixed": "#dae2fd",
+                        "surface-variant": "#e4e2e4",
+                        "surface-container-high": "#eae7e9",
+                        "error": "#EF4444",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "info": "#3B82F6",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-primary": "#bec6e0",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "on-background": "#1b1b1d",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "tertiary-fixed": "#fcdeb5",
+                        "inverse-on-surface": "#f3f0f2",
+                        "badge-completed-bg": "#D1FAE5",
+                        "secondary-fixed-dim": "#4edea3",
+                        "badge-received-bg": "#EDE9FE",
+                        "bg-subtle": "#F1F5F9",
+                        "inverse-surface": "#303032",
+                        "on-tertiary-container": "#98805d",
+                        "on-surface-variant": "#45464d",
+                        "outline-variant": "#c6c6cd",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#565e74",
+                        "outline": "#76777d",
+                        "on-secondary-container": "#00714d",
+                        "on-secondary": "#ffffff",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "surface": "#fcf8fa",
+                        "primary": "#000000",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#271901",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "on-secondary-fixed-variant": "#005236",
+                        "background": "#fcf8fa",
+                        "warning": "#F59E0B",
+                        "surface-container-low": "#f6f3f5",
+                        "surface-container-lowest": "#ffffff",
+                        "bg-light": "#FAFAFA",
+                        "badge-transit-bg": "#DBEAFE",
+                        "on-primary-container": "#7c839b",
+                        "tertiary": "#000000",
+                        "surface-container": "#f0edef",
+                        "on-tertiary-fixed": "#271901",
+                        "on-surface": "#1b1b1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "form-gap": "16px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xxxl": "64px",
+                        "xs": "4px",
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "xl": "32px",
+                        "section-gap": "48px"
+                    },
+                    "fontFamily": {
+                        "technical": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "small": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"]
+                    },
+                    "fontSize": {
+                        "technical": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600"}],
+                        "display": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "small": ["13px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "h1": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-xxxl">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-border-base transition-colors duration-200">
+<div class="flex items-center justify-between px-md h-11 w-full max-w-[480px] mx-auto">
+<button class="text-text-secondary hover:bg-bg-subtle p-sm rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-h1 text-h1 font-bold text-primary">Meest&amp;Returns</h1>
+<button class="text-text-secondary hover:bg-bg-subtle p-sm rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-[80px] px-container-padding max-w-[480px] mx-auto flex flex-col gap-lg">
+<!-- Header Section -->
+<div class="text-center">
+<h2 class="font-display text-display text-text-primary mb-sm">Twój kod QR</h2>
+<p class="font-body text-body text-text-secondary">Pokaż kod w punkcie. Operator zeskanuje i przyjmie paczkę.</p>
+</div>
+<!-- QR Code Section -->
+<div class="flex flex-col items-center gap-sm bg-surface-container-lowest p-lg rounded-xl border border-border-base shadow-sm mx-auto w-full max-w-[340px]">
+<div class="w-[280px] h-[280px] bg-white border border-border-base rounded-lg p-sm flex items-center justify-center">
+<img alt="A highly detailed generated image of a clean, crisp black and white QR code centered on a stark white background. The image is rendered with absolute clarity, reflecting a modern, technical aesthetic suitable for a logistics application. The sharp contrasts ensure the code appears scannable and precise, avoiding any blurring or artifacts." class="w-full h-full object-contain" data-alt="A highly detailed generated image of a clean, crisp black and white QR code centered on a stark white background. The image is rendered with absolute clarity, reflecting a modern, technical aesthetic suitable for a logistics application. The sharp contrasts ensure the code appears scannable and precise, avoiding any blurring or artifacts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsRiMRQDP-S7NA9T_pXVwAL3e3_mgN3L6rxRyYKpaxS5NuHZIQGXyyI2LWuinILYlt2TpSVeQU3ikNh8uxZHe8QFPn_mxy4YRW7VgyWOT97F4BsXdykYkqsBBmSixhAnXxKPO7nolw5qButJYv_52_2U5O645lMDWJrkbEPHSARUBeVexpNNL3JGMuixGY0ZHFm_KZbWHI_-Y5ssm5TfWUGYUq_psuMF7JQKfB6_5HbgWN9csgjsN4RF1N8ejZAtXEpujVb941QDYc"/>
+</div>
+<p class="font-technical text-technical text-text-primary tracking-widest mt-md">RTN-K9F2-8XLM</p>
+</div>
+<!-- Point Details Card -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-md">
+<div class="flex justify-between items-start mb-md">
+<div class="flex gap-sm">
+<div class="text-success mt-xs">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+</div>
+<div>
+<h3 class="font-h2 text-h2 text-text-primary">Sklep Żabka</h3>
+<p class="font-body text-body text-text-secondary">ul. Marszałkowska 10</p>
+<p class="font-small text-small text-text-secondary mt-xs flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Otwarte do 22:00
+                        </p>
+</div>
+</div>
+<div class="font-small text-small text-text-secondary font-medium">
+                    240 m
+                </div>
+</div>
+<button class="w-full h-[44px] flex items-center justify-center gap-sm bg-white border border-border-base rounded text-text-primary font-small text-small font-medium hover:bg-bg-subtle transition-colors">
+<span class="material-symbols-outlined text-[18px]">map</span>
+                Pokaż na mapie
+            </button>
+</div>
+<!-- Products Card -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg overflow-hidden">
+<div class="px-md py-sm border-b border-border-base bg-bg-subtle">
+<h3 class="font-small text-small text-text-primary font-semibold">Twoje produkty</h3>
+</div>
+<div class="p-md flex flex-col gap-md">
+<div class="flex items-center gap-md">
+<img alt="A sharply focused product thumbnail showing a sleek, modern black midi dress cleanly folded on a neutral gray studio background. The lighting is bright and even, casting no deep shadows, typical of high-end e-commerce photography. The stark minimalism aligns perfectly with the corporate logistics aesthetic." class="w-[48px] h-[48px] rounded object-cover border border-border-base" data-alt="A sharply focused product thumbnail showing a sleek, modern black midi dress cleanly folded on a neutral gray studio background. The lighting is bright and even, casting no deep shadows, typical of high-end e-commerce photography. The stark minimalism aligns perfectly with the corporate logistics aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvg-Yx5Fdge-3Mgt0bfjJm7W1fMDc_0pQrEgumn-14xzl80SbGNDaaKP4uPmhz8sdj9-7moLtlXbJjzSKWzgVgoPMPLlp-gh9SoSnuVr53VhVgbkXia4GwLi_AsEZkhmfqcyu0-XDT_WrlxIH7weC0X5aJm7pAkEkE4Et6Eflf09UrNN-A1Znz4T99qzbzloc0070EMGy45ZWUB9F7_RE0CrB6LEBON-FzWfwO6xDNBrRSVoQlAMSD8f5WZ23cSulF3_MIpBzRx47m"/>
+<div class="flex-1">
+<p class="font-body text-body text-text-primary font-medium">Black midi dress</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<img alt="A high-resolution product shot of a crisp white oversize button-down shirt, neatly presented against a soft, light grey backdrop. The image utilizes flat, diffuse lighting to eliminate harsh shadows, creating a pristine, catalog-style look that conveys professionalism and clean design." class="w-[48px] h-[48px] rounded object-cover border border-border-base" data-alt="A high-resolution product shot of a crisp white oversize button-down shirt, neatly presented against a soft, light grey backdrop. The image utilizes flat, diffuse lighting to eliminate harsh shadows, creating a pristine, catalog-style look that conveys professionalism and clean design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtMEW3mHZafAmlSzScoohzoUAIUGDp0DEPrOqZ2osx15zjL7epnPo5DKvd_n-WjyBLerYxbcFkTfxfsg8F-6kcDqXGdvFUC3gJfBrazZrOCyW9L1PP7qDE4jb6nG6PxTMeLu-5M7oAeGJ-0zR5oSS0lUYMlfr-p6Z6n2OH-eQGTcedureIVAgqUrlXggD8zrLdkn2SxiqBqrv50XRFf--t9BEzJCCpOjNZUdP255LzkOXOV7zVIYBknSgIY2SwIy3ipzLKjjFb7KyI"/>
+<div class="flex-1">
+<p class="font-body text-body text-text-primary font-medium">White oversize shirt</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-sm mt-sm">
+<button class="w-full h-[44px] flex items-center justify-center bg-primary text-white rounded font-small text-small font-medium hover:bg-opacity-90 transition-opacity">
+                Zapisz kod
+            </button>
+<button class="w-full h-[44px] flex items-center justify-center bg-white border border-border-base rounded text-text-primary font-small text-small font-medium hover:bg-bg-subtle transition-colors">
+                Wyślij na email
+            </button>
+</div>
+<!-- Expiration Text -->
+<p class="text-center font-small text-small text-text-muted mt-sm mb-xl">
+            Kod jest ważny 14 dni
+        </p>
+</main>
+</body></html>

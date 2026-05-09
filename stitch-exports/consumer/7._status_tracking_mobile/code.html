@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meest&amp;Returns - Status zwrotu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "bg-subtle": "#F1F5F9",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#131b2e",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-container": "#00714d",
+                        "tertiary": "#000000",
+                        "secondary": "#006c49",
+                        "primary": "#000000",
+                        "tertiary-container": "#271901",
+                        "on-surface-variant": "#45464d",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-surface": "#1b1b1d",
+                        "on-error-container": "#93000a",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "tertiary-fixed": "#fcdeb5",
+                        "warning": "#F59E0B",
+                        "on-secondary": "#ffffff",
+                        "border-base": "#E2E8F0",
+                        "on-primary-container": "#7c839b",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "surface-container-lowest": "#ffffff",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "success": "#10B981",
+                        "on-primary": "#ffffff",
+                        "badge-received-bg": "#EDE9FE",
+                        "badge-completed-bg": "#D1FAE5",
+                        "error": "#EF4444",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container-high": "#eae7e9",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface": "#fcf8fa",
+                        "on-secondary-fixed": "#002113",
+                        "text-secondary": "#64748B",
+                        "outline-variant": "#c6c6cd",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-fixed": "#dae2fd",
+                        "text-muted": "#94A3B8",
+                        "surface-container-low": "#f6f3f5",
+                        "badge-transit-bg": "#DBEAFE",
+                        "bg-light": "#FAFAFA",
+                        "surface-container": "#f0edef",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-tertiary-container": "#98805d",
+                        "inverse-surface": "#303032",
+                        "info": "#3B82F6",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-variant": "#e4e2e4",
+                        "outline": "#76777d",
+                        "surface-tint": "#565e74",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "text-primary": "#0F172A",
+                        "on-background": "#1b1b1d",
+                        "background": "#fcf8fa",
+                        "surface-dim": "#dcd9db"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "form-gap": "16px",
+                        "xxxl": "64px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "technical": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "display": ["Inter"],
+                        "small": ["Inter"]
+                    },
+                    "fontSize": {
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex flex-col items-center">
+<div class="w-full max-w-[480px] bg-surface min-h-screen relative shadow-[0_0_40px_rgba(0,0,0,0.05)] pb-section-gap">
+<!-- TopAppBar: Generated from Shared Components JSON -->
+<!-- Suppressing Bottom Nav since this is a focused detail/transactional screen (Task-focused) -->
+<header class="flex items-center px-container-padding h-11 w-full max-w-[480px] mx-auto bg-surface dark:bg-surface-container-high border-b border-border-base dark:border-outline-variant sticky top-0 z-50">
+<button class="mr-md text-text-primary dark:text-on-surface hover:bg-bg-subtle dark:hover:bg-surface-variant p-sm rounded-full transition-opacity opacity-100 hover:opacity-80 active:opacity-80 flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">arrow_back</span>
+</button>
+<div class="flex-1 text-center pr-10">
+<h1 class="font-display text-display text-primary dark:text-inverse-primary tracking-tight">Meest&amp;Returns</h1>
+</div>
+</header>
+<main class="px-container-padding pt-lg">
+<!-- Page Header & ID -->
+<div class="mb-xl">
+<h2 class="font-h1 text-h1 text-text-primary mb-xs">Status zwrotu</h2>
+<div class="flex items-center text-text-secondary">
+<span class="material-symbols-outlined text-[16px] mr-sm" style="font-variation-settings: 'wght' 300;">tag</span>
+<span class="font-technical text-technical">RTN-K9F2-8XLM</span>
+</div>
+</div>
+<!-- Timeline Section -->
+<div class="bg-surface-container-lowest border border-border-base rounded-xl p-lg mb-form-gap relative">
+<!-- Vertical Line Background -->
+<div class="absolute left-[39px] top-[40px] bottom-[40px] w-[1px] bg-border-base z-0"></div>
+<div class="relative z-10 flex flex-col gap-lg">
+<!-- Step 1: Completed -->
+<div class="flex gap-md group">
+<div class="w-[32px] h-[32px] rounded-full bg-badge-completed-bg border border-success flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-success text-[16px]" style="font-variation-settings: 'wght' 500;">check</span>
+</div>
+<div class="flex-1 pb-xs">
+<h3 class="font-body text-body font-semibold text-text-primary">Zwrot zainicjowany</h3>
+<div class="flex items-center text-text-secondary mt-xs">
+<span class="material-symbols-outlined text-[14px] mr-xs" style="font-variation-settings: 'wght' 300;">calendar_today</span>
+<p class="font-small text-small">12.10.2023, 14:20</p>
+</div>
+</div>
+</div>
+<!-- Step 2: In Progress (Highlighted) -->
+<div class="flex gap-md group">
+<div class="w-[32px] h-[32px] rounded-full bg-badge-dropped-bg border border-warning flex items-center justify-center shrink-0 mt-1 shadow-[0_0_0_4px_rgba(245,158,11,0.1)]">
+<span class="material-symbols-outlined text-warning text-[16px]" style="font-variation-settings: 'wght' 500;">hourglass_empty</span>
+</div>
+<div class="flex-1 pb-xs">
+<h3 class="font-body text-body font-semibold text-text-primary">Oddany w punkcie</h3>
+<div class="flex items-center text-text-secondary mt-xs">
+<span class="material-symbols-outlined text-[14px] mr-xs" style="font-variation-settings: 'wght' 300;">calendar_today</span>
+<p class="font-small text-small">13.10.2023, 09:45</p>
+</div>
+</div>
+</div>
+<!-- Step 3: Future -->
+<div class="flex gap-md group opacity-60">
+<div class="w-[32px] h-[32px] rounded-full bg-surface border border-border-base flex items-center justify-center shrink-0 mt-1">
+<div class="w-[8px] h-[8px] rounded-full bg-border-base"></div>
+</div>
+<div class="flex-1 pt-1 pb-xs">
+<h3 class="font-body text-body font-medium text-text-secondary">W transporcie</h3>
+</div>
+</div>
+<!-- Step 4: Future -->
+<div class="flex gap-md group opacity-60">
+<div class="w-[32px] h-[32px] rounded-full bg-surface border border-border-base flex items-center justify-center shrink-0 mt-1">
+<div class="w-[8px] h-[8px] rounded-full bg-border-base"></div>
+</div>
+<div class="flex-1 pt-1 pb-xs">
+<h3 class="font-body text-body font-medium text-text-secondary">Dotarł do magazynu</h3>
+</div>
+</div>
+<!-- Step 5: Future -->
+<div class="flex gap-md group opacity-60">
+<div class="w-[32px] h-[32px] rounded-full bg-surface border border-border-base flex items-center justify-center shrink-0 mt-1">
+<div class="w-[8px] h-[8px] rounded-full bg-border-base"></div>
+</div>
+<div class="flex-1 pt-1 pb-xs">
+<h3 class="font-body text-body font-medium text-text-secondary">Środki zwrócone</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- Info Cards -->
+<div class="flex flex-col gap-sm mb-xl">
+<!-- Refund Date Card -->
+<div class="bg-surface-container-lowest border border-border-base rounded-xl p-md flex items-center">
+<div class="w-[40px] h-[40px] rounded-lg bg-bg-subtle flex items-center justify-center text-text-secondary mr-md shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 300;">event_available</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-text-secondary uppercase mb-xs">Przewidywany zwrot środków</p>
+<p class="font-body text-body font-semibold text-text-primary">15.10.2023</p>
+</div>
+</div>
+<!-- Refund Amount Card -->
+<div class="bg-surface-container-lowest border border-border-base rounded-xl p-md flex items-center">
+<div class="w-[40px] h-[40px] rounded-lg bg-bg-subtle flex items-center justify-center text-text-secondary mr-md shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 300;">credit_card</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-text-secondary uppercase mb-xs">Zwracamy</p>
+<p class="font-body text-body font-semibold text-text-primary">359 zł <span class="font-normal text-text-secondary">na kartę kończącą się 4242</span></p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-sm">
+<button class="w-full min-h-[44px] py-[12px] px-lg bg-surface-container-lowest border border-border-base rounded-lg font-body text-body font-semibold text-text-primary flex items-center justify-center hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow">
+<span class="material-symbols-outlined text-[16px] mr-sm" style="font-variation-settings: 'wght' 300;">help_outline</span>
+                    Pomoc
+                </button>
+</div>
+</main>
+</div>
+</body></html>

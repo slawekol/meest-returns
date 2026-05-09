@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meest&amp;Returns - Wczytywanie</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "bg-subtle": "#F1F5F9",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#131b2e",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-container": "#00714d",
+                        "tertiary": "#000000",
+                        "secondary": "#006c49",
+                        "primary": "#000000",
+                        "tertiary-container": "#271901",
+                        "on-surface-variant": "#45464d",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-surface": "#1b1b1d",
+                        "on-error-container": "#93000a",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "tertiary-fixed": "#fcdeb5",
+                        "warning": "#F59E0B",
+                        "on-secondary": "#ffffff",
+                        "border-base": "#E2E8F0",
+                        "on-primary-container": "#7c839b",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "surface-container-lowest": "#ffffff",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "success": "#10B981",
+                        "on-primary": "#ffffff",
+                        "badge-received-bg": "#EDE9FE",
+                        "badge-completed-bg": "#D1FAE5",
+                        "error": "#EF4444",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container-high": "#eae7e9",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface": "#fcf8fa",
+                        "on-secondary-fixed": "#002113",
+                        "text-secondary": "#64748B",
+                        "outline-variant": "#c6c6cd",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-fixed": "#dae2fd",
+                        "text-muted": "#94A3B8",
+                        "surface-container-low": "#f6f3f5",
+                        "badge-transit-bg": "#DBEAFE",
+                        "bg-light": "#FAFAFA",
+                        "surface-container": "#f0edef",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-tertiary-container": "#98805d",
+                        "inverse-surface": "#303032",
+                        "info": "#3B82F6",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-variant": "#e4e2e4",
+                        "outline": "#76777d",
+                        "surface-tint": "#565e74",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fcf8fa",
+                        "text-primary": "#0F172A",
+                        "on-background": "#1b1b1d",
+                        "background": "#fcf8fa",
+                        "surface-dim": "#dcd9db"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "form-gap": "16px",
+                        "xxxl": "64px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "technical": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "display": ["Inter"],
+                        "small": ["Inter"]
+                    },
+                    "fontSize": {
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .shimmer {
+            background: linear-gradient(90deg, #F1F5F9 0%, #ffffff 50%, #F1F5F9 100%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body text-body min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-border-base flat no shadows flex items-center px-container-padding h-11 w-full max-w-[480px] mx-auto top-0 sticky z-40">
+<button class="text-text-primary hover:bg-bg-subtle p-1 rounded-full transition-colors flex items-center justify-center mr-sm">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</button>
+<span class="font-display text-display text-primary flex-1 text-center pr-8">Meest&amp;Returns</span>
+</header>
+<!-- Main Content Area (Max width 480px for mobile app feel) -->
+<main class="w-full max-w-[480px] mx-auto pb-[100px] pt-md px-md flex flex-col gap-section-gap">
+<!-- Section 1: Order Summary Placeholder -->
+<section class="flex flex-col gap-md">
+<!-- Title Placeholder -->
+<div class="h-8 w-1/2 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<!-- Card Placeholder -->
+<div class="bg-surface border border-border-base rounded-lg p-md flex flex-col gap-md">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-sm w-1/3">
+<div class="h-4 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-6 bg-surface-variant rounded-DEFAULT shimmer"></div>
+</div>
+<div class="h-6 w-16 bg-surface-variant rounded-full shimmer"></div>
+</div>
+<div class="h-px bg-border-base w-full my-sm"></div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<div class="h-4 w-1/4 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-4 w-1/3 bg-surface-variant rounded-DEFAULT shimmer"></div>
+</div>
+<div class="flex justify-between items-center">
+<div class="h-4 w-1/5 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-4 w-1/4 bg-surface-variant rounded-DEFAULT shimmer"></div>
+</div>
+<div class="flex justify-between items-center">
+<div class="h-4 w-1/4 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-4 w-1/2 bg-surface-variant rounded-DEFAULT shimmer"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Products List Placeholder -->
+<section class="flex flex-col gap-md">
+<!-- Section Title Placeholder -->
+<div class="h-6 w-1/3 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="flex flex-col gap-sm">
+<!-- Product Item Placeholder 1 -->
+<div class="flex items-center gap-md p-sm border border-border-base rounded-lg bg-surface">
+<div class="h-16 w-16 bg-surface-variant rounded-DEFAULT shimmer shrink-0"></div>
+<div class="flex flex-col gap-xs w-full">
+<div class="h-4 w-3/4 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-3 w-1/2 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-4 w-1/4 bg-surface-variant rounded-DEFAULT shimmer mt-sm"></div>
+</div>
+</div>
+<!-- Product Item Placeholder 2 -->
+<div class="flex items-center gap-md p-sm border border-border-base rounded-lg bg-surface">
+<div class="h-16 w-16 bg-surface-variant rounded-DEFAULT shimmer shrink-0"></div>
+<div class="flex flex-col gap-xs w-full">
+<div class="h-4 w-2/3 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-3 w-1/3 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-4 w-1/4 bg-surface-variant rounded-DEFAULT shimmer mt-sm"></div>
+</div>
+</div>
+<!-- Product Item Placeholder 3 -->
+<div class="flex items-center gap-md p-sm border border-border-base rounded-lg bg-surface">
+<div class="h-16 w-16 bg-surface-variant rounded-DEFAULT shimmer shrink-0"></div>
+<div class="flex flex-col gap-xs w-full">
+<div class="h-4 w-4/5 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-3 w-1/2 bg-surface-variant rounded-DEFAULT shimmer"></div>
+<div class="h-4 w-1/4 bg-surface-variant rounded-DEFAULT shimmer mt-sm"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Bar Placeholder for CTA -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-surface border-t border-border-base p-md z-50 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<div class="h-[44px] w-full bg-surface-variant rounded-DEFAULT shimmer"></div>
+</div>
+</body></html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LogiTrack Pro - Pulpit</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#006c49",
+                        "tertiary": "#000000",
+                        "primary-container": "#131b2e",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-container": "#00714d",
+                        "error-container": "#ffdad6",
+                        "bg-subtle": "#F1F5F9",
+                        "warning": "#F59E0B",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#fcdeb5",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-surface": "#1b1b1d",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#45464d",
+                        "primary": "#000000",
+                        "tertiary-container": "#271901",
+                        "success": "#10B981",
+                        "on-primary": "#ffffff",
+                        "badge-received-bg": "#EDE9FE",
+                        "badge-completed-bg": "#D1FAE5",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "border-base": "#E2E8F0",
+                        "surface": "#fcf8fa",
+                        "on-secondary-fixed": "#002113",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-container-high": "#eae7e9",
+                        "primary-fixed-dim": "#bec6e0",
+                        "error": "#EF4444",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-on-surface": "#f3f0f2",
+                        "outline-variant": "#c6c6cd",
+                        "text-secondary": "#64748B",
+                        "bg-light": "#FAFAFA",
+                        "surface-container-low": "#f6f3f5",
+                        "badge-transit-bg": "#DBEAFE",
+                        "text-muted": "#94A3B8",
+                        "inverse-primary": "#bec6e0",
+                        "inverse-surface": "#303032",
+                        "info": "#3B82F6",
+                        "on-tertiary-container": "#98805d",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-container": "#f0edef",
+                        "on-tertiary-fixed": "#271901",
+                        "surface-dim": "#dcd9db",
+                        "surface-bright": "#fcf8fa",
+                        "text-primary": "#0F172A",
+                        "on-background": "#1b1b1d",
+                        "background": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#565e74",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-variant": "#e4e2e4",
+                        "outline": "#76777d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "xxxl": "64px",
+                        "lg": "24px",
+                        "section-gap": "48px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "form-gap": "16px"
+                    },
+                    "fontFamily": {
+                        "technical": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "display": ["Inter"],
+                        "small": ["Inter"]
+                    },
+                    "fontSize": {
+                        "technical": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["11px", { "lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h2": ["20px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "small": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-text-primary font-body text-body antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- SideNavBar (JSON Derived) -->
+<nav class="bg-surface dark:bg-inverse-surface fixed left-0 top-0 h-full w-[240px] border-r border-border-base dark:border-outline-variant flex flex-col h-full py-lg z-20">
+<div class="px-xl mb-xl">
+<div class="font-h2 text-h2 font-bold text-primary dark:text-inverse-primary tracking-tight">LogiTrack Pro</div>
+<div class="font-label-caps text-label-caps text-text-secondary mt-xs uppercase">Panel Sprzedawcy</div>
+</div>
+<div class="flex-1 overflow-y-auto flex flex-col gap-xs px-sm">
+<!-- Active Tab: Pulpit -->
+<a class="flex items-center gap-md px-md py-sm bg-surface-container-high dark:bg-surface-container-highest text-primary dark:text-on-primary-container border-r-2 border-primary hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 transition-all rounded-r-none" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-small text-small font-medium">Pulpit</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-md px-md py-sm text-text-secondary dark:text-text-muted hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+<span class="font-small text-small">Zamówienia</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-text-secondary dark:text-text-muted hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="font-small text-small">Produkty</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-text-secondary dark:text-text-muted hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+<span class="font-small text-small">Logistyka</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-text-secondary dark:text-text-muted hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-small text-small">Raporty</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-text-secondary dark:text-text-muted hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-small text-small">Ustawienia</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-xs px-sm pt-md border-t border-border-base mx-sm">
+<a class="flex items-center gap-md px-md py-sm text-text-secondary dark:text-text-muted hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">help_outline</span>
+<span class="font-small text-small">Pomoc</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-text-secondary dark:text-text-muted hover:bg-surface-container dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="font-small text-small">Wyloguj</span>
+</a>
+<div class="mt-md flex items-center gap-sm px-md py-sm bg-bg-subtle rounded-lg border border-border-base">
+<div class="w-8 h-8 rounded-full bg-surface-tint text-on-primary flex items-center justify-center font-small text-small font-bold">M</div>
+<div class="flex flex-col">
+<span class="font-small text-small text-primary font-semibold leading-tight">Modivo S.A.</span>
+<span class="font-label-caps text-label-caps text-text-secondary leading-tight">Merchant</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- TopAppBar (JSON Derived) -->
+<header class="bg-surface dark:bg-inverse-surface fixed top-0 right-0 w-[calc(100%-240px)] h-16 border-b border-border-base dark:border-outline-variant flex items-center justify-between px-xl h-full ml-[240px] z-10">
+<div class="flex items-center gap-md">
+<div class="font-h2 text-h2 font-bold text-primary dark:text-inverse-primary">LogiTrack Pro</div>
+<div class="h-6 w-px bg-border-base mx-sm"></div>
+<span class="font-small text-small text-text-secondary">Modivo S.A. Overview</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="h-[36px] pl-10 pr-4 rounded-lg border border-border-base bg-surface-container-lowest text-small font-small focus:border-secondary focus:ring-0 w-[240px] transition-colors" placeholder="Szukaj SKU, zamówienia..." type="text"/>
+</div>
+<div class="flex items-center gap-sm ml-sm">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-container transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] mt-16 p-xl min-h-[calc(100vh-64px)] flex flex-col gap-section-gap">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-h1 text-h1 text-primary">Pulpit</h1>
+<p class="font-body text-body text-text-secondary mt-xs">Przegląd logistyki zwrotów dla Modivo S.A.</p>
+</div>
+<div class="flex items-center gap-sm">
+<div class="flex items-center border border-border-base rounded-lg bg-surface-container-lowest h-[44px] px-sm cursor-pointer hover:bg-bg-subtle transition-colors">
+<span class="material-symbols-outlined text-text-secondary text-[20px] mr-sm">calendar_today</span>
+<span class="font-small text-small text-primary mr-md">Ostatnie 30 dni</span>
+<span class="material-symbols-outlined text-text-secondary text-[20px]">arrow_drop_down</span>
+</div>
+<button class="h-[44px] px-lg rounded-lg border border-border-base bg-surface-container-lowest hover:bg-bg-subtle text-primary font-small text-small font-medium flex items-center gap-sm transition-all active:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Eksport CSV
+                </button>
+</div>
+</section>
+<!-- KPI Row -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<span class="font-small text-small text-text-secondary font-medium">Zwroty dziś</span>
+<span class="material-symbols-outlined text-text-muted text-[20px]">keyboard_return</span>
+</div>
+<div class="font-display text-display text-primary mb-xs">47</div>
+<div class="flex items-center gap-xs mt-auto">
+<span class="material-symbols-outlined text-success text-[16px]">trending_up</span>
+<span class="font-label-caps text-label-caps text-success">+12%</span>
+<span class="font-label-caps text-label-caps text-text-muted normal-case font-normal">vs wczoraj</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<span class="font-small text-small text-text-secondary font-medium">Aktywne zwroty</span>
+<span class="material-symbols-outlined text-text-muted text-[20px]">local_shipping</span>
+</div>
+<div class="font-display text-display text-primary mb-sm">184</div>
+<div class="flex gap-unit mt-auto">
+<div class="h-2 bg-badge-initiated-bg rounded-l-full flex-grow border-r border-surface" title="Zainicjowane: 23"></div>
+<div class="h-2 bg-badge-transit-bg flex-[3] border-r border-surface" title="W tranzycie: 89"></div>
+<div class="h-2 bg-badge-completed-bg rounded-r-full flex-[2.5]" title="W hubie: 72"></div>
+</div>
+<div class="flex justify-between mt-sm font-label-caps text-label-caps text-text-muted">
+<span>Zainic: 23</span>
+<span>Tranzit: 89</span>
+<span>Hub: 72</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<span class="font-small text-small text-text-secondary font-medium">Średni czas proc.</span>
+<span class="material-symbols-outlined text-text-muted text-[20px]">timer</span>
+</div>
+<div class="font-display text-display text-primary mb-xs flex items-baseline gap-xs">
+                    2.3 <span class="font-body text-body text-text-secondary">dnia</span>
+</div>
+<div class="mt-auto h-8 w-full flex items-end gap-[2px]">
+<!-- Sparkline placeholder using divs -->
+<div class="w-full h-[40%] bg-border-base rounded-t-sm"></div>
+<div class="w-full h-[60%] bg-border-base rounded-t-sm"></div>
+<div class="w-full h-[50%] bg-border-base rounded-t-sm"></div>
+<div class="w-full h-[70%] bg-border-base rounded-t-sm"></div>
+<div class="w-full h-[40%] bg-border-base rounded-t-sm"></div>
+<div class="w-full h-[30%] bg-success opacity-50 rounded-t-sm"></div>
+<div class="w-full h-[20%] bg-success rounded-t-sm"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-shadow flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<span class="font-small text-small text-text-secondary font-medium">Wartość zwrotów</span>
+<span class="material-symbols-outlined text-text-muted text-[20px]">payments</span>
+</div>
+<div class="font-display text-display text-primary mb-xs">47,392 <span class="font-h2 text-h2">zł</span></div>
+<div class="flex items-center gap-xs mt-auto">
+<span class="material-symbols-outlined text-text-secondary text-[16px]">trending_flat</span>
+<span class="font-label-caps text-label-caps text-text-secondary">0%</span>
+<span class="font-label-caps text-label-caps text-text-muted normal-case font-normal">vs pop. okres</span>
+</div>
+</div>
+</section>
+<!-- Charts Section -->
+<section class="bg-surface-container-lowest border border-border-base rounded-lg p-lg">
+<div class="flex justify-between items-center mb-xl">
+<h2 class="font-h2 text-h2 text-primary">Zwroty w czasie (30 dni)</h2>
+<button class="text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="h-[300px] w-full border-b border-l border-border-base relative">
+<!-- Abstract Line Chart Representation -->
+<div class="absolute inset-0 flex flex-col justify-between">
+<div class="w-full h-px bg-border-base opacity-30"></div>
+<div class="w-full h-px bg-border-base opacity-30"></div>
+<div class="w-full h-px bg-border-base opacity-30"></div>
+<div class="w-full h-px bg-border-base opacity-30"></div>
+<div class="w-full h-px bg-border-base opacity-30"></div>
+</div>
+<svg class="w-full h-full absolute inset-0" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,80 L10,75 L20,85 L30,60 L40,65 L50,40 L60,50 L70,30 L80,35 L90,15 L100,20" fill="none" stroke="#000000" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<!-- Area fill under line -->
+<path d="M0,80 L10,75 L20,85 L30,60 L40,65 L50,40 L60,50 L70,30 L80,35 L90,15 L100,20 L100,100 L0,100 Z" fill="rgba(0,0,0,0.03)" stroke="none"></path>
+</svg>
+</div>
+<div class="flex justify-between mt-sm font-small text-small text-text-muted">
+<span>01 Maj</span>
+<span>15 Maj</span>
+<span>30 Maj</span>
+</div>
+</section>
+<!-- Two Column Data Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-xl">
+<!-- Left: Top Return Reasons -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-lg flex flex-col">
+<div class="flex justify-between items-center mb-xl">
+<h2 class="font-h2 text-h2 text-primary">Główne powody zwrotu</h2>
+</div>
+<div class="flex flex-col gap-md flex-1">
+<!-- Reason 1 -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between font-small text-small">
+<span class="text-primary font-medium">Rozmiar za mały</span>
+<span class="text-text-secondary">34% (128)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 34%"></div>
+</div>
+</div>
+<!-- Reason 2 -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between font-small text-small">
+<span class="text-primary font-medium">Zmieniono zdanie</span>
+<span class="text-text-secondary">22% (84)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full opacity-80" style="width: 22%"></div>
+</div>
+</div>
+<!-- Reason 3 -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between font-small text-small">
+<span class="text-primary font-medium">Rozmiar za duży</span>
+<span class="text-text-secondary">18% (68)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full opacity-60" style="width: 18%"></div>
+</div>
+</div>
+<!-- Reason 4 -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between font-small text-small">
+<span class="text-primary font-medium">Niezgodny z opisem</span>
+<span class="text-text-secondary">12% (45)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full opacity-40" style="width: 12%"></div>
+</div>
+</div>
+<!-- Reason 5 -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between font-small text-small">
+<span class="text-primary font-medium">Uszkodzony produkt</span>
+<span class="text-text-secondary">9% (34)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-error h-2 rounded-full opacity-80" style="width: 9%"></div>
+</div>
+</div>
+<!-- Reason 6 -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between font-small text-small">
+<span class="text-primary font-medium">Inne</span>
+<span class="text-text-secondary">5% (19)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-border-base h-2 rounded-full" style="width: 5%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Top Returned SKUs -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg flex flex-col overflow-hidden">
+<div class="p-lg border-b border-border-base flex justify-between items-center bg-surface-container-lowest">
+<h2 class="font-h2 text-h2 text-primary">Najczęściej zwracane SKU</h2>
+<a class="font-small text-small text-primary hover:underline font-medium" href="#">Zobacz pełny raport</a>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-bg-subtle border-b border-border-base">
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary font-medium uppercase tracking-wider">SKU / Produkt</th>
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary font-medium uppercase tracking-wider text-right">Ilość zwrotów</th>
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary font-medium uppercase tracking-wider text-right">Wskaźnik zwrotów</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-base">
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="py-sm px-md">
+<div class="font-technical text-technical text-primary font-medium">MDV-SH-992-BLK</div>
+<div class="font-small text-small text-text-muted line-clamp-1">Koszula lniana slim fit czarna M</div>
+</td>
+<td class="py-sm px-md font-technical text-technical text-primary text-right">42</td>
+<td class="py-sm px-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-badge-rejected-bg text-on-error-container">18.5%</span>
+</td>
+</tr>
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="py-sm px-md">
+<div class="font-technical text-technical text-primary font-medium">MDV-DN-014-BLU</div>
+<div class="font-small text-small text-text-muted line-clamp-1">Jeansy wide leg jasnoniebieskie 38</div>
+</td>
+<td class="py-sm px-md font-technical text-technical text-primary text-right">38</td>
+<td class="py-sm px-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-badge-rejected-bg text-on-error-container">15.2%</span>
+</td>
+</tr>
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="py-sm px-md">
+<div class="font-technical text-technical text-primary font-medium">MDV-SN-441-WHT</div>
+<div class="font-small text-small text-text-muted line-clamp-1">Sneakersy skórzane białe 42</div>
+</td>
+<td class="py-sm px-md font-technical text-technical text-primary text-right">29</td>
+<td class="py-sm px-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-badge-dropped-bg text-warning">11.0%</span>
+</td>
+</tr>
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="py-sm px-md">
+<div class="font-technical text-technical text-primary font-medium">MDV-JK-102-GRY</div>
+<div class="font-small text-small text-text-muted line-clamp-1">Marynarka oversize szara L</div>
+</td>
+<td class="py-sm px-md font-technical text-technical text-primary text-right">24</td>
+<td class="py-sm px-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-badge-dropped-bg text-warning">9.4%</span>
+</td>
+</tr>
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="py-sm px-md">
+<div class="font-technical text-technical text-primary font-medium">MDV-DR-883-RED</div>
+<div class="font-small text-small text-text-muted line-clamp-1">Sukienka midi jedwabna czerwona S</div>
+</td>
+<td class="py-sm px-md font-technical text-technical text-primary text-right">18</td>
+<td class="py-sm px-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-surface-container text-text-secondary">6.1%</span>
+</td>
+</tr>
+<tr class="hover:bg-bg-subtle transition-colors">
+<td class="py-sm px-md">
+<div class="font-technical text-technical text-primary font-medium">MDV-TS-005-WHT</div>
+<div class="font-small text-small text-text-muted line-clamp-1">T-shirt basic bawełna organiczna biały M</div>
+</td>
+<td class="py-sm px-md font-technical text-technical text-primary text-right">15</td>
+<td class="py-sm px-md text-right">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-surface-container text-text-secondary">4.2%</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+</body></html>

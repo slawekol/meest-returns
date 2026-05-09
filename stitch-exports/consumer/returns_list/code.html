@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meest&amp;Returns Business - Zwroty</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1b1b1d",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#e4e2e4",
+                        "info": "#3B82F6",
+                        "text-muted": "#94A3B8",
+                        "on-tertiary-fixed": "#271901",
+                        "secondary-fixed": "#6ffbbe",
+                        "text-secondary": "#64748B",
+                        "text-primary": "#0F172A",
+                        "border-base": "#E2E8F0",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary": "#006c49",
+                        "surface-variant": "#e4e2e4",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fcf8fa",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#bec6e0",
+                        "surface": "#fcf8fa",
+                        "on-primary-fixed": "#131b2e",
+                        "bg-subtle": "#F1F5F9",
+                        "surface-container-low": "#f6f3f5",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "primary-fixed": "#dae2fd",
+                        "tertiary-fixed": "#fcdeb5",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#7c839b",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "surface-container-lowest": "#ffffff",
+                        "badge-transit-bg": "#DBEAFE",
+                        "on-tertiary-container": "#98805d",
+                        "success": "#10B981",
+                        "on-secondary-container": "#00714d",
+                        "outline-variant": "#c6c6cd",
+                        "badge-rejected-bg": "#FEE2E2",
+                        "badge-initiated-bg": "#F1F5F9",
+                        "error": "#EF4444",
+                        "surface-container": "#f0edef",
+                        "primary": "#000000",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-on-surface": "#f3f0f2",
+                        "warning": "#F59E0B",
+                        "badge-dropped-bg": "#FEF3C7",
+                        "secondary-container": "#6cf8bb",
+                        "on-surface": "#1b1b1d",
+                        "on-surface-variant": "#45464d",
+                        "inverse-surface": "#303032",
+                        "outline": "#76777d",
+                        "tertiary-container": "#271901",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error": "#ffffff",
+                        "badge-received-bg": "#EDE9FE",
+                        "surface-container-high": "#eae7e9",
+                        "primary-fixed-dim": "#bec6e0",
+                        "bg-light": "#FAFAFA",
+                        "surface-dim": "#dcd9db",
+                        "badge-completed-bg": "#D1FAE5",
+                        "background": "#fcf8fa",
+                        "surface-tint": "#565e74",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-container": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "xxxl": "64px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "container-padding": "24px",
+                        "xs": "4px",
+                        "xxl": "48px",
+                        "sm": "8px",
+                        "form-gap": "16px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "technical": ["JetBrains Mono"],
+                        "display": ["Inter"],
+                        "h1": ["Inter"],
+                        "small": ["Inter"],
+                        "h2": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "technical": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h1": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "small": ["13px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "h2": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.5px", "fontWeight": "600"}],
+                        "body": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body text-body min-h-screen">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest border-r border-border-base w-[240px] h-screen fixed left-0 top-0 flex flex-col h-full py-lg px-md z-20">
+<div class="mb-xxl flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-h2 text-h2 font-bold">L</div>
+<div>
+<h1 class="font-h1 text-h1 font-bold text-text-primary">Logistics Pro</h1>
+<p class="font-small text-small text-text-secondary">Merchant Portal</p>
+</div>
+</div>
+<ul class="flex-1 space-y-xs">
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-subtle transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="font-body text-body">Pulpit</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-text-primary font-bold border-r-2 border-primary bg-bg-subtle transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">assignment_return</span>
+<span class="font-body text-body">Zwroty</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-subtle transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[24px]">location_on</span>
+<span class="font-body text-body">Punkty</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-subtle transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+<span class="font-body text-body">Analytics</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-subtle transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="font-body text-body">Ustawienia</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-subtle transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+<span class="font-body text-body">Rozliczenia</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto border-t border-border-base pt-md">
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-subtle transition-colors duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[24px]">logout</span>
+<span class="font-body text-body">Wyloguj</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-border-base h-[64px] fixed top-0 right-0 left-[240px] z-10 flex justify-between items-center px-lg h-full">
+<div></div> <!-- Spacer for layout -->
+<div class="flex items-center gap-md">
+<button class="text-text-secondary hover:text-primary transition-colors cursor-pointer w-10 h-10 flex items-center justify-center rounded-full hover:bg-bg-subtle">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+<button class="text-text-secondary hover:text-primary transition-colors cursor-pointer w-10 h-10 flex items-center justify-center rounded-full hover:bg-bg-subtle">
+<span class="material-symbols-outlined text-[24px]">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-border-base overflow-hidden ml-sm cursor-pointer border border-border-base">
+<img alt="Użytkownik" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8sW3QGdJxrblvQobu3QClKN7gJLRQAaSTeRD01eApRx8W392tBLKSnTH_2vi7hzJ7oqI9bJMSGAsidb1kYC-SPjwzfrvR2n6ljpPX8HF1Th3ghLnTOfAlnCGO--U-b4cYi-cXNSzD82kIQfzq-u4v1y4CERKIN20ZcmBfhgJ0ZuLDN95hRPRtFr9LeE4suWucIwkg3EWTRecPdnjsOn_VTwIEE22rAor_JyMloJZVjkbfjt8OZ4fWIwHX_bVhNLPgosIQLmXLXvwh"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-[240px] mt-[64px] p-container-padding max-w-[1440px]">
+<!-- Page Header -->
+<div class="flex justify-between items-center mb-xl">
+<h2 class="font-display text-display text-text-primary">Zwroty</h2>
+<button class="bg-surface-container-lowest border border-border-base text-text-primary hover:bg-bg-subtle px-lg py-[10px] rounded-DEFAULT font-small text-small flex items-center gap-sm h-[44px] transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                Eksportuj
+            </button>
+</div>
+<!-- Filter Bar -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg p-md mb-lg flex flex-wrap gap-md items-end">
+<div class="flex-1 min-w-[200px]">
+<label class="block font-label-caps text-label-caps text-text-secondary mb-xs uppercase">Szukaj</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-text-secondary text-[20px]">search</span>
+<input class="w-full h-[44px] pl-[36px] pr-md rounded-DEFAULT border border-border-base bg-surface-container-lowest text-text-primary focus:border-success focus:ring-0 text-[15px] font-body transition-colors placeholder:text-text-muted" placeholder="RTN ID, Email..." type="text"/>
+</div>
+</div>
+<div class="w-[180px]">
+<label class="block font-label-caps text-label-caps text-text-secondary mb-xs uppercase">Status</label>
+<select class="w-full h-[44px] px-md rounded-DEFAULT border border-border-base bg-surface-container-lowest text-text-primary focus:border-success focus:ring-0 text-[15px] font-body transition-colors appearance-none cursor-pointer">
+<option value="">Wszystkie</option>
+<option value="initiated">Zainicjowane</option>
+<option value="in_transit">W drodze</option>
+<option value="received">Odebrane</option>
+<option value="completed">Zakończone</option>
+</select>
+</div>
+<div class="w-[220px]">
+<label class="block font-label-caps text-label-caps text-text-secondary mb-xs uppercase">Data</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-text-secondary text-[20px]">calendar_today</span>
+<input class="w-full h-[44px] pl-[36px] pr-md rounded-DEFAULT border border-border-base bg-surface-container-lowest text-text-primary focus:border-success focus:ring-0 text-[15px] font-body transition-colors cursor-pointer" placeholder="Wybierz zakres" type="text" value="Ost. 30 dni"/>
+</div>
+</div>
+<div class="w-[200px]">
+<label class="block font-label-caps text-label-caps text-text-secondary mb-xs uppercase">Punkt PUDO</label>
+<select class="w-full h-[44px] px-md rounded-DEFAULT border border-border-base bg-surface-container-lowest text-text-primary focus:border-success focus:ring-0 text-[15px] font-body transition-colors appearance-none cursor-pointer">
+<option value="">Wszystkie punkty</option>
+<option value="p1">PUDO Warszawa Centrum</option>
+<option value="p2">PUDO Kraków Główny</option>
+</select>
+</div>
+<button class="bg-primary text-on-primary px-lg py-[10px] rounded-DEFAULT font-small text-small h-[44px] hover:bg-surface-tint transition-colors">
+                Filtruj
+            </button>
+</div>
+<!-- Data Table -->
+<div class="bg-surface-container-lowest border border-border-base rounded-lg overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-bg-subtle border-b border-border-base">
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary uppercase cursor-pointer hover:bg-surface-container-high transition-colors group whitespace-nowrap">
+<div class="flex items-center gap-xs">Status <span class="material-symbols-outlined text-[16px] text-border-base group-hover:text-text-secondary">arrow_downward</span></div>
+</th>
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary uppercase cursor-pointer hover:bg-surface-container-high transition-colors group whitespace-nowrap">
+<div class="flex items-center gap-xs">RTN ID <span class="material-symbols-outlined text-[16px] text-border-base group-hover:text-text-secondary">arrow_downward</span></div>
+</th>
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary uppercase cursor-pointer hover:bg-surface-container-high transition-colors group whitespace-nowrap">
+<div class="flex items-center gap-xs">Klient <span class="material-symbols-outlined text-[16px] text-border-base group-hover:text-text-secondary">arrow_downward</span></div>
+</th>
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary uppercase whitespace-nowrap">Produkt</th>
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary uppercase cursor-pointer hover:bg-surface-container-high transition-colors group whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-xs">Wartość <span class="material-symbols-outlined text-[16px] text-border-base group-hover:text-text-secondary">arrow_downward</span></div>
+</th>
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary uppercase whitespace-nowrap">Punkt PUDO</th>
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary uppercase cursor-pointer hover:bg-surface-container-high transition-colors group whitespace-nowrap">
+<div class="flex items-center gap-xs">Data <span class="material-symbols-outlined text-[16px] text-border-base group-hover:text-text-secondary">arrow_downward</span></div>
+</th>
+<th class="py-sm px-md font-label-caps text-label-caps text-text-secondary uppercase text-center w-[48px]">Akcje</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-base">
+<!-- Row 1: In Transit -->
+<tr class="hover:bg-bg-subtle transition-colors group">
+<td class="py-md px-md whitespace-nowrap">
+<span class="inline-flex items-center px-[12px] py-[4px] rounded-full text-label-caps font-label-caps bg-badge-transit-bg text-info">W DRODZE</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-technical text-technical text-text-primary">RTN-2023-891A</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">a***@gmail.com</span>
+</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm min-w-[200px]">
+<div class="w-10 h-10 rounded bg-border-base overflow-hidden border border-border-base shrink-0">
+<img alt="Smartwatch product thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw9jz5uEhwd7TPiYKp-2wYhq_t3jEbRqy4-EqtyOL1Y9fPSFnN_LLBAdNjqvWZAqlCdvlTGyzapkgwCxgxQgkdm03SUWVg_9GENsem7bCcQ9voUsnnt6yoqspCDsQq5CFIKcqiTOoD3HmVCUAVHbffg9aeBL5rqnw2pKy3bgU6565RrFiN5BQNCmYinGzfGFC0eTyOr4qMfYKE6PM8GsDiRs9QaL4B4j2lerWXquBxZswk7dSBGYdnITgZ9bWmxz3fFlv5IPw_L0XY"/>
+</div>
+<span class="font-small text-small text-text-primary truncate">Smartwatch Series 8</span>
+</div>
+</td>
+<td class="py-md px-md whitespace-nowrap text-right">
+<span class="font-technical text-technical text-text-primary">1,299.00 PLN</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">PUDO WWA-01</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">12.10.2023 14:30</span>
+</td>
+<td class="py-md px-md text-center">
+<button class="text-text-secondary hover:text-text-primary p-xs rounded hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Received -->
+<tr class="hover:bg-bg-subtle transition-colors group">
+<td class="py-md px-md whitespace-nowrap">
+<span class="inline-flex items-center px-[12px] py-[4px] rounded-full text-label-caps font-label-caps bg-badge-received-bg text-[#6D28D9]">ODEBRANE</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-technical text-technical text-text-primary">RTN-2023-890B</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">j***@wp.pl</span>
+</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm min-w-[200px]">
+<div class="w-10 h-10 rounded bg-border-base overflow-hidden border border-border-base shrink-0">
+<img alt="Wireless headphones product thumbnail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs0QjxEXBTEiUBK11xIMd0oO4CUck08sCvB_IFNwH9JZuSkLjEAYBMah4F7nS5zu-_NypKH7xbZi5WEye9_95RJOb23zMByJrFZShaNeRwYpf2lIa-X3NUTimge3L3Jy7S8cwXCN6r7mNLOT9FwNDQcOzvu8shXA4fLpxXE036FAbUklVOZT9LXxUGjzCJ4X-loBzvDereFZgSc_QxdNPJ4Mdp00SugQ_-RT_Reoejpqy1no4P_CuroodzUf2kNFpzQPqFOvEuImNO"/>
+</div>
+<span class="font-small text-small text-text-primary truncate">Słuchawki Pro Max</span>
+</div>
+</td>
+<td class="py-md px-md whitespace-nowrap text-right">
+<span class="font-technical text-technical text-text-primary">899.00 PLN</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">Magazyn Główny</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">11.10.2023 09:15</span>
+</td>
+<td class="py-md px-md text-center">
+<button class="text-text-secondary hover:text-text-primary p-xs rounded hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Completed -->
+<tr class="hover:bg-bg-subtle transition-colors group">
+<td class="py-md px-md whitespace-nowrap">
+<span class="inline-flex items-center px-[12px] py-[4px] rounded-full text-label-caps font-label-caps bg-badge-completed-bg text-secondary">ZAKOŃCZONE</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-technical text-technical text-text-primary">RTN-2023-889C</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">m***@firma.pl</span>
+</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm min-w-[200px]">
+<div class="w-10 h-10 rounded bg-border-base overflow-hidden border border-border-base shrink-0 flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-text-muted text-[20px]">inventory_2</span>
+</div>
+<span class="font-small text-small text-text-primary truncate">Klawiatura Mechaniczna X1</span>
+</div>
+</td>
+<td class="py-md px-md whitespace-nowrap text-right">
+<span class="font-technical text-technical text-text-primary">349.00 PLN</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">Magazyn Główny</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">10.10.2023 16:45</span>
+</td>
+<td class="py-md px-md text-center">
+<button class="text-text-secondary hover:text-text-primary p-xs rounded hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Initiated -->
+<tr class="hover:bg-bg-subtle transition-colors group">
+<td class="py-md px-md whitespace-nowrap">
+<span class="inline-flex items-center px-[12px] py-[4px] rounded-full text-label-caps font-label-caps bg-badge-initiated-bg text-text-secondary">ZAINICJOWANE</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-technical text-technical text-text-primary">RTN-2023-888D</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">p***@onet.pl</span>
+</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm min-w-[200px]">
+<div class="w-10 h-10 rounded bg-border-base overflow-hidden border border-border-base shrink-0 flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-text-muted text-[20px]">inventory_2</span>
+</div>
+<span class="font-small text-small text-text-primary truncate">Mysz Ergonomiczna</span>
+</div>
+</td>
+<td class="py-md px-md whitespace-nowrap text-right">
+<span class="font-technical text-technical text-text-primary">129.00 PLN</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">Brak (Oczekuje)</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">12.10.2023 18:00</span>
+</td>
+<td class="py-md px-md text-center">
+<button class="text-text-secondary hover:text-text-primary p-xs rounded hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Rejected -->
+<tr class="hover:bg-bg-subtle transition-colors group">
+<td class="py-md px-md whitespace-nowrap">
+<span class="inline-flex items-center px-[12px] py-[4px] rounded-full text-label-caps font-label-caps bg-badge-rejected-bg text-error">ODRZUCONE</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-technical text-technical text-text-primary">RTN-2023-887E</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">k***@interia.pl</span>
+</td>
+<td class="py-md px-md">
+<div class="flex items-center gap-sm min-w-[200px]">
+<div class="w-10 h-10 rounded bg-border-base overflow-hidden border border-border-base shrink-0 flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-text-muted text-[20px]">inventory_2</span>
+</div>
+<span class="font-small text-small text-text-primary truncate">Kabel USB-C 2m</span>
+</div>
+</td>
+<td class="py-md px-md whitespace-nowrap text-right">
+<span class="font-technical text-technical text-text-primary">49.00 PLN</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">Magazyn Główny</span>
+</td>
+<td class="py-md px-md whitespace-nowrap">
+<span class="font-small text-small text-text-secondary">09.10.2023 11:20</span>
+</td>
+<td class="py-md px-md text-center">
+<button class="text-text-secondary hover:text-text-primary p-xs rounded hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="border-t border-border-base px-md py-sm flex items-center justify-between bg-surface-container-lowest">
+<div class="font-small text-small text-text-secondary">
+                    Pokazano <span class="font-bold text-text-primary">1-5</span> z <span class="font-bold text-text-primary">124</span> wyników
+                </div>
+<div class="flex items-center gap-xs">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-border-base text-text-secondary hover:bg-bg-subtle disabled:opacity-50 disabled:cursor-not-allowed transition-colors" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-on-primary font-small text-small border border-primary">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-border-base text-text-secondary font-small text-small hover:bg-bg-subtle transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-border-base text-text-secondary font-small text-small hover:bg-bg-subtle transition-colors">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-text-secondary">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-border-base text-text-secondary font-small text-small hover:bg-bg-subtle transition-colors">25</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-border-base text-text-secondary hover:bg-bg-subtle transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>
