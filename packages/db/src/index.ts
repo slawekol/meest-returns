@@ -1,20 +1,28 @@
-// Prisma client singleton. Models become available after `pnpm db:generate`
-// once the schema is filled in (Step 2).
+// Prisma client singleton (engine-less: driver adapter over node-postgres).
 //
-// We re-export the generated client from the local @prisma/client install so
-// every app gets the same instance and types.
+// Works identically in local dev, CI sandboxes and production (Railway),
+// because it does not depend on platform-specific Prisma engine binaries.
 
 import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
 };
 
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
-    log: process.env.NODE_ENV === 'development' ? ['query', 'warn', 'error'] : ['error'],
+function createClient(): PrismaClient {
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) {
+    throw new Error('DATABASE_URL is not set');
+  }
+  const adapter = new PrismaPg({ connectionString });
+  return new PrismaClient({
+    adapter,
+    log: process.env.NODE_ENV === 'development' ? ['warn', 'error'] : ['error'],
   });
+}
+
+export const prisma = globalForPrisma.prisma ?? createClient();
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 

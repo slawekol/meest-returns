@@ -1,22 +1,27 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { MaterialIcon } from '@meest/ui';
+import type { AcceptResult } from '../../../../lib/api';
 
 export default function ConfirmedPage() {
+  const [result, setResult] = useState<AcceptResult | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem('pudo-last-accept');
+      if (raw) setResult(JSON.parse(raw));
+    } catch {
+      /* noop */
+    }
+  }, []);
+
+  const instant = result?.refund.status === 'COMPLETED';
+
   return (
     <div className="bg-bg-subtle text-text-primary font-body antialiased min-h-screen flex">
-      <header className="md:hidden flex justify-between items-center px-lg py-sm w-full h-[64px] bg-surface border-b border-border-base fixed top-0 z-50">
-        <div className="font-h1 text-h1 font-bold text-primary">PUDO Operator</div>
-        <div className="flex gap-md">
-          <button className="text-primary hover:bg-surface-container-high transition-colors p-sm rounded-full active:scale-95 duration-100">
-            <MaterialIcon name="notifications" />
-          </button>
-          <button className="text-primary hover:bg-surface-container-high transition-colors p-sm rounded-full active:scale-95 duration-100">
-            <MaterialIcon name="account_circle" />
-          </button>
-        </div>
-      </header>
-
-      <main className="flex-1 flex flex-col pt-[64px] md:pt-0 min-h-screen">
+      <main className="flex-1 flex flex-col min-h-screen">
         <div className="flex-1 flex items-center justify-center p-container-padding">
           <div className="max-w-[480px] w-full flex flex-col items-center text-center space-y-xl">
             <div className="w-[96px] h-[96px] rounded-full bg-badge-completed-bg flex items-center justify-center">
@@ -25,14 +30,24 @@ export default function ConfirmedPage() {
             <div className="space-y-sm">
               <h1 className="font-display text-display text-text-primary">Zwrot przyjęty</h1>
               <p className="font-body text-body text-text-secondary">
-                Klient otrzyma zwrot środków w ciągu 24h
+                {instant
+                  ? `Refund ${result?.refund.amount} zł wypłacony klientowi natychmiast`
+                  : 'Klient otrzyma zwrot środków po weryfikacji w hubie (24–48h)'}
               </p>
+              {result && (
+                <p className="font-technical text-technical text-text-secondary">{result.returnId}</p>
+              )}
             </div>
             <div className="w-full bg-surface border border-border-base rounded-xl p-xl shadow-sm">
-              <p className="font-body text-body text-text-secondary mb-sm">Paczka trafia do worka</p>
+              <p className="font-body text-body text-text-secondary mb-sm">Paczka trafia do kontenera</p>
               <div className="inline-block bg-primary-container text-on-primary font-technical text-[24px] font-bold px-lg py-md rounded-lg">
-                A (Fashion)
+                {result?.bag.bagCode ?? '—'}
               </div>
+              {result && (
+                <p className="font-small text-small text-text-secondary mt-md">
+                  Zapełnienie: {result.bag.count} / {result.bag.capacity}
+                </p>
+              )}
             </div>
             <div className="w-full space-y-md pt-md">
               <Link

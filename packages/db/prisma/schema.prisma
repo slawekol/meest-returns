@@ -10,7 +10,9 @@
 //   - Lat/lon are Decimal(10,7) (~1cm precision).
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  engineType      = "client"
+  previewFeatures = ["queryCompiler", "driverAdapters"]
 }
 
 datasource db {

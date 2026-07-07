@@ -1,7 +1,28 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { MaterialIcon } from '@meest/ui';
+import { api } from '../../lib/api';
 
 export default function ScanPage() {
+  const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  async function simulateScan() {
+    setLoading(true);
+    setError(null);
+    try {
+      const { returnId } = await api.latestInitiated();
+      router.push(`/verify/${returnId}`);
+    } catch {
+      setError('Brak oczekujących zwrotów. Utwórz zwrot w aplikacji klienta.');
+      setLoading(false);
+    }
+  }
+
   return (
     <div className="bg-background text-text-primary antialiased h-screen w-full overflow-hidden flex flex-col md:flex-row relative">
       <main className="flex-1 relative w-full h-full flex flex-col bg-inverse-surface">
@@ -36,10 +57,7 @@ export default function ScanPage() {
             </div>
             <div
               className="relative w-[240px] h-[240px] flex items-center justify-center"
-              style={{
-                boxShadow: '0 0 0 9999px rgba(15, 23, 42, 0.85)',
-                borderRadius: '12px',
-              }}
+              style={{ boxShadow: '0 0 0 9999px rgba(15, 23, 42, 0.85)', borderRadius: '12px' }}
             >
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-success rounded-tl-lg" />
               <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-success rounded-tr-lg" />
@@ -47,21 +65,22 @@ export default function ScanPage() {
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-success rounded-br-lg" />
               <div className="absolute top-1/2 left-0 w-full h-[2px] bg-success opacity-80 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
             </div>
-            <div className="mt-xl text-center z-20">
-              <p className="font-technical text-technical text-on-secondary/80 tracking-wider">
-                Kod automatycznie wykryty
-              </p>
-            </div>
+            {error && (
+              <div className="mt-xl text-center z-20 bg-black/60 rounded-lg px-md py-sm pointer-events-auto">
+                <p className="font-small text-small text-on-secondary">{error}</p>
+              </div>
+            )}
           </div>
 
           <div className="w-full p-md flex flex-col gap-sm pointer-events-auto z-20">
-            <Link
-              href="/verify/RTN-2026-A41B"
-              className="w-full h-[56px] bg-success text-on-primary font-h2 text-h2 rounded-lg flex items-center justify-center gap-sm active:scale-[0.98] transition-transform"
+            <button
+              onClick={simulateScan}
+              disabled={loading}
+              className="w-full h-[56px] bg-success text-on-primary font-h2 text-h2 rounded-lg flex items-center justify-center gap-sm active:scale-[0.98] transition-transform disabled:opacity-60"
             >
               <MaterialIcon name="check_circle" size={24} filled />
-              Symuluj wykrycie kodu
-            </Link>
+              {loading ? 'Szukam zwrotu…' : 'Symuluj wykrycie kodu'}
+            </button>
             <Link
               href="/scan/manual"
               className="w-full h-[56px] bg-transparent border border-white/30 text-on-secondary font-h2 text-h2 rounded-lg flex items-center justify-center gap-sm hover:bg-white/10 transition-colors"
